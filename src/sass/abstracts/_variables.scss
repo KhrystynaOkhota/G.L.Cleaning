@@ -1,0 +1,26 @@
+$breakpoint-grid-sm: 576px;
+$breakpoint-grid-md: 768px;
+$breakpoint-grid-lg: 992px;
+$breakpoint-grid-xl: 1200px;
+
+$breakpoint-sm: 575px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 991px;
+$breakpoint-xl: 1199px;
+
+
+
+$color-accent: rgba(13, 185, 209, 1);
+$color-primary: rgba(5, 15, 46, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-black: rgba(20, 20, 20, 1);
+$font-primary: 'Gilroy', sans-serif;
+$transition-base:0.3s linear;
+
+// CSS Variables
+:root {
+  --color-accent: #{$color-accent};
+  --color-primary: #{$color-primary};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+}

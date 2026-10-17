@@ -1,0 +1,52 @@
+    @use "../abstracts/variables" as *;
+    @use "../abstracts/mixins" as *;
+
+    .s-price {
+        & .heading {
+            margin-bottom: fluid(29, 34);
+        }
+        & .description{
+            margin-bottom: fluid(23, 34);
+        }
+    }
+
+    .price {
+        display: grid;
+        grid-template-columns: 40% 1fr auto;
+        align-items: center;
+        gap: 10px;
+        background: rgba(248, 249, 253, 1);
+        color: rgba(20, 20, 20, 1);
+        padding: 18px 20px;
+        border-radius: 10px;
+        transition: background-color 0.2s ease;
+
+        &:nth-child(even) {
+            background-color: $color-white;
+        }
+
+        @media (max-width: 991px) {
+            grid-template-columns: 260px 1fr auto;
+            gap: 16px;
+        }
+
+
+        &__title,
+        &__value {
+            font-size: fluid(17, 20);
+            font-weight: 700;
+
+        }
+
+        &__desc {
+            font-size: fluid(15, 17);
+            line-height: 1.4;
+            color: #555555;
+        }
+
+        &__value {
+
+            white-space: nowrap;
+            text-align: right;
+        }
+    }

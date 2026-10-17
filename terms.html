@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>G.L.Cleaning</title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="assets/css/sumoselect.min.css" />
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="h-menu-overlay"></div>
+
+        <div class="h-wrap">
+            <div class="container">
+
+                <!-- 1. Верхній блок з кнопками/іконками (у мобільній версії — сітка з 5 колонок) -->
+                <div class="h-controls h-controls--top d-flex d-md-none">
+                    <div class="h-controls__item d-flex align-center align-middle">
+                        <button type="button" class="control-btn control-btn--search js_open_search"
+                            aria-label="Відкрити пошук">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#search"></use>
+                                </svg>
+                            </span>
+                        </button>
+
+                    </div>
+                    <div class="h-controls__item d-flex align-center align-middle">
+                        <a class="control-btn control-btn--account" href="account.html" aria-label="Особистий кабінет">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#user"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="h-controls__item d-flex align-center align-middle">
+                        <a class="control-btn control-btn--favorite" href="account-favourites.html"
+                            aria-label="Обрані товари">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#fav"></use>
+                                </svg>
+                                <span class="control-btn__count">0</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="h-controls__item d-flex align-center align-middle">
+                        <button type="button" class="control-btn control-btn--cart js_cart_open"
+                            aria-label="Відкрити кошик">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#bag"></use>
+                                </svg>
+                                <span class="control-btn__count">0</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="h-controls__item d-flex align-center align-middle">
+                        <div class="h-burger js-open-menu"><i></i></div>
+                    </div>
+                </div>
+
+                <!-- Десктопний верхній рядок -->
+                <div class="h-top d-none d-md-block">
+                    <div class="h-top-inner d-flex align-justify align-middle">
+                        <nav class="h-nav">
+                            <ul class="menu">
+                                <li class="menu-item"><a href="about.html">Про компанію</a></li>
+                                <li class="menu-item"><a href="services.html">Послуги</a></li>
+                                <li class="menu-item"><a href="delivery.html">Доставка і оплата</a></li>
+                                <li class="menu-item"><a href="return.html">Обмін і повернення</a></li>
+                                <li class="menu-item"><a href="blog.html">Блог</a></li>
+                                <li class="menu-item"><a href="contacts.html">Мережа салонів</a></li>
+                            </ul>
+                        </nav>
+                        <div class="h-phone d-none d-lg-flex align-center align-middle">
+                            <span class="h-phone__text text-light d-none d-xl-block">Є питання? Телефонуйте -
+                                допоможемо</span>
+                            <a href="tel:+380500749888" class="h-phone__number text-bold">+38 (050) 07-49-888</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Середній блок: Логотип та Кнопка запису -->
+                <div class="h-inner d-flex align-middle align-justify">
+                    <a class="h-logo" href="/" aria-label="Файна оптика logo">
+                        <img src="assets/img/logo.svg" alt="Файна оптика" class="h-logo__img">
+                    </a>
+
+                    <div class="h-search d-none d-lg-flex">
+                        <form class="search-form" action="#" method="get" role="search">
+                            <input type="search" class="search-form__input" placeholder="Пошук" aria-label="Пошук">
+                            <button type="submit" class="search-form__btn" aria-label="Шукати">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#search"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="h-btn">
+                        <a href="#" class="btn btn--primary open-popup" data-rel="cta">Запис до лікаря</a>
+                    </div>
+
+                    <div class="h-controls align-center d-none d-md-flex">
+
+                        <a class="control-btn control-btn--account" href="account.html" aria-label="Особистий кабінет">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#user"></use>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a class="control-btn control-btn--favorite" href="account-favourites.html"
+                            aria-label="Обрані товари">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#fav"></use>
+                                </svg>
+                                <span class="control-btn__count">0</span>
+                            </span>
+                        </a>
+
+                        <button type="button" class="control-btn control-btn--cart js_cart_open"
+                            aria-label="Відкрити кошик">
+                            <span class="control-btn__icon">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#bag"></use>
+                                </svg>
+                                <span class="control-btn__count">0</span>
+                            </span>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- 3. Мобільне випадаюче меню (Помаранчеві категорії -> Пошук -> Дод. посилання) -->
+                <div class="h-menu">
+                    <nav class="h-nav h-nav--top">
+                        <ul class="menu">
+                            <li class="menu-item"><a href="catalog.html">Оправи для зору</a></li>
+                            <li class="menu-item"><a href="catalog.html">Сонцезахисні окуляри</a></li>
+                            <li class="menu-item"><a href="catalog.html">Контактні лінзи</a></li>
+                            <li class="menu-item"><a href="catalog.html">Аксесуари/Засоби догляду</a></li>
+                            <li class="menu-item"><a href="promotions.html">Акції</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="h-search d-flex d-md-none">
+                        <form class="search-form" action="#" method="get" role="search">
+                            <input type="search" class="search-form__input" placeholder="Пошук" aria-label="Пошук">
+                            <button type="submit" class="search-form__btn" aria-label="Шукати">
+                                <svg class="icon" aria-hidden="true" width="22" height="22">
+                                    <use href="assets/img/symbol.svg#search"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <nav class="h-nav h-nav--bottom d-block d-md-none">
+                        <ul class="menu">
+                            <li class="menu-item"><a href="about.html">Про компанію</a></li>
+                            <li class="menu-item"><a href="services.html">Послуги</a></li>
+                            <li class="menu-item"><a href="delivery.html">Доставка і оплата</a></li>
+                            <li class="menu-item"><a href="return.html">Обмін і повернення</a></li>
+                            <li class="menu-item"><a href="blog.html">Блог</a></li>
+                            <li class="menu-item"><a href="contacts.html">Мережа салонів</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="h-search-wrap">
+            <div class="container-fluid">
+                <form class="h-search-inner search" action="https://lulacoco.com/" autocomplete="off"> <svg width="24"
+                        height="24">
+                        <use xlink:href="https://lulacoco.com/wp-content/themes/lulacoco/img/icons/icons_product.svg#search"
+                            fill="none"></use>
+                    </svg> <input type="text" name="s" placeholder="Enter the product name" aria-label="Search input">
+                    <div class="btn btn-md btn-thirdy search-btn"> <b>Search</b></div>
+                    <div class="btn-close js_close_search"></div>
+                </form>
+                <div class="h-search-dropdown">
+                    <div class="h-search-dropdown-inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h-search-overlay"></div>
+    </header>
+    <main class="main">
+        <div class="kama_breadcrumbs__wrap">
+            <div class="container">
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="kama_breadcrumbs">
+                            <span>
+                                <a href="" itemprop="item">
+                                    <span>Головна</span>
+                                </a>
+                                <span class="kb_sep">/</span>
+                                <span class="kb_title">Умови використання сайту</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="s-simple s-simple--terms">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 col-exs-16 column">
+                        <h1 class="heading h2 ">Умови використання сайту</h1>
+
+                        <div class="cms-content">
+                            <h2>1. ПРАВИЛА ТА УМОВИ ВИКОРИСТАННЯ САЙТУ</h2>
+
+                            <p>Ласкаво просимо на сайт Good Idea Cleaning (далі — «Сайт»).</p>
+
+                            <p>Ці Умови використання (далі — «Умови») регулюють відносини між користувачем Сайту (далі —
+                                «Користувач») та Компанією / ФОП (далі — «Компанія», «Good Idea Cleaning», «ми»).</p>
+
+                            <p>Сайт містить інформацію про клінінгові послуги Компанії, умови їх замовлення, вартість та
+                                інші відомості, необхідні для взаємодії з клієнтами.</p>
+
+                            <p>Використовуючи Сайт, переглядаючи його сторінки або надсилаючи заявку, Ви підтверджуєте,
+                                що ознайомилися з цими Умовами та погоджуєтеся з ними. Якщо Ви не погоджуєтеся з
+                                Умовами, просимо утриматися від використання Сайту.</p>
+
+                            <p>Компанія має право оновлювати ці Умови. Актуальна редакція публікується на Сайті.</p>
+
+                            <h2>2. ВИКОРИСТАННЯ САЙТУ ТА НАДАННЯ ПОСЛУГ</h2>
+
+                            <p>Good Idea Cleaning надає послуги професійного прибирання приміщень власними працівниками
+                                та/або клінерами, залученими Компанією для виконання замовлень.</p>
+
+                            <p>Через Сайт Користувач може ознайомитися з послугами, залишити заявку, передати контактні
+                                дані та отримати консультацію щодо організації прибирання.</p>
+
+                            <p>Компанія самостійно організовує виконання замовлень, узгоджує з клієнтом дату, час, обсяг
+                                і вартість робіт, а також координує роботу клінера або команди клінерів.</p>
+
+                            <h3>Оформлення замовлення</h3>
+
+                            <p>Для оформлення замовлення Користувач може скористатися формою на Сайті або зв'язатися з
+                                Компанією за вказаними контактами.</p>
+
+                            <p>Під час оформлення замовлення Користувач зобов'язується надати достовірну інформацію,
+                                необхідну для зв'язку та належної організації послуги.</p>
+
+                            <p>Замовлення вважається погодженим після підтвердження Компанією його основних умов,
+                                зокрема дати, часу, адреси, переліку робіт та вартості, якщо вона визначається
+                                індивідуально.</p>
+
+                            <p>Інформація про послуги та ціни на Сайті має ознайомчий характер, якщо інше прямо не
+                                зазначено. Останній обсяг і вартість можуть залежати від характеру приміщення, його
+                                стану, площі та додатково побажань клієнта.</p>
+
+                            <h3>Виконання послуг</h3>
+
+                            <p>Компанія організовує та забезпечує виконання погоджених робіт своїми клінерами. Клієнт
+                                зобов'язується надати доступ до приміщення у погоджений час та повідомити про обставини,
+                                які можуть вплинути на виконання прибирання.</p>
+
+                            <p>Якщо під час виконання робіт виникає потреба збільшити погоджений обсяг послуг, Компанія
+                                узгоджує такі зміни з клієнтом. Додаткові роботи та їхня вартість опрацьовуються окремо.
+                            </p>
+
+                            <p>Якщо для виконання замовлення необхідно залучити кількох клінерів, Компанія координує
+                                їхню роботу та відповідає за організацію виконання погоджених послуг.</p>
+
+                            <p>Порядок оплати, перенесення або скасування замовлення, а також умови розгляду замовлень
+                                можуть додатково зазначатися під час оформлення замовлення або в окремих документах
+                                Компанії.</p>
+
+                            <h2>3. КОНФІДЕНЦІЙНІСТЬ</h2>
+
+                            <p>Використання Сайту регулюється Політикою конфіденційності Good Idea Cleaning, яка описує
+                                порядок збору, використання, зберігання та захисту персональних даних Користувачів.</p>
+
+                            <p>Надаючи свої дані через Сайт або інші канали зв'язку з Компанією, Користувач підтверджує,
+                                що подана інформація є актуальною та достовірною.</p>
+
+                            <p>Просимо ознайомитися з Політикою конфіденційності, розміщеною на Сайті.</p>
+
+                            <h2>4. ЕЛЕКТРОННІ КОМУНІКАЦІЇ</h2>
+
+                            <p>Відвідуючи Сайт, заповнюючи форми або надсилаючи повідомлення Компанії електронною поштою
+                                чи через інші електронні канали, Користувач погоджується на електронну комунікацію з
+                                Good Idea Cleaning.</p>
+
+                            <p>Компанія може використовувати надані контактні дані для уточнення деталей замовлення,
+                                підтвердження дати й часу прибирання, попередження про зміни та надання відповідей на
+                                звернення.</p>
+
+                            <p>Електронні повідомлення можуть інтерпретуватися для інформування Користувача про умови
+                                замовлення та інші питання, пов'язані з наданням послуг.</p>
+
+                            <h2>5. ОБЛІКОВИЙ ЗАПИС ТА ВІДПОВІДАЛЬНІСТЬ КОРИСТУВАЧА</h2>
+
+                            <p>Якщо Сайт передбачає створення облікового запису, Користувач несе відповідальність за
+                                збереження конфіденційності своїх даних для входу та за дії, здійснені з використанням
+                                такого облікового запису.</p>
+
+                            <p>Користувач зобов'язується не передавати доступ до свого облікового запису іншим особам,
+                                якщо така передача не передбачена функціоналом Сайту.</p>
+
+                            <p>Компанія має право обмежити або припинити доступ до облікового запису у випадку порушення
+                                цих Умов, неправомірного використання Сайту або виникнення загрози його безпеці.</p>
+
+                            <h3>Використання Сайту неповнолітніми</h3>
+
+                            <p>Якщо Користувач не досяг повноліття, він повинен використовувати Сайт за згодою батьків
+                                або законних представників, якщо така згода необхідна відповідно до чинного
+                                законодавства.</p>
+
+                            <h3>Посилання на сторонні сайти та сервіси</h3>
+
+                            <p>Сайт може містити посилання на сторонні вебсайти або сервіси. Такі ресурси не перебувають
+                                під контролем Good Idea Cleaning, тому Компанія не відповідає за їхній вигляд,
+                                доступність, політики конфіденційності або умови використання.</p>
+
+                            <p>Користувач самостійно приймає рішення щодо переходу на сторонні ресурси та використання
+                                їхніх послуг.</p>
+
+                            <h3>Заборонене використання та інтелектуальна власність</h3>
+
+                            <p>Користувач зобов'язується використовувати Сайт законно та не вчиняти дій, які можуть
+                                порушити його роботу, безпеку або права інших осіб.</p>
+
+                            <p><strong>Зокрема, забороняється:</strong></p>
+
+                            <ul>
+                                <li>використовувати Сайт для поширення незаконного, образливого або непристойного
+                                    контенту, що порушує права третіх осіб;</li>
+                                <li>намагатися отримати несанкціонований доступ до Сайту, його систем або даних;</li>
+                                <li>використовувати шкідливі програми чи інші матеріали, які можуть зашкодити роботі
+                                    Сайту;</li>
+                                <li>копіювати, змінювати, поширювати або використовувати матеріали Сайту з комерційною
+                                    метою без відповідного дозволу.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="container">
+                <h2 class="visually-hidden">Інформація про компанію та навігація</h2>
+                <div class="row m-row align-center">
+
+                    <!-- 1. Логотип -->
+                    <div class="col-xl-3 col-lg-3 col-md-10 col-sm-16 col-xs-16 column">
+                        <a href="/" class="footer__logo" aria-label="Good idea Cleaning — На головну">
+                            <img src="assets/img/logo-light.svg" alt="Good idea Cleaning" width="180" height="60"
+                                loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- 2. Меню навігації (Для дому, Для бізнесу зі стрілочками, Ціни, Контакти) -->
+                    <div class="col-xl-3 col-lg-3 col-md-10 col-sm-16 col-xs-16 column">
+                        <nav class="footer-nav">
+                            <ul class="menu">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Для дому</a>
+                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <!-- Якщо є підменю -->
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="#">Підпункт 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Для бізнесу</a>
+                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="#">Підпункт 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="#">Ціни</a></li>
+                                <li class="menu-item"><a href="#">Контакти</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- 3. Друга колонка посилань (Про нас, Google відгуки, Політика...) -->
+                    <div class="col-xl-4 col-lg-4 col-md-10 col-sm-16 col-xs-16 column">
+                        <nav class="footer-nav">
+                            <ul class="menu">
+                                <li class="menu-item"><a href="about.html">Про нас</a></li>
+                                <li class="menu-item menu-item--google">
+                                    <a href="#" target="_blank" rel="noopener">
+                                        <span class="google-logo">
+                                            <span style="color:#4285F4">G</span><span
+                                                style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span
+                                                style="color:#4285F4">g</span><span style="color:#34A853">l</span><span
+                                                style="color:#EA4335">e</span>
+                                        </span>
+                                        відгуки
+                                    </a>
+                                </li>
+                                <li class="menu-item"><a href="#">Політика конфіденційності</a></li>
+                                <li class="menu-item"><a href="#">Умови використання сайту</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- 4. Контакти та соцмережі з іконками 30x30 -->
+                    <div class="col-xl-6 col-lg-6 col-md-10 col-sm-16 col-xs-16 column">
+                        <div class="contact">
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#phone"></use>
+                                </svg>
+                                <a href="tel:08001235335" class="contact__text">
+                                    <strong>0-800-123-53-35</strong> <span class="contact__note">(безкоштовно по
+                                        Україні)</span>
+                                </a>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#email"></use>
+                                </svg>
+                                <a href="mailto:hello@chystota.ua"
+                                    class="contact__text contact__text--link">hello@chystota.ua</a>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#location"></use>
+                                </svg>
+                                <span class="contact__text">м. Львів, вул. Лемківська 9а</span>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#clock"></use>
+                                </svg>
+                                <span class="contact__text">Прийом замовлень: Пн - Нд з 9:00 до 19:00</span>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#clock"></use>
+                                </svg>
+                                <span class="contact__text">Виконання замовлень: з 9:00 до 21:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Соціальні мережі -->
+                        <ul class="socials__list" role="list">
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--youtube" target="_blank" rel="noopener"
+                                    aria-label="YouTube">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#youtube"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--threads" target="_blank" rel="noopener"
+                                    aria-label="Threads">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#threads"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener"
+                                    aria-label="Facebook">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#facebook"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--instagram" target="_blank"
+                                    rel="noopener" aria-label="Instagram">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#instagram"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener"
+                                    aria-label="TikTok">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#tiktok"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер bottom -->
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row m-row justify-between">
+                    <div class="col-xl-8 col-lg-8 col-md-16 column">
+                        <div class="copyright">© 2026 Good idea Cleaning Усі права захищені</div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-16 column text-right">
+                        <div class="develop">
+                            Design and development —
+                            <a href="https://webtune.com.ua/" target="_blank" rel="nofollow"
+                                class="develop__link">WebTune</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="popup-wrapper">
+        <div class="bg-layer"></div>
+
+        <div class="popup-content cta" data-rel="cta">
+            <div class="layer-close"></div>
+            <div class="popup-container ">
+                <div class="popup-container__inner">
+                    <div class="btn--close d-flex align-middle align-center">
+
+                    </div>
+
+                    <div class="popup-form text-center">
+                        <h4 class="popup-form__heading text-bold h3">Записатись на прийом</h4>
+                        <form class="">
+
+                            <div class="row m-row">
+                                <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                                    <div class="field">
+                                        <label class="field__label text-left" for="user-name">Як до вас
+                                            звертатися?</label>
+                                        <input class="field__input" type="text" id="p-user-name" name="name"
+                                            placeholder="Ваше ім’я">
+                                    </div>
+                                    <div class="form-field ">
+                                        <label class="field__label text-left" for="user-phone">Ваш номер
+                                            телефону</label>
+                                        <input class="field__input" type="tel" id="p-user-phone" name="phone"
+                                            value="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
+                                            aria-describedby="phone-error">
+
+                                    </div>
+
+                                    <div class="form-field ">
+                                        <button class="btn btn--primary" type="submit">
+                                            Записатися на прийом
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9h5L2xSWEvRFgLc7y4d16KPUDydNgs9Y&loading=async&libraries=marker"
+        async></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.sumoselect.min.js"></script>
+
+    <script src="src/scripts/app-swiper.js"></script>
+    <script src="src/scripts/js_app.js"></script>
+
+    <script src="assets/js/app-comparison.js"></script>
+    <script src="src/scripts/app_map.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            // Клік по пункту меню з випадайкою
+            $('.menu-item-has-children > a').on('click', function (e) {
+                e.preventDefault();
+
+                const $parentItem = $(this).parent('.menu-item-has-children');
+                const $subMenu = $parentItem.children('.sub-menu');
+
+                // Закриваємо інші відкриті списки (плавно)
+                $('.menu-item-has-children').not($parentItem).removeClass('is-open')
+                    .children('.sub-menu').slideUp(300);
+
+                // Перемикаємо поточний список з плавним ефектом
+                $parentItem.toggleClass('is-open');
+                $subMenu.slideToggle(300);
+            });
+
+            // Закриття при кліку поза межами меню
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.menu-item-has-children').length) {
+                    $('.menu-item-has-children').removeClass('is-open')
+                        .children('.sub-menu').slideUp(300);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

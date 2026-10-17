@@ -1,0 +1,125 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/*
+.tab {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    gap: fluid(10, 20);
+
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    white-space: nowrap; // Запобігає переносу довгих назв
+
+    background: transparent;
+  
+    cursor: pointer;
+    position: relative;
+    @include transition(.5);
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 100%;
+
+    }
+
+    &.is--active {
+     
+    }
+  }
+
+  &__panel {
+
+    display: none;
+
+    &.is--active {
+      display: block;
+    }
+
+  }
+}
+
+.tab {
+    &__list {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #F8F9FD;
+        padding: 6px;
+        border-radius: 40px;
+
+        @media (max-width: 767px) {
+            display: flex;
+            width: 100%;
+            overflow-x: auto;
+        }
+    }
+
+    &__item {
+        background: transparent;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #00B9CE;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &.is--active {
+            background-color: #00B9CE;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+    }
+
+    &__panel {
+        display: none;
+
+        &.is--active {
+            display: block;
+        }
+    }
+}
+*/
+
+.tab {
+  &__list {
+    display: inline-flex;
+    gap: 6px;
+    background: #F8F9FD;
+    padding: 6px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #00B9CE;
+    cursor: pointer;
+    user-select: none;
+
+    &.is--active {
+      background-color: #00B9CE;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+  }
+
+  &__panel {
+    display: none;
+
+    &.is--active {
+      display: block;
+    }
+  }
+}
