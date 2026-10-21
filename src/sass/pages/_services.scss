@@ -356,10 +356,11 @@
     }
 }
 
+
 .s-whats-included {
     padding: 100px 0;
     background-color: rgba(248, 249, 253, 1);
-    margin-bottom: fluid(50,100);
+    margin-bottom: fluid(50, 100);
 
     & .heading {
         margin-bottom: 40px;
@@ -426,4 +427,8 @@
             gap: 20px;
         }
     }
+}
+
+.s-service-info {
+    padding: fluid(30, 100) 0 fluid(45, 90) 0;
 }

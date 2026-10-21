@@ -24,23 +24,10 @@
   .bg-layer {
     position: absolute;
     inset: -6.25rem 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: #F8F9FD;
     opacity: 0;
     transition: opacity 0.3s ease-out;
   }
-
-  & .btn--close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-
-    @media (max-width: $breakpoint-md) {
-      top: 15px;
-      right: 15px;
-    }
-  }
-
 }
 
 .popup-content {
@@ -56,13 +43,6 @@
   backface-visibility: hidden;
   -webkit-overflow-scrolling: touch;
   transition: opacity 0.3s ease-out, transform 0.3s ease-out, left 0s 0.3s;
-
-  &::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
 
   &.active {
     z-index: 5;
@@ -80,44 +60,49 @@
 
 .popup-container {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
   width: 100%;
-  max-width: 685px;
 
-  padding: 50px;
-  text-align: center;
-  vertical-align: middle;
+  text-align: left;
+  // vertical-align: middle;
+  padding-top: 32px;
 
-  @media (max-width: $breakpoint-md) {
-    padding: 50px 15px 15px 15px;
-    max-width: 515px;
-  }
 
-  &__inner {
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px 51px 20px;
+  &__top {
+    padding-bottom: 23px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 
-    @media (max-width: $breakpoint-md) {
-      padding: 30px 15px 10px 15px;
-    }
   }
 }
 
 .popup-form {
+  padding: fluid(30,60) 0;
+
   &__heading {
-    margin-bottom: fluid(15, 30);
+    font-size: fluid(35, 60);
+    margin-bottom: fluid(29, 34);
   }
 
-  .form-field {
-    margin-bottom: 25px;
+  &__description {
+    font-size: fluid(17, 20);
+    margin-bottom: fluid(16, 40);
+    font-weight: 600;
+  }
+
+  .field {
+    margin-bottom: 21px;
+    gap: 6px;
+
+    &__label {
+      color: #141414;
+    }
   }
 
   & .btn {
     &--primary {
       width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
+      
+      margin: 0 0 7px 0;
     }
 
   }

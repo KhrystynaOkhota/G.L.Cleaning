@@ -95,7 +95,7 @@ section {
 .main {
   overflow: hidden;
   min-height: 50vh;
-   padding-top: 210px;
+  padding-top: 210px;
 
   @media (max-width: $breakpoint-md) {
     padding-top: 130px;
@@ -107,6 +107,12 @@ section {
 
   &.overflow-visible {
     overflow: visible;
+  }
+}
+
+.home {
+  .main {
+    padding-top: 0;
   }
 }
 
@@ -198,7 +204,7 @@ section {
 
   &-pagination {
     position: static;
-    width: auto!important;
+    width: auto !important;
     margin: 0 20px;
     display: flex;
     gap: 8px;

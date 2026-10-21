@@ -1,6 +1,97 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+
+
+
+
+@media (min-width: 992px) {
+  .swiper-grid-flat {
+    overflow: hidden;
+  }
+
+  .swiper-grid-flat .swiper-wrapper {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    height: 480px;
+  }
+
+  .swiper-grid-flat .swiper-slide {
+    width: calc((100% - 16px) / 2) !important;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 1-й слайд у кожній трійці — ВЕЛИКИЙ */
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 1) {
+    height: 100% !important;
+  }
+
+  /* 2-й та 3-й слайди у кожній трійці — МАЛІ */
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 2),
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
+    height: calc((100% - 16px) / 2) !important;
+  }
+
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 2) {
+    margin-left: 16px;
+  }
+
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
+    margin-left: calc(-50% + 8px) !important;
+    transform: translateY(calc(100% + 16px));
+  }
+
+  /* Відступ після всієї трійки слайдів */
+  .swiper-grid-flat .swiper-slide:nth-child(3n) {
+    margin-right: 16px !important;
+  }
+
+  .swiper-grid-flat .swiper-slide:nth-child(3n + 1) .slide-text h3 {
+    font-size: 1.35rem;
+  }
+}
+
+
+.collage {
+  height: 100%;
+  max-height: 560px;
+
+  @media (min-width: $breakpoint-grid-xl) {
+    min-height: 560px;
+  }
+
+  &__img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__main {
+    padding: 10% 5% 6% 5%;
+    height: 100%;
+
+  }
+
+  &__top,
+  &__bottom {
+    aspect-ratio: 1/1.08;
+    width: 30%;
+    position: absolute;
+  }
+
+  &__top {
+    top: 0;
+    right: 0;
+  }
+
+  &__bottom {
+    bottom: 0;
+    left: 0;
+  }
+}
+
 .benefit-card {
   display: flex;
   flex-direction: column;
@@ -91,77 +182,22 @@
 }
 
 .s-about {
-  &--bg {
-    background-color: #F3F3F5;
-    padding: fluid(50, 100) 0;
-    margin-bottom: fluid(50, 70);
-  }
+  &--preview {
+    background: rgba(248, 249, 253, 1);
+    padding: fluid(50, 60) 0;
+    margin-bottom: fluid(50, 100);
 
-  &:not(.s-about--bg) {
-    background-color: transparent;
-    padding: 20px 0 fluid(50, 100) 0;
-
-    & .container {
-      padding-bottom: fluid(50, 100);
-    }
-  }
-
-  & .heading {
-    margin-bottom: 20px;
-  }
-
-  & .btn-more {}
-
-  & .intro-block {
-    margin-bottom: 30px;
-
-    &__link {
-      color: $color-accent;
-      margin-top: 28px;
-      display: block;
-    }
-  }
-
-  & .media {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-
-    &__video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    & .heading {
+      margin-bottom: 34px;
+      padding-top: 10%;
     }
 
-    &__btn.btn-play {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      width: 48px;
-      height: 48px;
-      background-color: $color-white;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      z-index: 2;
+    & .description {
+      margin-bottom: 41px;
+    }
 
-      &.hide {
-        display: none;
-      }
-
-      img {
-        width: 14px;
-        height: 14px;
-        margin-left: 2px; // Центрування іконки Play
-      }
-
-      &:hover {
-        transform: scale(1.08);
-      }
+    & .btn {
+      min-width: 225px;
     }
   }
 }
@@ -251,4 +287,72 @@
   }
 
   &__text {}
+}
+
+.s-team {
+  padding: 0 0 fluid(50, 100) 0;
+
+  & .heading {
+    margin-bottom: 34px;
+  }
+
+  & .description {
+    margin-bottom: 34px;
+  }
+
+  .team-member {
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        margin-bottom: 21px;
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 1/1.05;
+      }
+    }
+
+    &__name {
+      margin-bottom: 16px;
+    }
+
+    &__text {}
+  }
+
+  & .swiper-navigation {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .notice {
+    background-color: #F8F9FD;
+    border-radius: 20px;
+    padding: 34px 40px;
+    grid-template-columns: fluid(40, 43) 1fr;
+    display: grid;
+    gap: fluid(14, 33);
+    align-items: center;
+
+    &__icon {
+      width: fluid(40, 43);
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &__text {
+      font-size: fluid(15, 20);
+    }
+  }
+}
+
+.s-goal {
+  padding: fluid(50, 100) 0;
+  margin-bottom: fluid(50, 100);
+  background-color: #F8F9FD;
+
+  & .heading {
+    margin-bottom: 34px;
+  }
 }

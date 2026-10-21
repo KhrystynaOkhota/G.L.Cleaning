@@ -240,7 +240,7 @@ $transition-base: all 0.3s ease;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px 30px;
-   
+
     @media (max-width: $breakpoint-lg) {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -248,7 +248,7 @@ $transition-base: all 0.3s ease;
 
     @media (max-width: $breakpoint-sm) {
       grid-template-columns: 1fr;
-      gap:40px
+      gap: 40px
     }
   }
 
@@ -546,6 +546,8 @@ $transition-base: all 0.3s ease;
     }
   }
 
+
+
 }
 
 .s-related-news {
@@ -559,4 +561,85 @@ $transition-base: all 0.3s ease;
       margin-bottom: 30px;
     }
   }
+}
+
+.s-gallery {
+  margin-bottom: 40px;
+
+  @media (min-width: 1400px) {
+    .gallery-slider {
+      width: 100%;
+      overflow: hidden;
+
+      .swiper-wrapper {
+        display: flex;
+        align-items: stretch; // Однакової висоти для всіх слайдів
+        will-change: transform;
+      }
+
+      .swiper-slide {
+        height: auto;
+        flex-shrink: 0 !important;
+        box-sizing: border-box;
+
+        /* Вузькі слайди (2-й та 3-й у трійці) — по 25% */
+        width: calc(25% - 18px) !important;
+
+        /* Кожен 1-й слайд у трійці (1, 4, 7...) — широкий (50%) */
+        @media (min-width: 992px) {
+          &:nth-child(3n + 1) {
+            width: calc(50% - 16px) !important;
+          }
+        }
+
+        /* На мобільних пристроях — 1 слайд на весь екран */
+        @media (max-width: 767px) {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .gallery-card {
+    position: relative;
+    width: 100%;
+    height: 435px; // Жорстка фіксована висота для всіх карток у галереї
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #F8F9FD;
+
+    @media (max-width: 767px) {
+      height: 320px; // Єдина висота для мобільного викладу
+      border-radius: 16px;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Гарантує, що фото повністю заповнить картку без деформацій
+      display: block;
+    }
+  }
+
+}
+
+.s-info {
+  margin-bottom: 40px;
+}
+
+.s-video {
+  background-color: rgba(248, 249, 253, 1);
+  padding: fluid(50, 100) 0;
+
+  & .heading {
+    margin-bottom: fluid(20, 40);
+  }
+
+  & .description {
+    margin-bottom: fluid(25, 32);
+  }
+}
+
+.s-media{
+  
 }

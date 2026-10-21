@@ -18,8 +18,8 @@
 
 </head>
 
-<body>
-    <header class="header">
+<body class="home"> <!-- class="home" тільки для головної сторінки -->
+    <header class="header d-none">
         <div class="h-menu-overlay"></div>
 
         <div class="h-wrap">
@@ -205,57 +205,51 @@
         <div class="h-search-overlay"></div>
     </header>
     <main class="main">
-        <section class="s-hero">
-            <div class="hero-banner">
-                <div class="container hero-banner__container">
-
-                    <!-- Основний контент (по центру вертикально) -->
-                    <div class="hero-banner__body">
-                        <div class="row m-row">
-                            <div class="col-xl-9 col-lg-10 col-md-16 col-sm-16 col-xs-16 column">
-                                <div class="hero-banner__content">
-                                    <h1 class="hero-banner__title text-uppercase">
-                                        ЧИСТИЙ ПРОСТІР.<br>БІЛЬШЕ ЧАСУ ДЛЯ СЕБЕ.
-                                    </h1>
-                                    <div class="hero-banner__description">
-                                        <p>Професійне прибирання та хімчистка для вашого дому і бізнесу. Ми дбаємо про
-                                            чистоту, щоб ви могли насолоджуватися важливим.</p>
-                                    </div>
-                                    <div class="hero-banner__actions">
-                                        <a href="#" class="btn btn--primary open-popup" data-rel="cta">Замовити
-                                            прибирання</a>
-                                        <a href="prices.html" class="btn btn--outline">Переглянути ціни</a>
-                                    </div>
-                                </div>
+        <section class="s-hero s-hero--main">
+            <div class="container overlap">
+                <div class="row m-row">
+                    <div class="col-xl-9 col-lg-10 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="hero__content">
+                            <h1 class="hero__title">
+                                ЧИСТИЙ ПРОСТІР.<br>БІЛЬШЕ ЧАСУ ДЛЯ СЕБЕ.
+                            </h1>
+                            <div class="hero__description">
+                                Професійне прибирання та хімчистка для вашого дому і бізнесу. Ми дбаємо про
+                                чистоту, щоб ви могли насолоджуватися важливим.
+                            </div>
+                            <div class="hero__actions">
+                                <a href="#" class="btn btn--primary open-popup" data-rel="cta">Замовити прибирання</a>
+                                <a href="prices.html" class="btn btn--outline">Переглянути ціни</a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Плашки переваг (притиснуті до низу екрана) -->
-                    <div class="features">
-                        <div class="features__item">Досвідчені клінери</div>
-                        <div class="features__item">Еко-засоби</div>
-                        <div class="features__item">Гарантія якості</div>
-                        <div class="features__item">Зручна оплата</div>
-                    </div>
-
                 </div>
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="features__grid">
+                            <div class="features">Досвідчені клінери</div>
+                            <div class="features">Еко-засоби</div>
+                            <div class="features">Гарантія якості</div>
+                            <div class="features">Зручна оплата</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Фонові зображення -->
-                <div class="hero-banner__bg-wrap">
-                    <div class="hero-banner__bg hero-banner__bg--desktop"
-                        style="background-image: url('assets/img/hero-bg.jpg');"></div>
-                    <div class="hero-banner__bg hero-banner__bg--mobile"
-                        style="background-image: url('assets/img/hero-bg-mobile.jpg');"></div>
+            <!-- Фонові зображення (виправлено назву класу на .hero__bg відповідно до SCSS) -->
+            <div class="hero__bg-wrap">
+                <div class="hero__bg hero__bg--desktop" style="background-image: url('assets/img/banner-service.png');">
+                </div>
+                <div class="hero__bg hero__bg--mobile" style="background-image: url('assets/img/hero-bg-mobile.jpg');">
                 </div>
             </div>
         </section>
 
-        <section class="s-about">
+        <section class="s-about--preview">
             <div class="container">
                 <div class="row ">
                     <div class="col-xl-7 col-lg-7 col-md-8 col-sm-16 col-xs-16 col-exs-16 column">
-                        <h2>Про нас</h2>
+                        <h2 class="heading h1 text-bold">Про нас</h2>
                         <div class="description cms-content">
                             <p> Ми допомагаємо підтримувати чистоту в домі та створювати комфортний простір для життя.
                                 Працюємо уважно до деталей, використовуючи професійні засоби та сучасне обладнання. Наші
@@ -264,19 +258,22 @@
                             <p>Ми цінуємо час наших клієнтів, тому дотримуємося домовленостей і працюємо за прозорими
                                 цінами. Для нас важливо, щоб після кожного прибирання ви залишалися задоволені
                                 результатом.</p>
+                            
                         </div>
                         <a href="about.html" class="btn btn--outline">Читати далі</a>
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-8 col-sm-16 col-xs-16 col-exs-16 column">
-                        <div class="gallery__wrap">
-                            <div class="gallery__main">
-                                <img src="assets/img/about-1.png" alt="Прибирання кухні" loading="lazy">
+                        <div class="collage --relative">
+                            <div class="collage__main">
+                                <img src="assets/img/about-1.png" alt="Прибирання кухні" loading="lazy"
+                                    class="collage__img">
                             </div>
-                            <div class="gallery__top">
-                                <img src="assets/img/about-2.png" alt="Миття вікон" loading="lazy">
+                            <div class="collage__top">
+                                <img src="assets/img/about-2.png" alt="Миття вікон" loading="lazy" class="collage__img">
                             </div>
-                            <div class="gallery__bottom">
-                                <img src="assets/img/about-3.png" alt="Хімчистка техніки" loading="lazy">
+                            <div class="collage__bottom">
+                                <img src="assets/img/banner-service.png" alt="Хімчистка техніки" loading="lazy"
+                                    class="collage__img">
                             </div>
                         </div>
                     </div>
@@ -288,7 +285,7 @@
             <div class="container">
                 <div class="row m-row">
                     <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                        <h2 class="heading h2 text-bold text-uppercase">Чому обирають нас</h2>
+                        <h2 class="heading h1 text-bold">Чому обирають нас</h2>
                         <div class="description">Працюємо уважно до деталей, використовуючи професійні засоби та сучасне
                             обладнання.</div>
                     </div>
@@ -376,7 +373,7 @@
             <div class="container">
                 <div class="row m-row">
                     <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                        <h2 class="heading h2 text-bold text-uppercase">Наші послуги</h2>
+                        <h2 class="heading h1 text-bold">Наші послуги</h2>
 
                         <div class="description">Весь комплекс клінінгових послуг і навіть трохи більше. Чистота,
                             турбота та
@@ -448,7 +445,7 @@
                 <div class="row ">
                     <div class="col-xl-10 col-lg-10 col-md-16 col-sm-16 col-xs-16 overlap">
                         <div class="cta__block">
-                            <h2 class="heading h2 text-bold">Замовляйте прибирання</h2>
+                            <h2 class="heading h1 text-bold">Замовляйте прибирання</h2>
                             <div class="description text-bold">
                                 Оберіть зручний канал — Email, WhatsApp або Viber.
                             </div>
@@ -573,7 +570,7 @@
                 <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
 
-                        <h2 class="heading h2 text-bold text-uppercase">Про хімію і техніку</h2>
+                        <h2 class="heading h1 text-bold ">Про хімію і техніку</h2>
                         <div class="description cms-content">
                             <p>Ми використовуємо професійні сертифіковані засоби, які ефективно видаляють
                                 забруднення та водночас дбайливо ставляться до поверхонь. Обираємо перевірену хімію
@@ -677,12 +674,11 @@
             </div>
         </section>
 
-
         <section class="s-steps">
             <div class="container">
                 <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
-                        <h2 class="heading h2 text-bold text-uppercase">Як ми працюємо</h2>
+                        <h2 class="heading h1 text-bold ">Як ми працюємо</h2>
                         <div class="description">Чотири прості кроки від заявки до чистої оселі.</div>
                     </div>
                 </div>
@@ -729,7 +725,7 @@
             <div class="container">
                 <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
-                        <h2 class="heading h2 text-bold text-uppercase">Наша команда</h2>
+                        <h2 class="heading h1 text-bold">Наша команда</h2>
                         <p class="description">Знайомтеся! Найкращі з найкращих — наші досвідчені клінерки, які
                             подбають про ваш комфорт та чистоту у вашому домі. Вони вас по-справжньому здивують!</p>
                     </div>
@@ -748,81 +744,61 @@
                  }'>
 
                             <div class="swiper-wrapper">
-                                <!-- Співробітник 1 -->
                                 <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team__img-wrap">
-                                            <img src="assets/img/team-1.jpg" alt="Вікторія" class="team-card__img"
+                                    <div class="team-member">
+                                        <div class="team-member__img-wrap">
+                                            <img src="assets/img/team-2.png" alt="Марія" class="team-member__img"
                                                 loading="lazy">
                                         </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Вікторія</h3>
-                                        <p class="team-card__text">Любить, коли кожна деталь у домі ідеально чиста.</p>
+                                        <h3 class="team-member__name h5 text-bold">Марія</h3>
+                                        <p class="team-member__text">Понад 5 років допомагає створювати затишок.</p>
                                     </div>
                                 </div>
-
-                                <!-- Співробітник 2 -->
                                 <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team-card__img-wrap">
-                                            <img src="assets/img/team-2.jpg" alt="Марія" class="team-card__img"
+                                    <div class="team-member">
+                                        <div class="team-member__img-wrap">
+                                            <img src="assets/img/team-3.png" alt="Олена" class="team-member__img"
                                                 loading="lazy">
                                         </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Марія</h3>
-                                        <p class="team-card__text">Понад 5 років допомагає створювати затишок.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Співробітник 3 -->
-                                <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team-card__img-wrap">
-                                            <img src="assets/img/team-3.jpg" alt="Олена" class="team-card__img"
-                                                loading="lazy">
-                                        </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Олена</h3>
-                                        <p class="team-card__text">Завжди знаходить забруднення, які інші можуть не
+                                        <h3 class="team-member__name  h5 text-bold">Олена</h3>
+                                        <p class="team-member__text">Завжди знаходить забруднення, які інші можуть не
                                             помітити.</p>
                                     </div>
                                 </div>
-
-                                <!-- Співробітник 4 -->
                                 <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team-card__img-wrap">
-                                            <img src="assets/img/team-4.jpg" alt="Ігор" class="team-card__img"
+                                    <div class="team-member">
+                                        <div class="team-member__img-wrap">
+                                            <img src="assets/img/team-4.png" alt="Ігор" class="team-member__img"
                                                 loading="lazy">
                                         </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Ігор</h3>
-                                        <p class="team-card__text">Обажнює порядок і вважає, що чистота починається з
+                                        <h3 class="team-member__name h5 text-bold">Ігор</h3>
+                                        <p class="team-member__text">Обажнює порядок і вважає, що чистота починається з
                                             деталей.</p>
                                     </div>
                                 </div>
-                                <!-- Співробітник 4 -->
                                 <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team-card__img-wrap">
-                                            <img src="assets/img/team-4.jpg" alt="Ігор" class="team-card__img"
+                                    <div class="team-member">
+                                        <div class="team-member__img-wrap">
+                                            <img src="assets/img/team-1.png" alt="Ігор" class="team-member__img"
                                                 loading="lazy">
                                         </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Ігор</h3>
-                                        <p class="team-card__text">Обажнює порядок і вважає, що чистота починається з
+                                        <h3 class="team-member__name h5 text-bold">Ігор</h3>
+                                        <p class="team-member__text">Обажнює порядок і вважає, що чистота починається з
                                             деталей.</p>
                                     </div>
                                 </div>
-                                <!-- Співробітник 4 -->
                                 <div class="swiper-slide">
-                                    <div class="team-card">
-                                        <div class="team-card__img-wrap">
-                                            <img src="assets/img/team-4.jpg" alt="Ігор" class="team-card__img"
+                                    <div class="team-member">
+                                        <div class="team-member__img-wrap">
+                                            <img src="assets/img/banner-service.png" alt="Ігор" class="team-member__img"
                                                 loading="lazy">
                                         </div>
-                                        <h3 class="team-card__name heading h5 text-bold">Ігор</h3>
-                                        <p class="team-card__text">Обажнює порядок і вважає, що чистота починається з
+                                        <h3 class="team-member__name h5 text-bold">Ігор</h3>
+                                        <p class="team-member__text">Обажнює порядок і вважає, що чистота починається з
                                             деталей.</p>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -848,19 +824,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Нижня плашка гарантії / інформації -->
-                <div class="row m-row indent-t-l">
+
+                <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
-                        <div class="team-notice">
-                            <div class="team-notice__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-                                        stroke="#3AC2CF" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <p class="team-notice__text">Ми ретельно підбираємо співробітників, навчаємо їх і
+                        <div class="notice">
+                            <img src="assets/img/heart.svg" alt="icon heart" class="notice__icon">
+                            <p class="notice__text">Ми ретельно підбираємо співробітників, навчаємо їх і
                                 контролюємо якість роботи на кожному етапі.</p>
                         </div>
                     </div>
@@ -872,7 +841,7 @@
             <div class="container swiper-entry">
                 <div class="row">
                     <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 col-exs-16 column">
-                        <h2 class="heading h2 text-bold text-uppercase">Наші роботи</h2>
+                        <h2 class="heading h1 text-bold">Наші роботи</h2>
                         <div class="description">Працюємо уважно до деталей, використовуючи професійні засоби та сучасне
                             обладнання.</div>
                     </div>
@@ -1096,7 +1065,7 @@
             <div class="container --relative">
                 <div class="row m-row align-between align-middle s-reviews-slider__top">
                     <div class="column col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h2 class="heading h2 heading-font text-bold">Відгуки</h2>
+                        <h2 class="heading h1 heading-font text-bold">Відгуки</h2>
                     </div>
                     <div
                         class="column col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right d-flex align-middle align-right">
@@ -1267,7 +1236,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 ">
-                        <h2 class="heading h2 text-bold">
+                        <h2 class="heading h1 text-bold">
                             Нам довіряють
                         </h2>
                         <div class="description">
@@ -1357,14 +1326,12 @@
                 </div>
             </div>
         </section>
-
-
         <section class="s-last-news swiper-entry ">
             <div class="container">
                 <!-- Шапка секції -->
                 <div class="row m-row align-between align-middle s-last-news__top ">
                     <div class="column col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h2 class="heading h2 heading-font text-bold">Блог</h2>
+                        <h2 class="heading h1 heading-font text-bold">Блог</h2>
                     </div>
                     <div
                         class="column col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right d-flex align-middle align-right">
@@ -1504,7 +1471,7 @@
                 <div class="row m-row">
                     <div class="col-xl-7 col-lg-9 col-md-11 col-sm-16 col-xs-16 column">
                         <div class="contacts-card">
-                            <div class="heading h2 text-bold">Контакти</div>
+                            <div class="heading h1 text-bold">Контакти</div>
                             <div class="description">Приймаємо заявки цілодобово. Зателефонуйте, напишіть у месенджер
                                 або залиште заявку.</div>
 
@@ -1565,7 +1532,7 @@
                                 </div>
                             </div>
 
-                            
+
                             <div class="socials">
                                 <ul class="socials__list" role="list">
                                     <li class="socials__item"><a href="#" class="socials__link"
@@ -1795,43 +1762,66 @@
 
         <div class="popup-content cta" data-rel="cta">
             <div class="layer-close"></div>
-            <div class="popup-container ">
-                <div class="popup-container__inner">
-                    <div class="btn--close d-flex align-middle align-center">
+            <div class="popup-container container">
 
+                <div class="popup-container__top d-flex align-justify align-middle">
+                    <a class="p-logo" href="/" aria-label=" logo">
+                        <img src="assets/img/p-logo.svg" alt="" class="p-logo__img">
+                    </a>
+                    <div class="btn--close"></div>
+                </div>
+
+
+                <div class="popup-form ">
+                    <h4 class="popup-form__heading text-bold">Замовити дзвінок</h4>
+                    <div class="popup-form__description">Залиште свої контакти — ми зателефонуємо вам найближчим часом.
                     </div>
+                    <form class="">
 
-                    <div class="popup-form text-center">
-                        <h4 class="popup-form__heading text-bold h3">Записатись на прийом</h4>
-                        <form class="">
-
-                            <div class="row m-row">
-                                <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                                    <div class="field">
-                                        <label class="field__label text-left" for="user-name">Як до вас
-                                            звертатися?</label>
-                                        <input class="field__input" type="text" id="p-user-name" name="name"
-                                            placeholder="Ваше ім’я">
-                                    </div>
-                                    <div class="form-field ">
-                                        <label class="field__label text-left" for="user-phone">Ваш номер
-                                            телефону</label>
-                                        <input class="field__input" type="tel" id="p-user-phone" name="phone"
-                                            value="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
-                                            aria-describedby="phone-error">
-
-                                    </div>
-
-                                    <div class="form-field ">
-                                        <button class="btn btn--primary" type="submit">
-                                            Записатися на прийом
-                                        </button>
-                                    </div>
+                        <div class="row m-row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field">
+                                    <label class="field__label text-left" for="user-name">Ваше ім’ я</label>
+                                    <input class="field__input" type="text" id="p-user-name" name="name"
+                                        placeholder="Ваше ім’я">
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field ">
+                                    <label class="field__label text-left" for="user-phone">Ваш номер
+                                        телефону</label>
+                                    <input class="field__input" type="tel" id="p-user-phone" name="phone"
+                                        placeholder="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
+                                        aria-describedby="phone-error">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field ">
+                                    <button class="btn btn--primary" type="submit">
+                                        Замовити прибирання
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row m-row">
+                            <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="track_price" class="checkbox__input">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">
+                                        Я погоджуюся на обробку моїх персональних даних відповідно до Політики
+                                        конфіденційності.
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
             </div>
         </div>
 

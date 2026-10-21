@@ -463,3 +463,226 @@ $transition-base: all 0.3s ease;
     }
   }
 }
+
+
+.s-hero {
+  position: relative;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  color: #FFFFFF;
+  overflow: hidden;
+
+
+  &--main {
+    min-height: 100vh;
+    min-height: 100svh; // Враховує панелі мобільних браузерів
+
+    @media (max-width: 991px) {
+      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
+      padding: 60px 0 32px;
+    }
+  }
+
+  /* Для інших сторінок (не --main) висота адаптивна за замовчуванням */
+  &:not(&--main) {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero {
+    &__content {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      font-size: fluid(30, 60);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 29px;
+
+      @media (max-width: 991px) {
+        font-size: 38px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 30px;
+      }
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+      max-width: 600px;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: stretch;
+
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &--desktop {
+        display: block;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+
+        @media (max-width: 767px) {
+          display: block;
+        }
+      }
+
+      &-wrap {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, rgba(14, 24, 56, 0.85) 0%, rgba(14, 24, 56, 0.4) 60%, rgba(14, 24, 56, 0.25) 100%);
+        }
+      }
+    }
+  }
+
+  .features {
+    background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 90px;
+    padding: 13px 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    &__grid {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+
+      @media (max-width: 576px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .meta {
+    &__grid {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+
+      @media (max-width: 576px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 90px;
+    padding: 13px 44px 16px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 250px;
+    transition: background 0.3s ease,
+    border-color 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+
+    @media (max-width: 767px) {
+      border-radius: 50px;
+      flex-direction: row;
+      gap: 18px;
+      padding: 12px 16px;
+      min-width: auto;
+    }
+
+    &__label {
+      font-size: fluid(15, 18);
+      line-height: 1.5;
+      color: $color-white;
+      font-weight: 400;
+
+      @media (max-width: 767px) {
+        min-width: 70px;
+      }
+    }
+
+    &__value {
+      font-size: fluid(20, 25);
+      font-weight: 700;
+      line-height: 1.08;
+      color: $color-white;
+      white-space: nowrap;
+    }
+
+  }
+
+}
