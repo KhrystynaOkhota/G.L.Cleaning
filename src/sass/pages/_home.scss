@@ -110,9 +110,15 @@
 }
 
 .s-work {
-  background: rgba(24, 26, 28, 1);
+  background: #181A1C;
   padding: fluid(50, 100) 0;
   margin-bottom: fluid(50, 100);
+
+  & .heading,
+  & .description {
+    color: $color-white;
+    margin-bottom: fluid(30, 34);
+  }
 }
 
 .s-reviews {

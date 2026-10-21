@@ -39,21 +39,25 @@
 
     &__label {
       position: absolute;
-      bottom: 15px;
-      color: #899088;
-      padding: 6px 12px;
-      font-weight: 600;
+      top: 10px;
+      color: $color-white;
+      padding: 2px 20px;
+      font-weight: 800;
       font-size: 16px;
       transition: opacity 0.3s ease-in-out;
       user-select: none;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+      border-radius: 30px;
+      border: 1px solid rgba(0, 0, 0, .04);
 
       &--before {
-        left: 9px;
+        left: 10px;
         z-index: 5;
       }
 
       &--after {
-        right: 9px;
+        right: 10px;
         z-index: 3;
         visibility: visible;
       }
@@ -97,3 +101,128 @@
     }
   }
 }
+
+.work-card {
+    background: #18191c;
+    border-radius: 16px;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: sans-serif;
+    max-width: 600px;
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        color: #ffffff;
+    }
+
+    &__details {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    &__badge {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-size: 14px;
+        color: #b0b3b8;
+        flex: 1;
+        min-width: 100px;
+        text-align: center;
+
+        strong {
+            display: block;
+            color: #ffffff;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+    }
+}
+/*
+.comparison-block {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    user-select: none;
+
+    &__image-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &--before {
+            width: 50%; // Змініть через JS залежно від положення повзунка
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        &--after {
+            z-index: 1;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__label {
+        position: absolute;
+        top: 20px;
+        padding: 6px 16px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+        z-index: 4;
+
+        &--before {
+            left: 20px;
+        }
+
+        &--after {
+            right: 20px;
+        }
+    }
+
+    &__divider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 3;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+
+    &__icon-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}*/
