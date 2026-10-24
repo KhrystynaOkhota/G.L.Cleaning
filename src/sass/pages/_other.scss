@@ -88,12 +88,11 @@
 }
 
 .s-error {
-  background-color: rgba(248, 243, 239, 1);
+  background-color: $color-white;
+  margin-bottom: 60px;
 
-  &__row {
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row-reverse;
-    }
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 100px;
   }
 
   & .content {
@@ -104,119 +103,37 @@
     }
   }
 
-  & .number {
-    margin-bottom: fluid(30, 40);
-
-    @media (max-width: $breakpoint-md) {
-      max-width: 300px;
-      margin: 0 auto 30px auto;
-    }
-  }
-
   & .heading {
-    font-size: fluid(40, 50);
-    margin-bottom: fluid(30, 40);
-    //  width: 140%;
-
-    @media (max-width: $breakpoint-md) {
-      width: 100%;
-
-    }
+    margin-bottom: fluid(25, 50);
   }
 
   & .description {
-    gap: 20px;
-    display: grid;
-    margin-bottom: fluid(15, 40);
+    margin-bottom: fluid(30, 50);
   }
 
   & .btn {
-    min-width: 190px;
+    min-width: 250px;
 
-    @media (max-width: (475px)) {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .img__wrap {
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50vw;
+    }
+
+    & img {
+      height: 100%;
       width: 100%;
-    }
-
-    &__wrap {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      width: 140%;
-
-      @media (max-width: $breakpoint-md) {
-        width: 100%;
-
-      }
-
-      @media (max-width: (475px)) {
-        align-items: center;
-      }
+      object-fit: cover;
     }
   }
-
-  & .media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    &__wrap {
-      position: relative;
-
-      @media (min-width: $breakpoint-md) {
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 45vw;
-        height: 100%;
-      }
-
-      &:before {
-        @media (max-width: $breakpoint-md) {
-          content: '';
-          width: 100%;
-          height: 70px;
-          background: linear-gradient(180deg, #F8F3EF 0%, rgba(248, 243, 239, 0) 100%);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-    }
-
-
-    &--number {
-      max-width: fluid(285, 385);
-      margin-bottom: fluid(40, 50);
-    }
-
-    &__text {
-      position: absolute;
-      top: 5%;
-      right: 0;
-      z-index: 4;
-      font-style: italic;
-
-      @media (max-width: $breakpoint-md) {
-        top: 0;
-      }
-    }
-
-    &__arrow {
-      position: absolute;
-      top: 170%;
-      right: 25%;
-      transform: rotate(-13deg);
-      /* opacity: .2; */
-      width: fluid(90, 140);
-      pointer-events: none;
-
-      @media (max-width: $breakpoint-md) {
-        right: 0;
-      }
-    }
-  }
-
 }
 
 .s-thanks {

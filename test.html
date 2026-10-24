@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Grid Fixed</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .slider-container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .slide-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 230px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .slide-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 100%);
+      z-index: 1;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .slide-text h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .arrow-btn {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* -------------------------------------------------------------
+       DESKTOP GRID SYSTEM
+    ------------------------------------------------------------- */
+    @media (min-width: 769px) {
+      .swiper-grid-flat {
+        overflow: hidden;
+      }
+
+      .swiper-grid-flat .swiper-wrapper {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        height: 480px; 
+      }
+
+      .swiper-grid-flat .swiper-slide {
+        width: calc((100% - 16px) / 2) !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      /* 1-й слайд у кожній трійці — ВЕЛИКИЙ */
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 1) {
+        height: 100% !important;
+      }
+
+      /* 2-й та 3-й слайди у кожній трійці — МАЛІ */
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 2),
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
+        height: calc((100% - 16px) / 2) !important;
+      }
+
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 2) {
+        margin-left: 16px;
+      }
+
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
+        margin-left: calc(-50% + 8px) !important;
+        transform: translateY(calc(100% + 16px));
+      }
+
+      /* Відступ після всієї трійки слайдів */
+      .swiper-grid-flat .swiper-slide:nth-child(3n) {
+        margin-right: 16px !important;
+      }
+
+      .swiper-grid-flat .swiper-slide:nth-child(3n + 1) .slide-text h3 {
+        font-size: 1.35rem;
+      }
+    }
+
+    /* Controls Panel */
+    .slider-bottom-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding: 0 10px;
+    }
+
+    .swiper-pagination {
+      position: static !important;
+      width: auto !important;
+      display: flex;
+      gap: 8px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #e0e0e0;
+      opacity: 1;
+      margin: 0 !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #00bcd4;
+      width: 14px;
+      border-radius: 6px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: static !important;
+      width: 36px !important;
+      height: 36px !important;
+      margin: 0 !important;
+      color: #00bcd4;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: 1.2rem !important;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <div class="swiper swiper-grid-flat">
+      <div class="swiper-wrapper">
+        
+        <!-- ТРІЙКА 1 -->
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>1. Генеральне прибирання</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>2. Чиста репутація</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>3. Скільки часу займе?</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ТРІЙКА 2 -->
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>4. Хімчистка меблів</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>5. Після ремонту</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-card" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80')">
+            <div class="slide-content">
+              <div class="slide-text"><h3>6. Миття фасадів</h3></div>
+              <div class="arrow-btn">↗</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="slider-bottom-panel">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper-grid-flat', {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      speed: 600,
+      
+      // Кастомний рендер пагінації (генерує 1 булет на кожні 3 слайди)
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          const isDesktop = window.innerWidth >= 769;
+          
+          if (isDesktop) {
+            // Створюємо крапку тільки для першого слайда кожної трійки (0, 3, 6...)
+            if (index % 3 === 0) {
+              const groupIndex = Math.floor(index / 3);
+              return `<span class="${className}" data-group-index="${groupIndex}"></span>`;
+            }
+            return ''; // Пропускаємо додаткові крапки
+          }
+          
+          return `<span class="${className}"></span>`;
+        }
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+        769: {
+          slidesPerView: 'auto',
+          slidesPerGroup: 3,
+          allowTouchMove: true,
+        }
+      },
+
+      on: {
+        // Оновлюємо активний булет при зміні слайдів на десктопі
+        slideChange: function (s) {
+          if (window.innerWidth >= 769) {
+            const groupIndex = Math.floor(s.activeIndex / 3);
+            const bullets = s.pagination.bullets;
+            
+            bullets.forEach((bullet) => {
+              const bGroup = parseInt(bullet.getAttribute('data-group-index'));
+              if (bGroup === groupIndex) {
+                bullet.classList.add('swiper-pagination-bullet-active');
+              } else {
+                bullet.classList.remove('swiper-pagination-bullet-active');
+              }
+            });
+          }
+        },
+
+        // Виправляємо порожнє вікно в кінці (обмежуємо максимальний скрол)
+        setTranslate: function (s, translate) {
+          if (window.innerWidth >= 769) {
+            const containerWidth = s.width;
+            const totalSlides = s.slides.length;
+            const totalGroups = Math.ceil(totalSlides / 3);
+
+            // Точна максимальна відстань, на яку слайдер може зсунутися
+            const maxTranslate = -((totalGroups - 1) * (containerWidth + 16));
+
+            if (translate < maxTranslate) {
+              s.setTranslate(maxTranslate);
+            }
+          }
+        }
+      }
+    });
+
+    // Перераховуємо пагінацію при ресайзі екрана
+    window.addEventListener('resize', () => {
+      swiper.pagination.destroy();
+      swiper.pagination.init();
+      swiper.pagination.render();
+      swiper.pagination.update();
+    });
+  </script>
+</body>
+</html>

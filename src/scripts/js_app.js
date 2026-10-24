@@ -208,15 +208,32 @@ jQuery(function ($) {
 
     // 4. МОБІЛЬНЕ МЕНЮ
     /* Open menu */
-    $(document).on('click', '.js-open-menu', function () {
-        const isOpen = !$('header').hasClass('open-menu');
+    $(document).on('click', '.js-open-menu, #menu-toggle, #menu-close, .menu-overlay', function () {
+    const $header = $('header');
+    const isOpen = !$header.hasClass('open-menu');
 
-        $('html').toggleClass('overflow-menu'); $('header').removeClass('hide');
-        $('header').toggleClass('open-menu'); $('header').removeClass('open-search');
+    // Перемикаємо класи відповідно до вашої логіки та верстки
+    $('html').toggleClass('overflow-menu');
+    $header.removeClass('hide');
+    $header.toggleClass('open-menu');
+    $header.removeClass('open-search');
 
-        $('.h-search-form input').val("");
-        $(".h-search-results").removeClass("is-active");
-    });
+    // Додатково синхронізуємо з класом .is-open для off-canvas панелі та оверлея з нашого SCSS
+    $('#mobile-menu').toggleClass('is-open', isOpen);
+    $('#menu-overlay').toggleClass('is-open', isOpen);
+
+    // Очищення пошуку (як у вашому коді)
+    $('.h-search-form input').val("");
+    $(".h-search-results").removeClass("is-active");
+});
+
+// Логіка відкриття випадаючих пунктів (sub-menu) на мобільному по кліку
+$(document).on('click', '.menu-item-has-children > .nav__link', function (e) {
+    if (window.innerWidth <= 991) {
+        e.preventDefault();
+        $(this).parent('.menu-item-has-children').toggleClass('is-active');
+    }
+});
 
     /* Close menu */
     $(document).on('click', '.h-menu-overlay', function () {

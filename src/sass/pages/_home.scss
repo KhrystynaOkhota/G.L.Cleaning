@@ -1,8 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-
-
 .s-materials {
   padding-bottom: fluid(50, 100);
 
@@ -55,40 +53,34 @@
   & .step {
     background-color: rgba(248, 249, 253, 1);
     border-radius: 20px;
-    padding: 20px 20px 30px 20px;
+    padding: 20px fluid(10, 20) 30px fluid(10, 20);
     height: 100%;
     display: flex;
     flex-direction: column;
     transition: $transition-base;
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
     }
 
     &__number {
-      font-size: 60px;
+      font-size: fluid(40, 60);
       font-weight: 700;
       color: $color-primary;
       line-height: 1;
       margin-bottom: 28px;
-
-      @media (min-width: 992px) {
-        font-size: 44px;
-      }
+      color: $color-accent;
     }
 
     &__title {
-
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: fluid(17, 22);
+      margin-bottom: 18px;
       font-weight: 700;
     }
 
     &__text {
-      font-size: 14px;
+      font-size: fluid(15, 17);
       line-height: 1.55;
-
       margin: 0;
     }
 
@@ -119,9 +111,20 @@
     color: $color-white;
     margin-bottom: fluid(30, 34);
   }
+
+  & .swiper-navigation {
+    margin-top: fluid(30, 40);
+  }
 }
 
 .s-reviews {
+  padding-bottom: fluid(50, 100);
+
+  &__top {
+    margin-bottom: fluid(29, 34);
+  }
+
+
   .swiper {
     &-wrapper {
       display: flex;
@@ -132,6 +135,12 @@
       height: auto;
       display: flex;
     }
+
+    &-navigation {
+      margin: fluid(30, 42) 0 fluid(30, 50) 0;
+
+    }
+
   }
 
   .review {
@@ -169,6 +178,113 @@
       font-size: fluid(15, 17);
       color: $color-primary;
     }
+  }
+
+  .google-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F8F9FD;
+
+    border-radius: 20px;
+    padding: 35px 30px;
+
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      @media (max-width: $breakpoint-md) {
+        justify-content: center;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+    }
+
+    &__score {
+      font-size: fluid(25, 35);
+      font-weight: 700;
+      color: #050F2E;
+      line-height: 1;
+    }
+
+    &__stars {
+      display: flex;
+      gap: 7px;
+
+      .star {
+        color: $color-accent;
+        font-size: 24px;
+        line-height: 1;
+      }
+    }
+
+    &__count,
+    &__source-text {
+      font-size: fluid(15, 17);
+      color: #6D7388;
+    }
+
+    &__divider {
+      width: 1px;
+      height: 40px;
+      background: #DFE0E4;
+      margin: 0 20px;
+    }
+
+
+
+    &__action {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 1px solid #00bcd4;
+        border-radius: 30px;
+        color: #00bcd4;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        background: transparent;
+
+        &:hover {
+          background: #00bcd4;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.s-client {
+  padding-bottom: fluid(50, 100);
+
+  & .heading {
+    margin-bottom: fluid(34, 25);
+  }
+
+  & .description {
+    margin-bottom: fluid(34, 25);
+  }
+
+  & .divider {
+    margin-top: fluid(50, 100);
   }
 }
 
@@ -473,7 +589,7 @@ $transition-base: all 0.3s ease;
 
 .s-hero {
   position: relative;
-  padding: 40px 0;
+  padding: 73px 0 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -481,56 +597,19 @@ $transition-base: all 0.3s ease;
   color: #FFFFFF;
   overflow: hidden;
 
-
-  &--main {
-    min-height: 100vh;
-    min-height: 100svh; // Враховує панелі мобільних браузерів
-
-    @media (max-width: 991px) {
-      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
-      padding: 60px 0 32px;
-    }
-  }
-
-  /* Для інших сторінок (не --main) висота адаптивна за замовчуванням */
-  &:not(&--main) {
-    min-height: auto;
-    padding: 60px 0;
-  }
-
-  .hero {
-    &__content {
-      position: relative;
-      z-index: 2;
-      margin-bottom: 40px;
-    }
+  & .hero {
+    &__content {}
 
     &__title {
       font-size: fluid(30, 60);
       font-weight: 800;
       line-height: 1.15;
-      color: #FFFFFF;
-      margin-bottom: 29px;
-
-      @media (max-width: 991px) {
-        font-size: 38px;
-      }
-
-      @media (max-width: 576px) {
-        font-size: 30px;
-      }
+      color: $color-white;
+      margin-bottom: fluid(22, 51);
     }
 
-    &__description {
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 32px;
-      max-width: 600px;
-
-      @media (max-width: 576px) {
-        font-size: 14px;
-      }
+    &__meta {
+      margin-bottom: fluid(30, 50);
     }
 
     &__actions {
@@ -539,16 +618,24 @@ $transition-base: all 0.3s ease;
       gap: 20px;
       flex-wrap: wrap;
 
+      & .btn {
+        @media (min-width: $breakpoint-grid-xl) {
+          min-width: 304px;
+        }
+      }
+
       @media (max-width: 480px) {
         flex-direction: column;
         align-items: stretch;
 
         .btn {
           width: 100%;
+
           text-align: center;
         }
       }
     }
+
 
     &__bg {
       position: absolute;
@@ -589,6 +676,104 @@ $transition-base: all 0.3s ease;
     }
   }
 
+
+  &--main {
+    min-height: 100vh;
+    min-height: 100svh; // Враховує панелі мобільних браузерів
+
+    @media (max-width: 991px) {
+      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
+      padding: 60px 0 32px;
+    }
+
+    & .hero {
+      &__content {}
+
+      &__title {}
+
+      &__description {
+        margin-bottom: fluid(25, 35);
+      }
+    }
+  }
+
+  &--article {
+    margin-bottom: 50px;
+
+    & .hero {
+      &__content {}
+
+      &__title {
+        font-size: fluid(30, 60);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #FFFFFF;
+        margin-bottom: 29px;
+      }
+
+      &__description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 32px;
+        max-width: 600px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+
+      &__actions {
+        margin-bottom: 85px;
+      }
+
+      &__bg {
+        position: absolute;
+        inset: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &--desktop {
+          display: block;
+
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        &--mobile {
+          display: none;
+
+          @media (max-width: 767px) {
+            display: block;
+          }
+        }
+
+        &-wrap {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(14, 24, 56, 0.85) 0%, rgba(14, 24, 56, 0.4) 60%, rgba(14, 24, 56, 0.25) 100%);
+          }
+        }
+      }
+    }
+
+  }
+
+  &:not(&--main) {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+
   .features {
     background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
     backdrop-filter: blur(10px);
@@ -617,6 +802,14 @@ $transition-base: all 0.3s ease;
       gap: 20px;
       flex-wrap: wrap;
       margin-top: 50px;
+
+      @media (min-width: $breakpoint-xl) {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
+      }
 
       @media (max-width: 576px) {
         display: grid;

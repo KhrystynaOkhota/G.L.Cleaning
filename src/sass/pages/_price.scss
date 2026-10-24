@@ -1,52 +1,79 @@
-    @use "../abstracts/variables" as *;
-    @use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
-    .s-price {
+.s-price {
+    &:not(&--article) {
         & .heading {
             margin-bottom: fluid(29, 34);
         }
-        & .description{
+
+        & .description {
             margin-bottom: fluid(23, 34);
         }
     }
 
-    .price {
-        display: grid;
-        grid-template-columns: 40% 1fr auto;
-        align-items: center;
-        gap: 10px;
-        background: rgba(248, 249, 253, 1);
-        color: rgba(20, 20, 20, 1);
-        padding: 18px 20px;
-        border-radius: 10px;
-        transition: background-color 0.2s ease;
 
-        &:nth-child(even) {
-            background-color: $color-white;
+    &--article {
+        padding-bottom: fluid(50, 100);
+
+        & .description {
+            margin-bottom: fluid(23, 40);
         }
 
-        @media (max-width: 991px) {
-            grid-template-columns: 260px 1fr auto;
-            gap: 16px;
+        & .divider {
+            margin: 50px 0;
         }
 
-
-        &__title,
-        &__value {
-            font-size: fluid(17, 20);
-            font-weight: 700;
-
+        & .price-group {
+            @media (max-width: $breakpoint-md) {
+                margin-bottom: 30px;
+            }
         }
+    }
 
-        &__desc {
-            font-size: fluid(15, 17);
-            line-height: 1.4;
-            color: #555555;
-        }
+    &__top {
+        margin-bottom: fluid(30, 45);
+    }
+}
 
-        &__value {
+.price {
+    display: grid;
+    grid-template-columns: 40% 1fr auto;
+    align-items: center;
+    gap: 10px;
+    background: rgba(248, 249, 253, 1);
+    color: rgba(20, 20, 20, 1);
+    padding: 18px 20px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
 
-            white-space: nowrap;
+    &:nth-child(even) {
+        background-color: $color-white;
+    }
+
+    @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    &__title,
+    &__value {
+        font-size: fluid(17, 20);
+        font-weight: 700;
+
+    }
+
+    &__desc {
+        font-size: fluid(15, 17);
+        line-height: 1.4;
+        color: #555555;
+    }
+
+    &__value {
+        white-space: nowrap;
+        @media (min-width: $breakpoint-md) {
             text-align: right;
         }
     }
+}

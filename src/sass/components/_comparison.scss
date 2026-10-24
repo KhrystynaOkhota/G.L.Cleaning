@@ -5,13 +5,15 @@
   .comparison-block {
     position: relative;
     width: 100%;
-    padding-bottom: 100%;
+        border-radius: 20px;
+    aspect-ratio: 1 / 0.7;
     overflow: hidden;
     touch-action: none;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    margin-bottom: 20px;
 
     &__image-wrap {
       position: absolute;
@@ -103,48 +105,51 @@
 }
 
 .work-card {
-    background: #18191c;
-    border-radius: 16px;
-    overflow: hidden;
-    color: #ffffff;
-    font-family: sans-serif;
-    max-width: 600px;
+  background: #18191c;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: sans-serif;
+  max-width: 600px;
 
-    &__content {
-        padding: 20px;
+  &__content {}
+
+  &__title {
+    font-size: 20px fluid(17, 20);
+    font-weight: 800;
+    margin: 0 0 13px 0;
+    color: $color-white;
+  }
+
+  &__details {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__badge {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px 20px;
+    border-radius: 900px;
+    font-size: fluid(15, 17);
+    color: $color-white;
+    flex: 1;
+    min-width: 100px;
+    text-align: left;
+
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
     }
 
-    &__title {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0 0 16px 0;
-        color: #ffffff;
+    strong {
+      @media (max-width: $breakpoint-md) {
+        display: block;
+        margin-top: 4px;
+      }
     }
-
-    &__details {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    &__badge {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 10px 16px;
-        border-radius: 12px;
-        font-size: 14px;
-        color: #b0b3b8;
-        flex: 1;
-        min-width: 100px;
-        text-align: center;
-
-        strong {
-            display: block;
-            color: #ffffff;
-            font-size: 15px;
-            margin-top: 4px;
-        }
-    }
+  }
 }
+
 /*
 .comparison-block {
     position: relative;

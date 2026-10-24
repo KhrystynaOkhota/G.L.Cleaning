@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>G.L.Cleaning</title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="assets/css/sumoselect.min.css" />
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+
+</head>
+
+<body class=""> <!-- class="home" тільки для головної і сторінки подяяки сторінки -->
+    <header class="header">
+    <div class="h-menu-overlay"></div>
+        <div class="h-wrap">
+            <div class="container h-container">
+                <div class="h-controls">
+                    <a href="" class="header__logo" aria-label=""> 
+                        <img src="assets/img/logo-white.svg" alt="" class="header__logo-img header__logo-img--light d-none">
+                        <img src="assets/img/logo-dark.svg" alt="" class="header__logo-img header__logo-img--dark"> 
+                    </a>
+                </div>
+                <div class="h-inner">
+                    <div class="header__top">
+                        <div class="header__top-info">
+                            <span class="header__address">
+                            м. Львів, вул. Лемківська 9а | <a href="#" class="header__link-map">На карті</a>
+                            </span>
+                            <span class="header__schedule">Графік прийому: Пн - Нд з 9:00 до 19:00</span>
+                            <span class="header__worktime">Графік виконання: 24/24</span>
+                            <a href="tel:08001235335" class="header__phone">0-800-123-53-35</a>
+                        </div>
+                    </div>
+
+                    <div class="header__bottom d-flex align-justify align-middle">
+   
+                        <nav class="header__nav nav" id="mobile-menu">
+                            <div class="mobile-menu__top">
+                            <a href="/" class="header__logo logo">
+                                <span class="logo__text">Good Idea<br><strong>Cleaning</strong></span>
+                            </a>
+                            <button class="mobile-menu__close" id="menu-close" aria-label="Закрити меню">&times;</button>
+                            </div>
+
+                            <ul class="nav__list menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="nav__link">Для дому <span class="arrow">▼</span></a>
+                                <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
+                                <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
+                                <li class="menu-item"><a href="#">Мийка вікон</a></li>
+                                <li class="menu-item"><a href="#">Хімчистка меблів</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="nav__link">Для бізнесу <span class="arrow">▼</span></a>
+                                <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Прибирання офісів</a></li>
+                                <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
+                                <li class="menu-item"><a href="#">Прибирання після подій</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Ціни</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link active">Про сервіс</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Блог</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Контакти</a>
+                            </li>
+                            </ul>
+
+                            <!-- Блок контактів всередині мобільного меню -->
+                            <div class="mobile-menu__info">
+                            <div class="mobile-menu__address">
+                                м. Львів, вул. Лемківська 9а<br>
+                                <a href="#" class="header__link-map">На карті</a>
+                            </div>
+                            <div class="mobile-menu__schedule">
+                                Графік прийому: Пн - Нд з 9:00 до 19:00
+                            </div>
+                            <div class="mobile-menu__worktime">
+                                Графік виконання: 24/24
+                            </div>
+                            <a href="tel:08001235335" class="mobile-menu__phone">0-800-123-53-35</a>
+                            
+                            <div class="header__socials">
+                                <a href="#" class="social-icon telegram">✈</a>
+                                <a href="#" class="social-icon whatsapp">💬</a>
+                                <a href="#" class="social-icon viber">📞</a>
+                            </div>
+
+                            <a href="#" class="btn btn--primary btn--full">ЗАМОВИТИ ДЗВІНОК</a>
+                            </div>
+                        </nav>
+
+                        <div class="header__actions">
+                            <div class="socials d-none d-md-flex">
+                                <ul class="socials__list" role="list">
+                                    <li class="socials__item">
+                                        <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#telegram"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#whatsapp"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="viber://chat?number=%2B380500136888" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#viber"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <a href="tel:08001235335" class="header__phone-icon" aria-label="Зателефонувати">📞</a>
+                            <a href="#" class="btn btn--primary d-none d-md-inline-block">ЗАМОВИТИ ДЗВІНОК</a>
+                            <button class="burger-btn" id="menu-toggle" aria-label="Відкрити меню">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+     <div class="menu-overlay" id="menu-overlay"></div>
+</header>
+    <main class="main">
+        <section class="s-error">
+            <div class="container overlap">
+                <div class="row m-row">
+                    <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="content">
+                            <h1 class="heading h1">
+                               Схожу, тут сталася маленька катастрофа
+                            </h1>
+                           
+                            <div class="description">
+                               Можливо, вона була тут раніше або була переміщена. Але не хвилюйтеся - ми допоможемо вам знайти потрібне
+                            </div>
+                            <div class="hero__actions">
+                                <a href="index.html" class="btn btn--outline">Повернутися на головну</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16 column --relative">
+                        <div class="img__wrap">
+                            <img src="assets/img/banner-service.png" alt="" class="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="container">
+                <h2 class="visually-hidden">Інформація про компанію та навігація</h2>
+                <div class="row m-row align-center">
+
+                    <!-- 1. Логотип -->
+                    <div class="col-xl-3 col-lg-3 col-md-10 col-sm-16 col-xs-16 column">
+                        <a href="/" class="footer__logo" aria-label="Good idea Cleaning — На головну">
+                            <img src="assets/img/logo-light.svg" alt="Good idea Cleaning" width="180" height="60"
+                                loading="lazy">
+                        </a>
+                    </div>
+
+                    <!-- 2. Меню навігації (Для дому, Для бізнесу зі стрілочками, Ціни, Контакти) -->
+                    <div class="col-xl-3 col-lg-3 col-md-10 col-sm-16 col-xs-16 column">
+                        <nav class="footer-nav">
+                            <ul class="menu">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Для дому</a>
+                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <!-- Якщо є підменю -->
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="#">Підпункт 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Для бізнесу</a>
+                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="#">Підпункт 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="#">Ціни</a></li>
+                                <li class="menu-item"><a href="#">Контакти</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- 3. Друга колонка посилань (Про нас, Google відгуки, Політика...) -->
+                    <div class="col-xl-4 col-lg-4 col-md-10 col-sm-16 col-xs-16 column">
+                        <nav class="footer-nav">
+                            <ul class="menu">
+                                <li class="menu-item"><a href="about.html">Про нас</a></li>
+                                <li class="menu-item menu-item--google">
+                                    <a href="#" target="_blank" rel="noopener">
+                                        <span class="google-logo">
+                                            <span style="color:#4285F4">G</span><span
+                                                style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span
+                                                style="color:#4285F4">g</span><span style="color:#34A853">l</span><span
+                                                style="color:#EA4335">e</span>
+                                        </span>
+                                        відгуки
+                                    </a>
+                                </li>
+                                <li class="menu-item"><a href="#">Політика конфіденційності</a></li>
+                                <li class="menu-item"><a href="#">Умови використання сайту</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- 4. Контакти та соцмережі з іконками 30x30 -->
+                    <div class="col-xl-6 col-lg-6 col-md-10 col-sm-16 col-xs-16 column">
+                        <div class="contact">
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#phone"></use>
+                                </svg>
+                                <a href="tel:08001235335" class="contact__text">
+                                    <strong>0-800-123-53-35</strong> <span class="contact__note">(безкоштовно по
+                                        Україні)</span>
+                                </a>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#email"></use>
+                                </svg>
+                                <a href="mailto:hello@chystota.ua"
+                                    class="contact__text contact__text--link">hello@chystota.ua</a>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#location"></use>
+                                </svg>
+                                <span class="contact__text">м. Львів, вул. Лемківська 9а</span>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#clock"></use>
+                                </svg>
+                                <span class="contact__text">Прийом замовлень: Пн - Нд з 9:00 до 19:00</span>
+                            </div>
+                            <div class="contact__item">
+                                <svg class="contact__icon" width="16" height="16">
+                                    <use href="assets/img/symbol.svg#clock"></use>
+                                </svg>
+                                <span class="contact__text">Виконання замовлень: з 9:00 до 21:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Соціальні мережі -->
+                        <ul class="socials__list" role="list">
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--youtube" target="_blank" rel="noopener"
+                                    aria-label="YouTube">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#youtube"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--threads" target="_blank" rel="noopener"
+                                    aria-label="Threads">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#threads"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener"
+                                    aria-label="Facebook">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#facebook"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--instagram" target="_blank"
+                                    rel="noopener" aria-label="Instagram">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#instagram"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="socials__item">
+                                <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener"
+                                    aria-label="TikTok">
+                                    <div class="socials__icon-wrap">
+                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                            <use href="assets/img/symbol.svg#tiktok"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер bottom -->
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row m-row justify-between">
+                    <div class="col-xl-8 col-lg-8 col-md-16 column">
+                        <div class="copyright">© 2026 Good idea Cleaning Усі права захищені</div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-16 column text-right">
+                        <div class="develop">
+                            Design and development —
+                            <a href="https://webtune.com.ua/" target="_blank" rel="nofollow"
+                                class="develop__link">WebTune</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="popup-wrapper">
+        <div class="bg-layer"></div>
+
+        <div class="popup-content cta" data-rel="cta">
+            <div class="layer-close"></div>
+            <div class="popup-container ">
+                <div class="popup-container__inner">
+                    <div class="btn--close d-flex align-middle align-center">
+
+                    </div>
+
+                    <div class="popup-form text-center">
+                        <h4 class="popup-form__heading text-bold h3">Записатись на прийом</h4>
+                        <form class="">
+
+                            <div class="row m-row">
+                                <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                                    <div class="field">
+                                        <label class="field__label text-left" for="user-name">Як до вас
+                                            звертатися?</label>
+                                        <input class="field__input" type="text" id="p-user-name" name="name"
+                                            placeholder="Ваше ім’я">
+                                    </div>
+                                    <div class="form-field ">
+                                        <label class="field__label text-left" for="user-phone">Ваш номер
+                                            телефону</label>
+                                        <input class="field__input" type="tel" id="p-user-phone" name="phone"
+                                            value="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
+                                            aria-describedby="phone-error">
+
+                                    </div>
+
+                                    <div class="form-field ">
+                                        <button class="btn btn--primary" type="submit">
+                                            Записатися на прийом
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9h5L2xSWEvRFgLc7y4d16KPUDydNgs9Y&loading=async&libraries=marker"
+        async></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.sumoselect.min.js"></script>
+
+    <script src="src/scripts/app-swiper.js"></script>
+    <script src="src/scripts/js_app.js"></script>
+
+    <script src="assets/js/app-comparison.js"></script>
+    <script src="src/scripts/app_map.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            // Клік по пункту меню з випадайкою
+            $('.menu-item-has-children > a').on('click', function (e) {
+                e.preventDefault();
+
+                const $parentItem = $(this).parent('.menu-item-has-children');
+                const $subMenu = $parentItem.children('.sub-menu');
+
+                // Закриваємо інші відкриті списки (плавно)
+                $('.menu-item-has-children').not($parentItem).removeClass('is-open')
+                    .children('.sub-menu').slideUp(300);
+
+                // Перемикаємо поточний список з плавним ефектом
+                $parentItem.toggleClass('is-open');
+                $subMenu.slideToggle(300);
+            });
+
+            // Закриття при кліку поза межами меню
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.menu-item-has-children').length) {
+                    $('.menu-item-has-children').removeClass('is-open')
+                        .children('.sub-menu').slideUp(300);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

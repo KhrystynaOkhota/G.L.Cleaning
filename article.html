@@ -19,191 +19,153 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="h-menu-overlay"></div>
-
+  <header class="header">
+    <div class="h-menu-overlay"></div>
         <div class="h-wrap">
-            <div class="container">
-
-                <!-- 1. Верхній блок з кнопками/іконками (у мобільній версії — сітка з 5 колонок) -->
-                <div class="h-controls h-controls--top d-flex d-md-none">
-                    <div class="h-controls__item d-flex align-center align-middle">
-                        <button type="button" class="control-btn control-btn--search js_open_search"
-                            aria-label="Відкрити пошук">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#search"></use>
-                                </svg>
-                            </span>
-                        </button>
-
-                    </div>
-                    <div class="h-controls__item d-flex align-center align-middle">
-                        <a class="control-btn control-btn--account" href="account.html" aria-label="Особистий кабінет">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#user"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="h-controls__item d-flex align-center align-middle">
-                        <a class="control-btn control-btn--favorite" href="account-favourites.html"
-                            aria-label="Обрані товари">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#fav"></use>
-                                </svg>
-                                <span class="control-btn__count">0</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="h-controls__item d-flex align-center align-middle">
-                        <button type="button" class="control-btn control-btn--cart js_cart_open"
-                            aria-label="Відкрити кошик">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#bag"></use>
-                                </svg>
-                                <span class="control-btn__count">0</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="h-controls__item d-flex align-center align-middle">
-                        <div class="h-burger js-open-menu"><i></i></div>
-                    </div>
+            <div class="container h-container">
+                <div class="h-controls">
+                    <a href="" class="header__logo" aria-label=""> 
+                        <img src="assets/img/logo-white.svg" alt="" class="header__logo-img header__logo-img--light d-none">
+                        <img src="assets/img/logo-dark.svg" alt="" class="header__logo-img header__logo-img--dark"> 
+                    </a>
                 </div>
-
-                <!-- Десктопний верхній рядок -->
-                <div class="h-top d-none d-md-block">
-                    <div class="h-top-inner d-flex align-justify align-middle">
-                        <nav class="h-nav">
-                            <ul class="menu">
-                                <li class="menu-item"><a href="about.html">Про компанію</a></li>
-                                <li class="menu-item"><a href="services.html">Послуги</a></li>
-                                <li class="menu-item"><a href="delivery.html">Доставка і оплата</a></li>
-                                <li class="menu-item"><a href="return.html">Обмін і повернення</a></li>
-                                <li class="menu-item"><a href="blog.html">Блог</a></li>
-                                <li class="menu-item"><a href="contacts.html">Мережа салонів</a></li>
-                            </ul>
-                        </nav>
-                        <div class="h-phone d-none d-lg-flex align-center align-middle">
-                            <span class="h-phone__text text-light d-none d-xl-block">Є питання? Телефонуйте -
-                                допоможемо</span>
-                            <a href="tel:+380500749888" class="h-phone__number text-bold">+38 (050) 07-49-888</a>
+                <div class="h-inner">
+                    <div class="header__top">
+                        <div class="header__top-info">
+                            <span class="header__address">
+                            м. Львів, вул. Лемківська 9а | <a href="#" class="header__link-map">На карті</a>
+                            </span>
+                            <span class="header__schedule">Графік прийому: Пн - Нд з 9:00 до 19:00</span>
+                            <span class="header__worktime">Графік виконання: 24/24</span>
+                            <a href="tel:08001235335" class="header__phone">0-800-123-53-35</a>
                         </div>
                     </div>
-                </div>
 
-                <!-- 2. Середній блок: Логотип та Кнопка запису -->
-                <div class="h-inner d-flex align-middle align-justify">
-                    <a class="h-logo" href="/" aria-label="Файна оптика logo">
-                        <img src="assets/img/logo.svg" alt="Файна оптика" class="h-logo__img">
-                    </a>
+                    <div class="header__bottom d-flex align-justify align-middle">
+   
+                        <nav class="header__nav nav" id="mobile-menu">
+                            <div class="mobile-menu__top">
+                            <a href="/" class="header__logo logo">
+                                <span class="logo__text">Good Idea<br><strong>Cleaning</strong></span>
+                            </a>
+                            <button class="mobile-menu__close" id="menu-close" aria-label="Закрити меню">&times;</button>
+                            </div>
 
-                    <div class="h-search d-none d-lg-flex">
-                        <form class="search-form" action="#" method="get" role="search">
-                            <input type="search" class="search-form__input" placeholder="Пошук" aria-label="Пошук">
-                            <button type="submit" class="search-form__btn" aria-label="Шукати">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#search"></use>
-                                </svg>
+                            <ul class="nav__list menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="nav__link">Для дому <span class="arrow">▼</span></a>
+                                <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
+                                <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
+                                <li class="menu-item"><a href="#">Мийка вікон</a></li>
+                                <li class="menu-item"><a href="#">Хімчистка меблів</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="nav__link">Для бізнесу <span class="arrow">▼</span></a>
+                                <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Прибирання офісів</a></li>
+                                <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
+                                <li class="menu-item"><a href="#">Прибирання після подій</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Ціни</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link active">Про сервіс</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Блог</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="nav__link">Контакти</a>
+                            </li>
+                            </ul>
+
+                            <!-- Блок контактів всередині мобільного меню -->
+                            <div class="mobile-menu__info">
+                            <div class="mobile-menu__address">
+                                м. Львів, вул. Лемківська 9а<br>
+                                <a href="#" class="header__link-map">На карті</a>
+                            </div>
+                            <div class="mobile-menu__schedule">
+                                Графік прийому: Пн - Нд з 9:00 до 19:00
+                            </div>
+                            <div class="mobile-menu__worktime">
+                                Графік виконання: 24/24
+                            </div>
+                            <a href="tel:08001235335" class="mobile-menu__phone">0-800-123-53-35</a>
+                            
+                            <div class="header__socials">
+                                <a href="#" class="social-icon telegram">✈</a>
+                                <a href="#" class="social-icon whatsapp">💬</a>
+                                <a href="#" class="social-icon viber">📞</a>
+                            </div>
+
+                            <a href="#" class="btn btn--primary btn--full">ЗАМОВИТИ ДЗВІНОК</a>
+                            </div>
+                        </nav>
+
+                        <div class="header__actions">
+                            <div class="socials d-none d-md-flex">
+                                <ul class="socials__list" role="list">
+                                    <li class="socials__item">
+                                        <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#telegram"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#whatsapp"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="viber://chat?number=%2B380500136888" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#viber"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <a href="tel:08001235335" class="header__phone-icon" aria-label="Зателефонувати">📞</a>
+                            <a href="#" class="btn btn--primary d-none d-md-inline-block">ЗАМОВИТИ ДЗВІНОК</a>
+                            <button class="burger-btn" id="menu-toggle" aria-label="Відкрити меню">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </button>
-                        </form>
-                    </div>
-
-                    <div class="h-btn">
-                        <a href="#" class="btn btn--primary open-popup" data-rel="cta">Запис до лікаря</a>
-                    </div>
-
-                    <div class="h-controls align-center d-none d-md-flex">
-
-                        <a class="control-btn control-btn--account" href="account.html" aria-label="Особистий кабінет">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#user"></use>
-                                </svg>
-                            </span>
-                        </a>
-
-                        <a class="control-btn control-btn--favorite" href="account-favourites.html"
-                            aria-label="Обрані товари">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#fav"></use>
-                                </svg>
-                                <span class="control-btn__count">0</span>
-                            </span>
-                        </a>
-
-                        <button type="button" class="control-btn control-btn--cart js_cart_open"
-                            aria-label="Відкрити кошик">
-                            <span class="control-btn__icon">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#bag"></use>
-                                </svg>
-                                <span class="control-btn__count">0</span>
-                            </span>
-                        </button>
+                        </div>
 
                     </div>
                 </div>
-
-                <!-- 3. Мобільне випадаюче меню (Помаранчеві категорії -> Пошук -> Дод. посилання) -->
-                <div class="h-menu">
-                    <nav class="h-nav h-nav--top">
-                        <ul class="menu">
-                            <li class="menu-item"><a href="catalog.html">Оправи для зору</a></li>
-                            <li class="menu-item"><a href="catalog.html">Сонцезахисні окуляри</a></li>
-                            <li class="menu-item"><a href="catalog.html">Контактні лінзи</a></li>
-                            <li class="menu-item"><a href="catalog.html">Аксесуари/Засоби догляду</a></li>
-                            <li class="menu-item"><a href="promotions.html">Акції</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="h-search d-flex d-md-none">
-                        <form class="search-form" action="#" method="get" role="search">
-                            <input type="search" class="search-form__input" placeholder="Пошук" aria-label="Пошук">
-                            <button type="submit" class="search-form__btn" aria-label="Шукати">
-                                <svg class="icon" aria-hidden="true" width="22" height="22">
-                                    <use href="assets/img/symbol.svg#search"></use>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-
-                    <nav class="h-nav h-nav--bottom d-block d-md-none">
-                        <ul class="menu">
-                            <li class="menu-item"><a href="about.html">Про компанію</a></li>
-                            <li class="menu-item"><a href="services.html">Послуги</a></li>
-                            <li class="menu-item"><a href="delivery.html">Доставка і оплата</a></li>
-                            <li class="menu-item"><a href="return.html">Обмін і повернення</a></li>
-                            <li class="menu-item"><a href="blog.html">Блог</a></li>
-                            <li class="menu-item"><a href="contacts.html">Мережа салонів</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
             </div>
         </div>
-
-        <div class="h-search-wrap">
-            <div class="container-fluid">
-                <form class="h-search-inner search" action="https://lulacoco.com/" autocomplete="off"> <svg width="24"
-                        height="24">
-                        <use xlink:href="https://lulacoco.com/wp-content/themes/lulacoco/img/icons/icons_product.svg#search"
-                            fill="none"></use>
-                    </svg> <input type="text" name="s" placeholder="Enter the product name" aria-label="Search input">
-                    <div class="btn btn-md btn-thirdy search-btn"> <b>Search</b></div>
-                    <div class="btn-close js_close_search"></div>
-                </form>
-                <div class="h-search-dropdown">
-                    <div class="h-search-dropdown-inner"></div>
-                </div>
-            </div>
-        </div>
-        <div class="h-search-overlay"></div>
-    </header>
+    </div>
+  
+     <div class="menu-overlay" id="menu-overlay"></div>
+</header>
     <main class="main">
         <div class="kama_breadcrumbs__wrap">
             <div class="container">
@@ -230,18 +192,67 @@
         <section class="s-hero s-hero--article">
             <div class="container overlap">
                 <div class="row m-row">
-                    <div class="col-xl-8 col-lg-10 col-md-16 col-sm-16 col-xs-16 column">
-                        <div class="hero-content">
-                            <h1 class="hero-content__title">
+                    <div class="col-xl-9 col-lg-10 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="hero__content overlap">
+                            <h1 class="hero__title">
                                 Генеральне прибирання будинків у Львові. Покрокова інструкція
                             </h1>
-                            <div class="hero-content__meta"></div>
+                            <div class="hero__meta d-flex align-left align-middle">
+                                <div class="news__date">
+                                    <svg class="icon" aria-hidden="true" width="16" height="16">
+                                        <use href="assets/img/sprite.svg#calendar"></use>
+                                    </svg>
+                                    <span>12.09.2026</span>
+                                </div>
+                                <div class="news__category">
+                                    <svg class="icon" aria-hidden="true" width="16" height="16">
+                                        <use href="assets/img/sprite.svg#tag"></use>
+                                    </svg>
+                                    <span>Новини</span>
+                                </div>
+                            </div>
                             <div class="">
-                                <div class="hero-content__actions">
+                                <div class="hero__actions">
                                     <a href="#" class="btn btn--primary open-popup" data-rel="cta">Замовити
                                         прибирання</a>
                                     <a href="prices.html" class="btn btn--outline">Переглянути ціни</a>
                                 </div>
+                            </div>
+                            <div class="socials socials--row  align-left align-middle">
+                                <span class="socials__label">Поділитися цією публікацією:</span>
+                                <ul class="socials__list" role="list">
+                                    <li class="socials__item">
+                                        <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#telegram"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#whatsapp"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="viber://chat?number=%2B380500136888" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+
+                                            <div class="socials__icon-wrap">
+                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                    <use href="assets/img/symbol.svg#viber"></use>
+                                                </svg>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -256,10 +267,23 @@
                     style="background-image: url('assets/img/hero-bg-mobile.jpg');"></div>
             </div>
         </section>
+        <section>
+            <div class="container">
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                        <div class="">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <section class="s-info">
             <div class="container">
-                <div class="row">
-                    <div class="column">
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
                         <div class="cms-content">
                             <p>Для більшості з нас генеральне прибирання будинку — це рутинна робота, яка може легко
                                 загубитися поміж роботою, хобі та сном. Саме тому контрольний список прибирання вдома
@@ -333,28 +357,28 @@
             }
         }'>
                             <div class="swiper-wrapper">
-                                <!-- Слайд 1 -->
+                                
                                 <div class="swiper-slide">
                                     <div class="gallery-card">
                                         <img src="assets/img/gallery-1.png" alt="Прибирання кухні" loading="lazy"
                                             class="gallery-card__img">
                                     </div>
                                 </div>
-                                <!-- Слайд 2 -->
+                               
                                 <div class="swiper-slide">
                                     <div class="gallery-card">
                                         <img src="assets/img/gallery-2.png" alt="Клінінг у Львові" loading="lazy"
                                             class="gallery-card__img">
                                     </div>
                                 </div>
-                                <!-- Слайд 3 -->
+                               
                                 <div class="swiper-slide">
                                     <div class="gallery-card">
                                         <img src="assets/img/gallery-3.png" alt="Миття поверхонь" loading="lazy"
                                             class="gallery-card__img">
                                     </div>
                                 </div>
-                                <!-- Слайд 4 -->
+                               
                                 <div class="swiper-slide">
                                     <div class="gallery-card">
                                         <img src="assets/img/gallery-1.png" alt="Прибирання" loading="lazy"
@@ -367,7 +391,7 @@
                                             class="gallery-card__img">
                                     </div>
                                 </div>
-                                <!-- Слайд 3 -->
+                                
                                 <div class="swiper-slide">
                                     <div class="gallery-card">
                                         <img src="assets/img/gallery-3.png" alt="Миття поверхонь" loading="lazy"
@@ -378,8 +402,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Навігація та пагінація -->
                 <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
                         <div class="swiper-navigation d-flex align-middle align-justify">
@@ -406,8 +428,8 @@
         </section>
         <section class="s-info">
             <div class="container">
-                <div class="row">
-                    <div class="column">
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
                         <div class="cms-content">
                             <p>Виконання цих задач гарантує те, що ваша їжа буде в безпеці, і ви зможете почувати себе
                                 комфортно, готуючи на своїй кухні.</p>
@@ -450,106 +472,266 @@
                 </div>
             </div>
         </section>
-        <section class="s-last-news swiper-entry ">
+        <section class="s-media">
             <div class="container">
-                <!-- Шапка секції -->
-                <div class="row m-row align-between align-middle s-last-news__top ">
-                    <div class="column col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h2 class="heading h2 heading-font text-bold">Блог</h2>
-                    </div>
-                    <div
-                        class="column col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right d-flex align-middle align-right">
-                        <a href="blog.html" class="btn btn--outline d-none d-md-inline-block">Усі статті</a>
-                    </div>
-                </div>
-
-                <!-- Слайдер -->
                 <div class="row m-row">
                     <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
-                        <div class="swiper-container js-swiper-blog" data-options='{
-                   "slidesPerView": 1,
-                   "spaceBetween": 20,
-                   "loop": false,
-    
-                   "breakpoints": {
-                     "576": { "slidesPerView": 2, "spaceBetween": 20 },
-                     "992": { "slidesPerView": 2, "spaceBetween": 20 }
-                   }
-                 }'>
+                        <h3 class="heading h1 text-bold"> Чи варто замовляти клінінг ?</h3>
+                        <div class="description cms-content">
+                            <p>Останнім часом клінінговий сервіс стає все популярнішим, і не просто так. Це недорогий та ефективний спосіб стежити за чистотою в будинку, заощаджуючи свої сили та час. На повне прибирання будинку, яке ми описали вище, піде весь день, причому це базовий набір дій. Також потрібно регулярно мити вікна, дезінфікувати унітаз та прибирати пил у всіх важкодоступних місцях. Зробити все це самостійно складно і результат не буде ідеальним.</p>
+                            <p>Якщо ви хочете замовити генеральне прибирання будинку чи котеджу у Львові, спробуйте наші послуги. Наша клінінгова компанія  пропонує як прибирання окремих кімнат, так і повне прибирання будинку (разове або регулярне). Ціна генерального прибирання будинку залежить від кількох факторів: кількості кімнат, додаткових послуг тощо.</p>
+                        </div>
+                    </div>
+                 
+                    <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                        <div class="media media__entry">
+                            <video muted="" playsinline="" loop="" preload="metadata" poster="assets/img/video-banner.png" src="assets/img/video.mp4" class="media__video"></video>
 
+                            <div class="media__btn btn-play d-flex align-middle align-center">
+                                <img src="assets/img/play.svg" alt="play btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="s-work s-comparison  app-comparison">
+            <div class="container swiper-entry">
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 col-exs-16 column">
+                        <h2 class="heading h1 text-bold">Наші роботи</h2>
+                        <div class="description">Працюємо уважно до деталей, використовуючи професійні засоби та сучасне
+                            обладнання.</div>
+                    </div>
+                </div>
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 col-exs-16 column">
+
+                        <div class="swiper-container" data-options='{
+                        "slidesPerView": 1,
+                        "spaceBetween": 10,
+                        "loop": false,
+                       
+                        "breakpoints": {
+                            "576": { "slidesPerView": 1, "spaceBetween": 10 },
+                            "768": { "slidesPerView": 2, "spaceBetween": 15 },
+                            "992": { "slidesPerView": 2, "spaceBetween": 30 },
+                            "1200": { "slidesPerView": 2, "spaceBetween": 60 }
+                        }
+                    }'>
                             <div class="swiper-wrapper">
 
-
                                 <div class="swiper-slide">
-                                    <article class="news">
-                                        <div class="news__img-wrap">
-                                            <img src="assets/img/about-1.png"
-                                                alt="Генеральне прибирання будинків у Львові" class="news__img"
-                                                loading="lazy">
-                                        </div>
-                                        <div class="news__content">
-                                            <div class="news__info">
-
-                                                <h2 class="news__title heading h4 text-bold">Генеральне прибирання
-                                                    будинків у Львові. Покрокова інструкція</h2>
-                                                <p class="news__text">Для більшості з нас генеральне прибирання
-                                                    будинку — це рутинна робота, яка може легко...</p>
+                                    <div class="work-card">
+                                        <div class="comparison-block">
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--before">
+                                                <img src="assets/img/about-1.png" alt="До прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--before">До
+                                                </div>
                                             </div>
-                                            <a href="news-single.html" class="news__btn" aria-label="Читати новину">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#ffffff"
-                                                        stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                            </a>
+
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--after">
+                                                <img src="assets/img/about-2.png" alt="Після прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--after">
+                                                    Після</div>
+                                            </div>
+
+                                            <div class="comparison-block__handle"></div>
+
+                                            <div class="comparison-block__divider">
+                                                <div class="comparison-block__icon-wrap">
+                                                    <svg role="presentation" focusable="false" fill="none" width="50"
+                                                        height="50" viewBox="0 0 50 50">
+                                                        <g>
+                                                            <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+                                                            <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000"
+                                                                stroke-width=".75" stroke-linecap="square"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </article>
+
+                                        <div class="work-card__content">
+                                            <h3 class="work-card__title">Прибирання квартири після ремонту</h3>
+
+                                            <div class="work-card__details">
+                                                <div class="work-card__badge">
+                                                    Площа: <strong>43.2 м²</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Час: <strong>5 годин</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Ціна: <strong>4 500 грн</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
+
                                 <div class="swiper-slide">
-                                    <article class="article-card article-card--featured">
-                                        <div class="article-card__img-wrap">
-                                            <img src="assets/img/blog-1.jpg"
-                                                alt="Генеральне прибирання будинків у Львові" class="article-card__img"
-                                                loading="lazy">
+                                    <div class="work-card">
+                                        <div class="comparison-block">
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--before">
+                                                <img src="assets/img/about-1.png" alt="До прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--before">До
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--after">
+                                                <img src="assets/img/about-2.png" alt="Після прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--after">
+                                                    Після</div>
+                                            </div>
+
+                                            <div class="comparison-block__handle"></div>
+
+                                            <div class="comparison-block__divider">
+                                                <div class="comparison-block__icon-wrap">
+                                                    <svg role="presentation" focusable="false" fill="none" width="50"
+                                                        height="50" viewBox="0 0 50 50">
+                                                        <g>
+                                                            <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+                                                            <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000"
+                                                                stroke-width=".75" stroke-linecap="square"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="article-card__content">
-                                            <h3 class="article-card__title heading h3 text-bold">Генеральне прибирання
-                                                будинків у Львові. Покрокова інструкція</h3>
-                                            <p class="article-card__excerpt text-s d-none d-sm-block">Для більшості з
-                                                нас генеральне прибирання будинку — це рутинна робота, яка може легко...
-                                            </p>
-                                            <a href="blog-single.html" class="article-card__btn-arrow"
-                                                aria-label="Читати далі">
-                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </a>
+
+                                        <div class="work-card__content">
+                                            <h3 class="work-card__title">Прибирання квартири після ремонту</h3>
+
+                                            <div class="work-card__details">
+                                                <div class="work-card__badge">
+                                                    Площа: <strong>43.2 м²</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Час: <strong>5 годин</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Ціна: <strong>4 500 грн</strong>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </article>
+                                    </div>
                                 </div>
+
                                 <div class="swiper-slide">
-                                    <article class="article-card article-card--featured">
-                                        <div class="article-card__img-wrap">
-                                            <img src="assets/img/blog-1.jpg"
-                                                alt="Генеральне прибирання будинків у Львові" class="article-card__img"
-                                                loading="lazy">
+                                    <div class="work-card">
+                                        <div class="comparison-block">
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--before">
+                                                <img src="assets/img/about-1.png" alt="До прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--before">До
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--after">
+                                                <img src="assets/img/about-2.png" alt="Після прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--after">
+                                                    Після</div>
+                                            </div>
+
+                                            <div class="comparison-block__handle"></div>
+
+                                            <div class="comparison-block__divider">
+                                                <div class="comparison-block__icon-wrap">
+                                                    <svg role="presentation" focusable="false" fill="none" width="50"
+                                                        height="50" viewBox="0 0 50 50">
+                                                        <g>
+                                                            <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+                                                            <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000"
+                                                                stroke-width=".75" stroke-linecap="square"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="article-card__content">
-                                            <h3 class="article-card__title heading h3 text-bold">Генеральне прибирання
-                                                будинків у Львові. Покрокова інструкція</h3>
-                                            <p class="article-card__excerpt text-s d-none d-sm-block">Для більшості з
-                                                нас генеральне прибирання будинку — це рутинна робота, яка може легко...
-                                            </p>
-                                            <a href="blog-single.html" class="article-card__btn-arrow"
-                                                aria-label="Читати далі">
-                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </a>
+
+                                        <div class="work-card__content">
+                                            <h3 class="work-card__title">Прибирання квартири після ремонту</h3>
+
+                                            <div class="work-card__details">
+                                                <div class="work-card__badge">
+                                                    Площа: <strong>43.2 м²</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Час: <strong>5 годин</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Ціна: <strong>4 500 грн</strong>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </article>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="work-card">
+                                        <div class="comparison-block">
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--before">
+                                                <img src="assets/img/about-1.png" alt="До прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--before">До
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="comparison-block__image-wrap comparison-block__image-wrap--after">
+                                                <img src="assets/img/about-2.png" alt="Після прибирання"
+                                                    class="comparison-block__img">
+                                                <div class="comparison-block__label comparison-block__label--after">
+                                                    Після</div>
+                                            </div>
+
+                                            <div class="comparison-block__handle"></div>
+
+                                            <div class="comparison-block__divider">
+                                                <div class="comparison-block__icon-wrap">
+                                                    <svg role="presentation" focusable="false" fill="none" width="50"
+                                                        height="50" viewBox="0 0 50 50">
+                                                        <g>
+                                                            <rect width="50" height="50" rx="25" fill="#ffffff"></rect>
+                                                            <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000"
+                                                                stroke-width=".75" stroke-linecap="square"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="work-card__content">
+                                            <h3 class="work-card__title">Прибирання квартири після ремонту</h3>
+
+                                            <div class="work-card__details">
+                                                <div class="work-card__badge">
+                                                    Площа: <strong>43.2 м²</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Час: <strong>5 годин</strong>
+                                                </div>
+                                                <div class="work-card__badge">
+                                                    Ціна: <strong>4 500 грн</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -577,16 +759,410 @@
                         </div>
                     </div>
                 </div>
-                <!-- Кнопка для мобільних -->
-                <div class="row m-row d-md-none indent-t-m">
-                    <div class="column col-xs-16">
-                        <a href="blog.html" class="btn btn--outline-primary btn--full text-center">Усі
-                            статті</a>
+            </div>
+            </div>
+            <div class="divider"></div>
+        </section>
+
+        <section class="s-price s-price--article">
+            <div class="container">
+                <div class="row m-row  s-price__top">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column align-justify align-middle d-flex">
+                        <h2 class="heading h1 text-bold">Вартість послуг</h2>
+                        <a href="" class="btn btn--primary open-popup d-none d-md-inline-block" data-rel="cta">Замовити прибирання</a>
+                             </div>
+                </div>
+                <div class="row m-row">
+                    <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                       <div class="description">Прозорі ціни без прихованих платежів. Вартість прибирання залежить від площі, типу послуги та обсягу робіт.</div>
+               
+                        <div class="price-group">
+                            <div class="price">
+                                <div class="price__title">Генеральне прибирання</div>
+                                <div class="price__desc">Квартира, будинок чи котедж — повний комплекс робіт</div>
+                                <div class="price__value">від 2,500 грн</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Прибирання після ремонту чи будівництва</div>
+                                <div class="price__desc">Будівельний пил, плями фарби та клею</div>
+                                <div class="price__value">від 5,000 грн</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Підтримуюче (регулярне) прибирання</div>
+                                <div class="price__desc">За графіком: щотижня чи щомісяця</div>
+                                <div class="price__value">від 35 грн</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Прибирання ванної кімнати</div>
+                                <div class="price__desc">Очищення від пилу, плісняви та висолів</div>
+                                <div class="price__value">від 2,800 грн</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Еко-прибирання</div>
+                                <div class="price__desc">Безпечні засоби без агресивної хімії</div>
+                                <div class="price__value">від 50 грн</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Прибирання після пожежі та задимлення</div>
+                                <div class="price__desc">Очищення від сажі, усунення запаху гару</div>
+                                <div class="price__value">За домовленістю</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Прибирання після затоплення</div>
+                                <div class="price__desc">Видалення вологи та примусове сушіння</div>
+                                <div class="price__value">За домовленістю</div>
+                            </div>
+                            <div class="price">
+                                <div class="price__title">Озонування</div>
+                                <div class="price__desc">Дезінфекція повітря та поверхонь</div>
+                                <div class="price__value">від 15 грн</div>
+                            </div>
+                        </div>
+                         <a href="" class="btn btn--primary open-popup d-block d-md-none" data-rel="cta">Замовити прибирання</a>
+                        <div class="divider"></div>
+                        <a href="blog.html" class="btn btn--outline d-block d-md-inline-block">повернутись на інші статті</a>
+                       
                     </div>
                 </div>
-
             </div>
         </section>
+           <section class="s-last-news swiper-entry swiper-grid-flat">
+                <div class="container">
+                   
+                    <div class="row m-row align-justify align-middle s-last-news__top ">
+                        <div class="column col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <h2 class="heading h1  text-bold">Схожі статті</h2>
+                        </div>
+                        <div class="column col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right d-flex align-middle align-right">
+                            <a href="blog.html" class="btn btn--outline d-none d-md-inline-block">Усі статті</a>
+                        </div>
+                    </div>
+
+
+                    <div class="row m-row">
+                        <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                            <div class="swiper-container" data-options='{
+                                    "gridFlat": true,
+                                    "spaceBetween": 20,
+                                    "speed": 600,
+                                    "breakpoints": {
+                                        "0": {
+                                            "slidesPerView": 1,
+                                            "slidesPerGroup": 1,
+                                            "spaceBetween": 20
+                                        },
+                                        "576": {
+                                            "slidesPerView": 2,
+                                            "slidesPerGroup": 1,
+                                            "spaceBetween": 20
+                                        },
+                                        "992": {
+                                            "slidesPerView": 3,
+                                            "slidesPerGroup": 3,
+                                            "spaceBetween": 20
+                                        }
+                                    }
+                                }'>
+
+                                <div class="swiper-wrapper">
+
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="news">
+                                            <div class="news__img-wrap">
+                                                <img
+                                                    src="assets/img/about-1.png"
+                                                    alt="Генеральне прибирання будинків у Львові"
+                                                    class="news__img"
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="news__content">
+                                                <div class="news__info">
+
+                                                    <h2
+                                                        class="news__title heading h4 text-bold">Генеральне
+                                                        прибирання
+                                                        будинків у Львові.
+                                                        Покрокова
+                                                        інструкція</h2>
+                                                    <p class="news__text">Для
+                                                        більшості з нас
+                                                        генеральне прибирання
+                                                        будинку — це рутинна
+                                                        робота, яка може
+                                                        легко...</p>
+                                                </div>
+                                                <a href="news-single.html"
+                                                    class="news__btn"
+                                                    aria-label="Читати новину">
+                                                    <svg width="16" height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none">
+                                                        <path
+                                                            d="M7 17L17 7M17 7H7M17 7V17"
+                                                            stroke="#ffffff"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-row">
+                        <div
+                            class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                            <div
+                                class="swiper-navigation d-flex align-middle align-justify">
+                                <button type="button"
+                                    class="swiper-button swiper-button-prev"
+                                    aria-label="Попередній слайд">
+                                    <svg width="12" height="20"
+                                        viewBox="0 0 12 20" fill="none">
+                                        <path d="M11 19L2 10L11 1"
+                                            stroke="#3AC2CF" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+
+                                <div class="swiper-pagination"></div>
+
+                                <button type="button"
+                                    class="swiper-button swiper-button-next"
+                                    aria-label="Наступний слайд">
+                                    <svg width="12" height="20"
+                                        viewBox="0 0 12 20" fill="none">
+                                        <path d="M1 19L10 10L1 1"
+                                            stroke="#3AC2CF" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-row ">
+                        <div class="column col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                            <a href="blog.html"
+                                class="btn btn--outline d-block d-md-none">Усі
+                                статті</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
         <section class="s-cta">
             <div class="cta__img-wrap">

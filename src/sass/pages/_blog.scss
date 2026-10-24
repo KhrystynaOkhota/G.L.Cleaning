@@ -9,6 +9,14 @@ $transition-base: all 0.3s ease;
 .s-last-news {
   padding-bottom: fluid(50, 70);
 
+  &__top {
+    margin-bottom: fluid(30, 45);
+  }
+
+  & .btn--outline {
+    min-width: 223px;
+  }
+
   .news {
     position: relative;
     border-radius: 20px;
@@ -159,6 +167,16 @@ $transition-base: all 0.3s ease;
       }
     }
   }
+
+  & .swiper {
+    &-navigation {
+      margin-top: fluid(30, 40);
+
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 30px;
+      }
+    }
+  }
 }
 
 
@@ -176,9 +194,10 @@ $transition-base: all 0.3s ease;
     &__list {
       display: flex;
       align-items: center;
-      gap: 6px;
       list-style: none;
-      padding: 6px;
+      padding: 0;
+      margin: 0;
+      background: rgba(248, 249, 253, 1);
       margin: 0;
       background: #F8F9FD;
       border-radius: 40px;
@@ -202,11 +221,12 @@ $transition-base: all 0.3s ease;
       display: block;
       background: transparent;
       border: none;
-      padding: 12px 24px;
+      padding: 17px 30px;
       border-radius: 30px;
-      font-size: 14.5px;
-      font-weight: 500;
-      color: #6F6F6F;
+      font-size: fluid(15, 17);
+      line-height: 1;
+      font-weight: 700;
+      color: $color-accent;
       text-decoration: none;
       cursor: pointer;
       white-space: nowrap;
@@ -253,7 +273,7 @@ $transition-base: all 0.3s ease;
   }
 
   .news {
-    background: #FFFFFF;
+    background: $color-white;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -261,23 +281,6 @@ $transition-base: all 0.3s ease;
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    &__img-wrap {
-      position: relative;
-      width: 100%;
-      height: 240px;
-      overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 16px;
-
-      @media (max-width: 767px) {
-        height: 200px;
-      }
-    }
 
     &__img {
       width: 100%;
@@ -286,8 +289,17 @@ $transition-base: all 0.3s ease;
       display: block;
       transition: transform 0.6s ease;
 
-      .news-card:hover & {
-        transform: scale(1.03);
+      &-wrap {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        border-radius: 16px;
+        margin-bottom: 20px;
+
+        @media (max-width: 767px) {
+          height: 200px;
+        }
       }
     }
 
@@ -298,7 +310,7 @@ $transition-base: all 0.3s ease;
       padding: 10px 16px;
       background: rgba(248, 249, 253, 1);
       border-radius: 30px;
-      margin-bottom: 16px;
+      margin-bottom: 15px;
       width: 100%;
       font-size: 13.5px;
       color: #6F6F6F;
@@ -314,6 +326,8 @@ $transition-base: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 6px;
+      font-size: fluid(15, 17);
+      color: rgba(109, 115, 136, 1);
     }
 
     &__content {
@@ -326,8 +340,8 @@ $transition-base: all 0.3s ease;
       font-size: 20px;
       font-weight: 700;
       line-height: 1.35;
-      color: #1A1A1A;
-      margin-bottom: 12px;
+      color: rgba(20, 20, 20, 1);
+      margin-bottom: 15px;
 
       @media (max-width: 767px) {
         font-size: 18px;
@@ -337,8 +351,8 @@ $transition-base: all 0.3s ease;
     &__text {
       font-size: 14.5px;
       line-height: 1.5;
-      color: #555555;
-      margin-bottom: 20px;
+      color: rgba(20, 20, 20, 1);
+      margin-bottom: 15px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -349,9 +363,9 @@ $transition-base: all 0.3s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 14.5px;
+      font-size: fluid(15, 17);
       font-weight: 500;
-      color: #3AC2CF;
+      color: $color-accent;
       text-decoration: none;
       margin-top: auto;
       transition: color 0.3s ease;
@@ -640,6 +654,57 @@ $transition-base: all 0.3s ease;
   }
 }
 
-.s-media{
-  
+.s-media {
+  background: rgba(248, 249, 253, 1);
+  padding: fluid(50, 100) 0;
+
+  & .heading {
+    margin-bottom: fluid(20, 40);
+  }
+
+  & .description {
+    margin-bottom: fluid(25, 32);
+  }
+
+  & .media {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    &__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &__btn.btn-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 86px;
+      height: 86px;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 2;
+
+      &.hide {
+        display: none;
+      }
+
+      img {
+        width: 35px;
+        height: 35px;
+        margin-left: 2px;
+      }
+    }
+  }
+
 }

@@ -15,7 +15,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-
+  text-transform: uppercase;
 
   &--primary {
     color: $color-white;
@@ -78,8 +78,8 @@
     position: relative;
     background-color: transparent;
     color: #6D7388;
-    width: fluid(25,30);
-    height:fluid(25,30);
+    width: fluid(25, 30);
+    height: fluid(25, 30);
     transition: all ease-out .4s;
     cursor: pointer;
     padding: 0;
