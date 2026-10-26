@@ -29,9 +29,9 @@
                         <img src="assets/img/logo-dark.svg" alt="" class="h__logo__img h-logo__img--dark"> 
                     </a>
                 </div>
-                <div class="h-inner">
-                    <div class="h__top">
-                        <div class="h__top-info d-none d-lg-flex">
+                <div class="h-inner ">
+                    <div class="h__top d-none d-lg-block">
+                        <div class="h__top-info d-flex">
                             <span class="h__address">
                            <span class="h__address--text">м. Львів, вул. Лемківська 9а</span> <a href="#" class="h__address--link-map">На карті</a>
                             </span>
@@ -111,7 +111,6 @@
                                                     <use href="assets/img/symbol.svg#telegram"></use>
                                                 </svg>
                                             </div>
-                                            <span class="socials__text">Telegram</span>
                                         </a>
                                     </li>
                                     <li class="socials__item">
@@ -122,18 +121,18 @@
                                                     <use href="assets/img/symbol.svg#viber"></use>
                                                 </svg>
                                             </div>
-                                            <span class="socials__text">Viber</span>
+                                           
                                         </a>
                                     </li>
 
                                     <li class="socials__item">
                                         <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
                                             <div class="socials__icon-wrap">
-                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                                    <use href="assets/img/symbol.svg#whatsapp"></use>
+                                                <svg class="socials__icon" aria-hidden="true" width="24" height="24">
+                                                    <use href="assets/img/symbol.svg#phone"></use>
                                                 </svg>
                                             </div>
-                                            <span class="socials__text">WhatsApp</span>
+                                            
                                         </a>
                                     </li>
 
@@ -183,7 +182,11 @@
 
                                 </ul>
                             </div>
-                            <a href="tel:08001235335" class="header__phone-icon" aria-label="Зателефонувати">📞</a>
+                            <a href="tel:08001235335" class="header__phone-icon" aria-label="Зателефонувати">
+                                <svg class="socials__icon" aria-hidden="true" width="35" height="35">
+                                    <use href="assets/img/symbol.svg#phone"></use>
+                                </svg>
+                            </a>
                             <a href="#" class="btn btn--primary d-none d-md-inline-block">ЗАМОВИТИ ДЗВІНОК</a>
                             <button class="burger-btn" id="menu-toggle" aria-label="Відкрити меню">
                                 <span></span>
@@ -198,7 +201,7 @@
         </div>
     </div>
   
-     <div class="menu-overlay" id="menu-overlay"></div>
+     <div class="h-overlay" id="menu-overlay"></div>
 </header>
     <main class="main">
         <section class="s-hero s-hero--main">
@@ -1807,9 +1810,7 @@
                                     <li class="socials__item">
                                         <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener" aria-label="TikTok">
                                             <div class="socials__icon-wrap">
-                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                                    <use href="assets/img/symbol.svg#tiktok"></use>
-                                                </svg>
+                                               <img src="assets/img/tiktok.svg" alt="tiktok" class="socials__icon">
                                             </div>
                                         </a>
                                     </li>
@@ -1907,13 +1908,8 @@
                                 <li class="menu-item"><a href="about.html">Про нас</a></li>
                                 <li class="menu-item menu-item--google">
                                     <a href="#" target="_blank" rel="noopener">
-                                        <span class="google-logo">
-                                            <span style="color:#4285F4">G</span><span
-                                                style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span
-                                                style="color:#4285F4">g</span><span style="color:#34A853">l</span><span
-                                                style="color:#EA4335">e</span>
-                                        </span>
-                                        відгуки
+                                       <img src="assets/img/google.svg" alt="logo google">
+                                        <span>Google відгуки</span>
                                     </a>
                                 </li>
                                 <li class="menu-item"><a href="#">Політика конфіденційності</a></li>
@@ -1960,77 +1956,77 @@
                             </div>
                         </div>
 
-                        <!-- Соціальні мережі -->
-                        <ul class="socials__list" role="list">
-                            <li class="socials__item">
-                                <a href="#" class="socials__link socials__link--youtube" target="_blank" rel="noopener"
-                                    aria-label="YouTube">
-                                    <div class="socials__icon-wrap">
-                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                            <use href="assets/img/symbol.svg#youtube"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
+                        <div class="socials">
+                            <ul class="socials__list" role="list">
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--instagram" target="_blank" rel="noopener" aria-label="Instagram">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="15" height="15">
+                                                <use href="assets/img/symbol.svg#instagram"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener" aria-label="Facebook">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#facebook"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener" aria-label="TikTok">
+                                        <div class="socials__icon-wrap">
+                                            <img src="assets/img/tiktok.svg" alt="tiktok" class="socials__icon">
+                                        </div>
+                                    </a>
+                                </li>
 
-                            <li class="socials__item">
-                                <a href="#" class="socials__link socials__link--threads" target="_blank" rel="noopener"
-                                    aria-label="Threads">
-                                    <div class="socials__icon-wrap">
-                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                            <use href="assets/img/symbol.svg#threads"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#telegram"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
 
-                            <li class="socials__item">
-                                <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener"
-                                    aria-label="Facebook">
-                                    <div class="socials__icon-wrap">
-                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                            <use href="assets/img/symbol.svg#facebook"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="Whatsapp">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#whatsapp"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
 
-                            <li class="socials__item">
-                                <a href="#" class="socials__link socials__link--instagram" target="_blank"
-                                    rel="noopener" aria-label="Instagram">
-                                    <div class="socials__icon-wrap">
-                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                            <use href="assets/img/symbol.svg#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="socials__item">
-                                <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener"
-                                    aria-label="TikTok">
-                                    <div class="socials__icon-wrap">
-                                        <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                            <use href="assets/img/symbol.svg#tiktok"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                                <li class="socials__item">
+                                    <a href="#" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#viber"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <!-- Футер bottom -->
         <div class="footer__bottom">
             <div class="container">
-                <div class="row m-row justify-between">
+                <div class="row m-row">
                     <div class="col-xl-8 col-lg-8 col-md-16 column">
                         <div class="copyright">© 2026 Good idea Cleaning Усі права захищені</div>
                     </div>
-                    <div class="col-xl-8 col-lg-8 col-md-16 column text-right">
+                    <div class="col-xl-8 col-lg-8 col-md-16 column">
                         <div class="develop">
                             Design and development —
                             <a href="https://webtune.com.ua/" target="_blank" rel="nofollow"
@@ -2120,36 +2116,54 @@
     <script src="assets/js/jquery.sumoselect.min.js"></script>
 
     <script src="src/scripts/app-swiper.js"></script>
-    <script src="src/scripts/js_app.js"></script>
+    <!--<script src="src/scripts/js_app.js"></script>-->
 
     <script src="assets/js/app-comparison.js"></script>
     <script src="src/scripts/app_map.js"></script>
     <script>
-        jQuery(document).ready(function ($) {
-            // Клік по пункту меню з випадайкою
-            $('.menu-item-has-children > a').on('click', function (e) {
-                e.preventDefault();
+      jQuery(document).ready(function ($) {
 
-                const $parentItem = $(this).parent('.menu-item-has-children');
-                const $subMenu = $parentItem.children('.sub-menu');
+    // Вказуємо точний селектор і відв'язуємо попередні події (через .off), щоб уникнути подвійного спрацьовування
+    $('.footer').on('click', '.menu-item-has-children > a', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-                // Закриваємо інші відкриті списки (плавно)
-                $('.menu-item-has-children').not($parentItem).removeClass('is-open')
-                    .children('.sub-menu').slideUp(300);
+        var $parentItem = $(this).closest('.menu-item-has-children');
+        var $subMenu = $parentItem.children('.sub-menu');
 
-                // Перемикаємо поточний список з плавним ефектом
-                $parentItem.toggleClass('is-open');
-                $subMenu.slideToggle(300);
-            });
+        // Якщо цей пункт вже відкритий — просто закриваємо його
+        if ($parentItem.hasClass('is-open')) {
+            $parentItem.removeClass('is-open');
+            $subMenu.stop(true, true).slideUp(300);
+        } else {
+            // Закриваємо всі інші відкриті списки в футері
+            $('.footer .menu-item-has-children')
+                .not($parentItem)
+                .removeClass('is-open')
+                .children('.sub-menu')
+                .stop(true, true)
+                .slideUp(300);
 
-            // Закриття при кліку поза межами меню
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.menu-item-has-children').length) {
-                    $('.menu-item-has-children').removeClass('is-open')
-                        .children('.sub-menu').slideUp(300);
-                }
-            });
-        });
+            // Відкриваємо поточний
+            $parentItem.addClass('is-open');
+            $subMenu.stop(true, true).slideDown(300);
+        }
+
+        return false; // Повністю блокує будь-який стрибок сторінки вгору
+    });
+
+    // Закриття при кліку поза межами меню
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.footer .menu-item-has-children').length) {
+            $('.footer .menu-item-has-children')
+                .removeClass('is-open')
+                .children('.sub-menu')
+                .stop(true, true)
+                .slideUp(300);
+        }
+    });
+
+});
     </script>
 </body>
 

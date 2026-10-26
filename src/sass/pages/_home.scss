@@ -676,104 +676,6 @@ $transition-base: all 0.3s ease;
     }
   }
 
-
-  &--main {
-    min-height: 100vh;
-    min-height: 100svh; // Враховує панелі мобільних браузерів
-
-    @media (max-width: 991px) {
-      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
-      padding: 60px 0 32px;
-    }
-
-    & .hero {
-      &__content {}
-
-      &__title {}
-
-      &__description {
-        margin-bottom: fluid(25, 35);
-      }
-    }
-  }
-
-  &--article {
-    margin-bottom: 50px;
-
-    & .hero {
-      &__content {}
-
-      &__title {
-        font-size: fluid(30, 60);
-        font-weight: 800;
-        line-height: 1.15;
-        color: #FFFFFF;
-        margin-bottom: 29px;
-      }
-
-      &__description {
-        font-size: 16px;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 32px;
-        max-width: 600px;
-
-        @media (max-width: 576px) {
-          font-size: 14px;
-        }
-      }
-
-      &__actions {
-        margin-bottom: 85px;
-      }
-
-      &__bg {
-        position: absolute;
-        inset: 0;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-
-        &--desktop {
-          display: block;
-
-          @media (max-width: 767px) {
-            display: none;
-          }
-        }
-
-        &--mobile {
-          display: none;
-
-          @media (max-width: 767px) {
-            display: block;
-          }
-        }
-
-        &-wrap {
-          position: absolute;
-          inset: 0;
-          z-index: 1;
-          pointer-events: none;
-
-          &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(14, 24, 56, 0.85) 0%, rgba(14, 24, 56, 0.4) 60%, rgba(14, 24, 56, 0.25) 100%);
-          }
-        }
-      }
-    }
-
-  }
-
-  &:not(&--main) {
-    min-height: auto;
-    padding: 60px 0;
-  }
-
-
   .features {
     background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
     backdrop-filter: blur(10px);
@@ -883,5 +785,117 @@ $transition-base: all 0.3s ease;
     }
 
   }
+
+  &--main {
+    min-height: 100vh;
+    min-height: 100svh; // Враховує панелі мобільних браузерів
+
+    @media (max-width: 991px) {
+      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
+      padding: 60px 0 32px;
+    }
+
+    & .hero {
+      &__content {}
+
+      &__title {}
+
+      &__description {
+        margin-bottom: fluid(25, 35);
+      }
+    }
+  }
+
+  &--article {
+    margin-bottom: 50px;
+
+    & .hero {
+      &__content {}
+
+      &__title {
+        font-size: fluid(30, 60);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #FFFFFF;
+        margin-bottom: 29px;
+      }
+
+      &__description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 32px;
+        max-width: 600px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+
+      &__actions {
+        margin-bottom: 85px;
+      }
+
+      &__bg {
+        position: absolute;
+        inset: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &--desktop {
+          display: block;
+
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        &--mobile {
+          display: none;
+
+          @media (max-width: 767px) {
+            display: block;
+          }
+        }
+
+        &-wrap {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(14, 24, 56, 0.85) 0%, rgba(14, 24, 56, 0.4) 60%, rgba(14, 24, 56, 0.25) 100%);
+          }
+        }
+      }
+    }
+
+  }
+
+  &--service {
+    & .hero {
+      &__description {
+        margin-bottom: 29px;
+      }
+    }
+
+
+    & .meta__grid {
+      margin-top: fluid(50, 100);
+    }
+  }
+
+  &:not(&--main) {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+
+
 
 }

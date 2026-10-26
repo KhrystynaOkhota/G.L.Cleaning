@@ -103,15 +103,16 @@
   &__item {
     padding: 10px 24px;
     border-radius: 30px;
-    font-size: 14px;
-    color: #00B9CE;
+    font-size: fluid(15, 17);
+    color: $color-accent;
     cursor: pointer;
     user-select: none;
+    font-weight: bold;
 
     &.is--active {
       background-color: #00B9CE;
       color: #FFFFFF;
-      font-weight: 600;
+
     }
   }
 

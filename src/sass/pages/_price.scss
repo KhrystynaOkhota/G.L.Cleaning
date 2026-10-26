@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 .s-price {
+    padding-top: fluid(30,50);
     &:not(&--article) {
         & .heading {
             margin-bottom: fluid(29, 34);
@@ -72,8 +73,155 @@
 
     &__value {
         white-space: nowrap;
+
         @media (min-width: $breakpoint-md) {
             text-align: right;
+        }
+    }
+}
+
+.s-packages {
+    padding: fluid(50, 70) 0 fluid(50, 140) 0;
+
+    & .heading {
+        font-size: fluid(25, 40);
+        margin-bottom: fluid(37, 66);
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        align-items: center;
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            max-width: 420px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+    }
+}
+
+.packages-card {
+    background: rgba(248, 249, 253, 1);
+    border-radius: 30px;
+    padding: 36px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+
+    &__title {
+        font-size: 25px;
+        font-weight: 700;
+        color: rgba(20, 20, 20, 1);
+        margin-bottom: 20px;
+    }
+
+    &__desc {
+        font-size: fluid(15, 17);
+        line-height: 1.5;
+        color: rgba(20, 20, 20, 1);
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        font-size: 18px;
+        font-weight: 700;
+        color: #00B9CE;
+        margin-bottom: 26px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(20, 20, 20, .1);
+        width: 100%;
+
+        &-val {
+            font-size: 20px;
+        }
+
+        &-unit {
+            font-weight: 400;
+            font-size: 15px;
+        }
+    }
+
+    &__features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 33px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        li {
+            font-size: fluid(15, 17);
+            line-height: 1.4;
+            color: rgba(20, 20, 20, 1);
+        }
+    }
+
+    &__btn {
+        margin-top: auto;
+        background: transparent;
+        border: 1.5px solid #00B9CE;
+        color: #00B9CE;
+        padding: 12px 36px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 200px;
+
+        &:hover {
+            background-color: #00B9CE;
+            color: #FFFFFF;
+        }
+    }
+
+    /* Активна картка */
+    &--featured {
+        background: $color-accent;
+        color: $color-white;
+        padding: 30px 20px;
+        box-shadow: 0px 0px 30px 0px rgba(20, 120, 134, 0.4);
+
+
+        @media (min-width: $breakpoint-md) {
+            transform: scale(1.15);
+        }
+
+        .packages-card__title {
+            color: #FFFFFF;
+        }
+
+        .packages-card__desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .packages-card__price {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .packages-card__features li {
+            color: #FFFFFF;
+        }
+
+        .packages-card__btn {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+
+            &:hover {
+                background: #FFFFFF;
+                color: #00B9CE;
+            }
         }
     }
 }
