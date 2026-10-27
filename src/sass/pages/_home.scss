@@ -65,17 +65,19 @@
 
     &__number {
       font-size: fluid(40, 60);
-      font-weight: 700;
+
       color: $color-primary;
       line-height: 1;
       margin-bottom: 28px;
       color: $color-accent;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
 
     &__title {
       font-size: fluid(17, 22);
       margin-bottom: 18px;
-      font-weight: 700;
+
     }
 
     &__text {
@@ -268,6 +270,12 @@
           color: #ffffff;
         }
       }
+    }
+  }
+
+  & .btn--outline {
+    @media (max-width: $breakpoint-md) {
+      margin: 0 auto;
     }
   }
 }
@@ -681,13 +689,13 @@ $transition-base: all 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 90px;
-    padding: 13px 44px;
+    padding: fluid(9, 13) fluid(9, 44);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 500;
+    color: $color-white;
+    font-size: fluid(15, 18);
+    font-weight: 700;
     transition: background 0.3s ease, border-color 0.3s ease;
 
     &:hover {
@@ -757,7 +765,7 @@ $transition-base: all 0.3s ease;
     }
 
 
-    @media (max-width: 767px) {
+    @media (max-width: $breakpoint-md) {
       border-radius: 50px;
       flex-direction: row;
       gap: 18px;
@@ -771,7 +779,7 @@ $transition-base: all 0.3s ease;
       color: $color-white;
       font-weight: 400;
 
-      @media (max-width: 767px) {
+      @media (max-width: $breakpoint-md) {
         min-width: 70px;
       }
     }
@@ -788,11 +796,11 @@ $transition-base: all 0.3s ease;
 
   &--main {
     min-height: 100vh;
-    min-height: 100svh; // Враховує панелі мобільних браузерів
+    min-height: 100svh;
 
-    @media (max-width: 991px) {
-      min-height: auto; // На мобільних відпускаємо висоту по контенту, щоб нічого не обрізалося
-      padding: 60px 0 32px;
+    @media (max-width: $breakpoint-lg) {
+      min-height: auto;
+      padding: 124px 0 30px;
     }
 
     & .hero {
@@ -808,6 +816,10 @@ $transition-base: all 0.3s ease;
 
   &--article {
     margin-bottom: 50px;
+
+    @media (max-width: $breakpoint-lg) {
+      padding: 124px 0 32px 0;
+    }
 
     & .hero {
       &__content {}
@@ -835,6 +847,30 @@ $transition-base: all 0.3s ease;
       &__actions {
         margin-bottom: 85px;
       }
+
+      &__meta {
+        gap: 20px;
+      }
+
+      &__date,
+      &__category {
+        background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 11px 20px 12px 20px;
+        border-radius: 900px;
+        min-width: 223px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        & span {
+          font-size: fluid(15, 18);
+          font-weight: 700;
+        }
+      }
+
+      &__category {}
 
       &__bg {
         position: absolute;
@@ -890,12 +926,8 @@ $transition-base: all 0.3s ease;
     }
   }
 
-  &:not(&--main) {
+  &:not(&--main, &--article) {
     min-height: auto;
     padding: 60px 0;
   }
-
-
-
-
 }

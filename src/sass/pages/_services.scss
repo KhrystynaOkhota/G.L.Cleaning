@@ -45,14 +45,12 @@
     &__content {
         position: absolute;
         z-index: 2;
-        padding: 16px 20px;
+        padding: 18px 19px;
         margin: 0;
+        background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+        backdrop-filter: blur(10px);
 
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-
-        border-radius: 12px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         left: 20px;
@@ -62,14 +60,10 @@
 
     &__title {
         color: $color-white;
-        margin: 0 0 4px 0;
-        padding-right: 35px;
-        font-size: 16px;
+        margin: 0 0 12px 0;
+        padding-right: 50px;
+        font-size: fluid(20, 22);
         line-height: 1.35;
-
-        @media (min-width: 992px) {
-            font-size: 18px;
-        }
 
         a {
             color: inherit;
@@ -86,47 +80,30 @@
 
     &__price {
         margin: 0;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: fluid(17, 20);
         color: $color-white;
-        opacity: 0.9;
-
-        @media (min-width: 992px) {
-            font-size: 15px;
-        }
     }
 
-    &__arrow {
+    &__btn {
         position: absolute;
-        right: 16px;
-        bottom: 16px;
+        right: 20px;
+        top: 23px;
         z-index: 3;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 38px;
-        height: 38px;
+        width: 44px;
+        height: 44px;
 
-        border: 1.5px solid rgba(255, 255, 255, 0.6);
+        border: 1px solid $color-white;
         border-radius: 50%;
         background: transparent;
-        // transition: $transition-base;
-
-        @media (min-width: 992px) {
-            right: 20px;
-            bottom: 20px;
-            width: 44px;
-            height: 44px;
-        }
+        transition: $transition-base;
 
         &:hover {
             background-color: $color-white;
             border-color: $color-white;
-
-            svg path {
-                stroke: $color-primary;
-            }
         }
     }
 
@@ -282,6 +259,14 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 20px;
+
+            @media (max-width: $breakpoint-lg) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }

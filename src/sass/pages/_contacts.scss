@@ -16,6 +16,7 @@
 
   & .heading {
     margin-bottom: 14px;
+    color: $color-white;
   }
 
   & .description {
@@ -84,29 +85,133 @@
     margin-bottom: fluid(21, 37);
   }
 
-  .cta__block {
+  & .description {
+    margin-bottom: 44px;
+    font-size: fluid(17, 22);
+
+    @media (max-width: $breakpoint-md) {
+      font-weight: bold;
+    }
+  }
+
+  & .btn {
+    width: 100%;
+    max-width: 304px;
+  }
+
+
+  .online-request {
     background: rgba(248, 249, 253, 1);
     padding: 30px;
     border-radius: 20px 20px 0 20px;
 
-    @media (max-width: 1300px) {
-      margin-bottom: 50px;
+    @media (max-width: $breakpoint-md) {
+      padding: 30px 15px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      margin-bottom: 25px;
+    }
+
+    &__note {
+      font-size: fluid(14, 17);
+      color: rgba(109, 115, 136, 1);
+    }
+
+    &__btn {
+      margin-bottom: 21px;
+    }
+
+    .field__label {
+      color: rgba(20, 20, 20, 1);
+    }
+
+  }
+
+  .contacts-card {
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2) 100%);
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    @media (min-width: $breakpoint-md) {
+      padding-top: 30px;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__description {
+      margin-bottom: 25px;
+    }
+
+    & .contacts {
+      padding: 9px 0;
+      border: 1px solid rgba(221, 221, 221, 1);
+      border-radius: 10px;
+      margin-left: 25px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+        background: $color-accent;
+        border: 5px solid $color-white;
+        transform: translateX(-25px);
+        margin-right: -25px;
+        border-radius: 10px;
+      }
+
+      &__link,
+      &__text {}
     }
   }
 
 
-  & .contacts__icon {
-    color: $color-white;
-    width: 22px;
-    height: 22px;
 
-    &--email {
-      &+.contacts__link {
-        color: $color-accent;
+  & .contacts {
+    &__icon {
+      color: $color-white;
+      width: 22px;
+      height: 22px;
+
+      &--email {
+        &+.contacts__link {
+          color: $color-accent;
+        }
+      }
+    }
+
+    &__text,
+    &__link {
+      font-size: fluid(15, 17);
+      color: rgba(20, 20, 20, 1);
+    }
+
+    &__link {
+      &--bold {
+        font-size: 25px;
+      }
+
+      & .contacts__note {
+        font-size: fluid(15, 17);
+        font-weight: 400;
       }
     }
   }
-
 
   & .map {
     width: 100%;
@@ -121,44 +226,35 @@
     }
   }
 
-  & .socials {
-    margin: 20px 0;
-  }
-
-
-  & .contact-form {
-    padding: fluid(24, 43) fluid(10, 30) fluid(32, 51) fluid(10, 30);
-    border-radius: 30px;
-    background: rgba(242, 242, 242, 1);
-
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 30px;
-    }
-
-    &__heading {
-      margin-bottom: 21px;
-      font-size: fluid(25, 35);
-
-      @media (max-width: $breakpoint-md) {
-        text-align: center;
-      }
-    }
-  }
 
   &--full {
-    @media (min-width: $breakpoint-md) {
-      padding: 20px 0 0 0;
+    padding-top: fluid(22, 50);
+
+    .online-request,
+    .contacts-card {
+      &__title {
+        font-size: fluid(25, 40);
+        margin-bottom: 20px;
+      }
+
     }
 
     .map {
+      margin-top: fluid(50, 100);
+
       @media (min-width: $breakpoint-md) {
         min-height: 700px;
       }
     }
+
+    & .socials {
+      margin: fluid(30, 50) 0 50px 25px;
+    }
+
   }
 
   &--footer {
-    padding: 38px 0 ;
+    padding: 38px 0;
     position: relative;
 
     @media (min-width: $breakpoint-md) {
@@ -169,6 +265,20 @@
       padding-bottom: 0;
     }
 
+    .contacts-card {
+      padding: 20px 20px 30px 20px;
+      border-radius: 20px;
+
+      &__title {
+        font-size: fluid(35, 60);
+        margin-bottom: fluid(14, 32);
+      }
+    }
+
+    & .socials {
+      margin: 20px 0 30px 0;
+    }
+
     .map {
       &__wrap {
 
@@ -177,60 +287,16 @@
         left: 0;
 
         @media (min-width: 1300px) {
-          
+
           z-index: -1;
-         
+
         }
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-lg) {
           position: relative;
 
         }
       }
     }
-  }
-}
-
-.contacts-card {
-  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2) 100%);
-  backdrop-filter: blur(10px);
-  padding: 20px 20px 30px 20px;
-  border-radius: 20px;
-
-  & .heading {
-    margin-bottom: 32px;
-  }
-
-  & .description {
-    margin-bottom: 25px;
-  }
-
-  & .contacts {
-    padding: 9px 0;
-    border: 1px solid rgba(221, 221, 221, 1);
-    border-radius: 10px;
-    margin-left: 25px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-
-    &__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    &__icon {
-      width: 50px;
-      height: 50px;
-      background: $color-accent;
-      border: 5px solid $color-white;
-      transform: translateX(-25px);
-      margin-right: -25px;
-      border-radius: 10px;
-    }
-
-    &__link,
-    &__text {}
   }
 }

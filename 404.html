@@ -16,58 +16,75 @@
     <link rel="stylesheet" href="assets/css/sumoselect.min.css" />
     <link rel="stylesheet" href="assets/css/app.min.css" />
 
+
 </head>
 
 <body class=""> <!-- class="home" тільки для головної і сторінки подяяки сторінки -->
-  <header class="header">
-    <div class="h-menu-overlay"></div>
+    <header class="header">
+
         <div class="h-wrap">
             <div class="container h-container">
-                <div class="h-controls">
-                    <a href="" class="h-logo" aria-label=""> 
+                <div class="h-controls d-flex align-justify align-middle">
+                    <a href="" class="h-logo" aria-label="">
                         <img src="assets/img/logo-white.svg" alt="" class="h-logo__img h-logo__img--light d-none">
-                        <img src="assets/img/logo-dark.svg" alt="" class="h__logo__img h-logo__img--dark"> 
+                        <img src="assets/img/logo-dark.svg" alt="" class="h__logo__img h-logo__img--dark">
                     </a>
+                    <div class="d-flex align-justify align-middle">
+                        <a href="tel:08001235335" class="phone" aria-label="Зателефонувати">
+                            <svg class="phone__icon" aria-hidden="true" width="21" height="21">
+                                <use href="assets/img/symbol.svg#phone"></use>
+                            </svg>
+                        </a>
+
+                        <button class="burger js-open-menu" aria-label="Відкрити меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
                 </div>
                 <div class="h-inner ">
-                    <div class="h__top d-none d-lg-block">
-                        <div class="h__top-info d-flex">
-                            <span class="h__address">
-                           <span class="h__address--text">м. Львів, вул. Лемківська 9а</span> <a href="#" class="h__address--link-map">На карті</a>
+                    <div class="h-top d-none d-lg-block">
+                        <div class="h-info">
+                            <span class="h-info__address">
+                                <span class="h-info__address-text">м. Львів, вул. Лемківська 9а</span>
+                                <a href="#" class="h-info__address-link">На карті</a>
                             </span>
-                            <span class="h__schedule d-none d-lg-block">Графік прийому: Пн - Нд з 9:00 до 19:00</span>
-                            <span class="h__worktime d-none d-xl-block">Графік виконання: 24/24</span>
-                            <a href="tel:08001235335" class="h__phone">0-800-123-53-35</a>
+                            <span class="h-info__schedule d-none d-lg-block">Графік прийому: Пн - Нд з 9:00 до
+                                19:00</span>
+                            <span class="h-info__worktime d-none d-xl-block">Графік виконання: 24/24</span>
+                            <a href="tel:08001235335" class="h-info__phone">0-800-123-53-35</a>
                         </div>
                     </div>
 
-                    <div class="header__bottom d-flex align-justify align-middle">
-   
-                        <nav class="header__nav nav" id="mobile-menu">
-                            <div class="mobile-menu__top">
-                             <a href="" class="h-logo" aria-label=""> 
-                                <img src="assets/img/logo-dark.svg" alt="" class="h__logo__img h-logo__img--dark"> 
-                            </a>
-                            <button class="mobile-menu__close" id="menu-close" aria-label="Закрити меню">&times;</button>
+                    <div class="h-bottom d-flex align-justify align-middle">
+
+                        <div class="h-nav nav" id="mobile-menu">
+                            <div class="h-nav__top d-flex align-middle align-justify">
+                                <a href="" class="h-logo__wrap" aria-label="">
+                                    <img src="assets/img/logo-dark.svg" alt="" class="h-logo">
+                                </a>
+                                <button class="h-close js-close-menu" aria-label="Закрити меню">&times;</button>
                             </div>
 
                             <ul class="menu">
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">Для дому <span class="arrow">▼</span></a>
                                     <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
-                                    <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
-                                    <li class="menu-item"><a href="#">Мийка вікон</a></li>
-                                    <li class="menu-item"><a href="#">Хімчистка меблів</a></li>
+                                        <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
+                                        <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
+                                        <li class="menu-item"><a href="#">Мийка вікон</a></li>
+                                        <li class="menu-item"><a href="#">Хімчистка меблів</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#" class="nav__link">Для бізнесу <span class="arrow">▼</span></a>
                                     <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Прибирання офісів</a></li>
-                                    <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
-                                    <li class="menu-item"><a href="#">Прибирання після подій</a></li>
+                                        <li class="menu-item"><a href="#">Прибирання офісів</a></li>
+                                        <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
+                                        <li class="menu-item"><a href="#">Прибирання після подій</a></li>
                                     </ul>
                                 </li>
 
@@ -88,68 +105,22 @@
                                 </li>
                             </ul>
 
-                            <!-- Блок контактів всередині мобільного меню -->
-                            <div class="mobile-menu__info">
-                            <div class="mobile-menu__address">
-                                м. Львів, вул. Лемківська 9а<br>
-                                <a href="#" class="header__link-map">На карті</a>
-                            </div>
-                            <div class="mobile-menu__schedule">
-                                Графік прийому: Пн - Нд з 9:00 до 19:00
-                            </div>
-                            <div class="mobile-menu__worktime">
-                                Графік виконання: 24/24
-                            </div>
-                            <a href="tel:08001235335" class="mobile-menu__phone">0-800-123-53-35</a>
-                
-                            <div class="socials socials--monochrome">
-                                <ul class="socials__list" role="list">
-                                     <li class="socials__item">
-                                        <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
-                                            <div class="socials__icon-wrap">
-                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                                    <use href="assets/img/symbol.svg#telegram"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="socials__item">
-                                        <a href="viber://chat?number=%2B380500136888" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
-
-                                            <div class="socials__icon-wrap">
-                                                <svg class="socials__icon" aria-hidden="true" width="36" height="36">
-                                                    <use href="assets/img/symbol.svg#viber"></use>
-                                                </svg>
-                                            </div>
-                                           
-                                        </a>
-                                    </li>
-
-                                    <li class="socials__item">
-                                        <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                            <div class="socials__icon-wrap">
-                                                <svg class="socials__icon" aria-hidden="true" width="24" height="24">
-                                                    <use href="assets/img/symbol.svg#phone"></use>
-                                                </svg>
-                                            </div>
-                                            
-                                        </a>
-                                    </li>
-
-                                   
-                                </ul>
-                                
+                            <div class="h-info d-flex d-lg-none">
+                                <span class="h-info__address">
+                                    <span class="h-info__address-text">м. Львів, вул. Лемківська 9а</span>
+                                    <a href="#" class="h-info__address-link">На карті</a>
+                                </span>
+                                <span class="h-info__schedule">Графік прийому: Пн - Нд з 9:00 до 19:00</span>
+                                <span class="h-info__worktime">Графік виконання: 24/24</span>
+                                <a href="tel:08001235335" class="h-info__phone">0-800-123-53-35</a>
                             </div>
 
-                            <a href="#" class="btn btn--primary open-popup" data-rel="cta">ЗАМОВИТИ ДЗВІНОК</a>
-                            </div>
-                        </nav>
-
-                        <div class="header__actions">
-                            <div class="socials socials--monochrome d-none d-xl-flex">
+                            <div class="socials socials--monochrome d-flex d-xl-none">
                                 <ul class="socials__list" role="list">
                                     <li class="socials__item">
-                                        <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                        <a href="https://t.me/+380500136888"
+                                            class="socials__link socials__link--telegram" target="_blank" rel="noopener"
+                                            aria-label="Telegram">
                                             <div class="socials__icon-wrap">
                                                 <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                     <use href="assets/img/symbol.svg#telegram"></use>
@@ -159,7 +130,9 @@
                                         </a>
                                     </li>
                                     <li class="socials__item">
-                                        <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                        <a href="https://wa.me/380500136888"
+                                            class="socials__link socials__link--whatsapp" target="_blank" rel="noopener"
+                                            aria-label="WhatsApp">
                                             <div class="socials__icon-wrap">
                                                 <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                     <use href="assets/img/symbol.svg#whatsapp"></use>
@@ -169,7 +142,9 @@
                                         </a>
                                     </li>
                                     <li class="socials__item">
-                                        <a href="viber://chat?number=%2B380500136888" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+                                        <a href="viber://chat?number=%2B380500136888"
+                                            class="socials__link socials__link--viber" target="_blank" rel="noopener"
+                                            aria-label="Viber">
 
                                             <div class="socials__icon-wrap">
                                                 <svg class="socials__icon" aria-hidden="true" width="36" height="36">
@@ -182,27 +157,59 @@
 
                                 </ul>
                             </div>
-                            <a href="tel:08001235335" class="header__phone-icon" aria-label="Зателефонувати">
-                                <svg class="socials__icon" aria-hidden="true" width="35" height="35">
-                                    <use href="assets/img/symbol.svg#phone"></use>
-                                </svg>
-                            </a>
-                            <a href="#" class="btn btn--primary d-none d-md-inline-block">ЗАМОВИТИ ДЗВІНОК</a>
-                            <button class="burger-btn" id="menu-toggle" aria-label="Відкрити меню">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
+                            <a href="#" class="btn btn--primary d-block d-lg-none open-popup" data-rel="cta">ЗАМОВИТИ
+                                ДЗВІНОК</a>
                         </div>
+                        <div class="socials socials--monochrome d-none d-xl-flex">
+                            <ul class="socials__list" role="list">
+                                <li class="socials__item">
+                                    <a href="https://t.me/+380500136888" class="socials__link socials__link--telegram"
+                                        target="_blank" rel="noopener" aria-label="Telegram">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#telegram"></use>
+                                            </svg>
+                                        </div>
+
+                                    </a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="https://wa.me/380500136888" class="socials__link socials__link--whatsapp"
+                                        target="_blank" rel="noopener" aria-label="WhatsApp">
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#whatsapp"></use>
+                                            </svg>
+                                        </div>
+
+                                    </a>
+                                </li>
+                                <li class="socials__item">
+                                    <a href="viber://chat?number=%2B380500136888"
+                                        class="socials__link socials__link--viber" target="_blank" rel="noopener"
+                                        aria-label="Viber">
+
+                                        <div class="socials__icon-wrap">
+                                            <svg class="socials__icon" aria-hidden="true" width="36" height="36">
+                                                <use href="assets/img/symbol.svg#viber"></use>
+                                            </svg>
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn--primary d-none d-lg-inline-block open-popup" data-rel="cta">ЗАМОВИТИ
+                            ДЗВІНОК</a>
 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  
-     <div class="h-overlay" id="menu-overlay"></div>
-</header>
+
+        <div class="h-overlay"></div>
+    </header>
     <main class="main">
         <section class="s-error">
             <div class="container overlap">
@@ -210,20 +217,21 @@
                     <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16 column">
                         <div class="content">
                             <h1 class="heading h1">
-                               Схожу, тут сталася маленька катастрофа
+                                Схожу, тут сталася маленька катастрофа
                             </h1>
-                           
+
                             <div class="description">
-                               Можливо, вона була тут раніше або була переміщена. Але не хвилюйтеся - ми допоможемо вам знайти потрібне
+                                Можливо, вона була тут раніше або була переміщена. Але не хвилюйтеся - ми допоможемо вам
+                                знайти потрібне
                             </div>
                             <div class="hero__actions">
                                 <a href="index.html" class="btn btn--outline">Повернутися на головну</a>
                             </div>
                         </div>
                     </div>
-                     <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16 column --relative">
+                    <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16 column --relative">
                         <div class="img__wrap">
-                            <img src="assets/img/banner-service.png" alt="" class="img">
+                            <img src="assets/img/banner-404.png" alt="" class="img">
                         </div>
                     </div>
                 </div>
@@ -231,13 +239,13 @@
         </section>
     </main>
 
-     <footer class="footer">
+    <footer class="footer">
         <div class="footer__inner">
             <div class="container">
                 <h2 class="visually-hidden">Інформація про компанію та навігація</h2>
                 <div class="row m-row align-center">
 
-                  
+
                     <div class="col-xl-3 col-lg-3 col-md-10 col-sm-16 col-xs-16 column">
                         <a href="/" class="footer__logo" aria-label="Good idea Cleaning — На головну">
                             <img src="assets/img/logo-white.svg" alt="Good idea Cleaning" width="180" height="60"
@@ -254,7 +262,7 @@
                                         <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" />
                                     </svg>
-                                   
+
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Підпункт 1</a></li>
                                     </ul>
@@ -281,7 +289,7 @@
                                 <li class="menu-item"><a href="about.html">Про нас</a></li>
                                 <li class="menu-item menu-item--google">
                                     <a href="#" target="_blank" rel="noopener">
-                                       <img src="assets/img/google.svg" alt="logo google">
+                                        <img src="assets/img/google.svg" alt="logo google">
                                         <span>Google відгуки</span>
                                     </a>
                                 </li>
@@ -332,7 +340,8 @@
                         <div class="socials">
                             <ul class="socials__list" role="list">
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--instagram" target="_blank" rel="noopener" aria-label="Instagram">
+                                    <a href="#" class="socials__link socials__link--instagram" target="_blank"
+                                        rel="noopener" aria-label="Instagram">
                                         <div class="socials__icon-wrap">
                                             <svg class="socials__icon" aria-hidden="true" width="15" height="15">
                                                 <use href="assets/img/symbol.svg#instagram"></use>
@@ -341,7 +350,8 @@
                                     </a>
                                 </li>
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener" aria-label="Facebook">
+                                    <a href="#" class="socials__link socials__link--facebook" target="_blank"
+                                        rel="noopener" aria-label="Facebook">
                                         <div class="socials__icon-wrap">
                                             <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                 <use href="assets/img/symbol.svg#facebook"></use>
@@ -350,7 +360,8 @@
                                     </a>
                                 </li>
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--tiktok" target="_blank" rel="noopener" aria-label="TikTok">
+                                    <a href="#" class="socials__link socials__link--tiktok" target="_blank"
+                                        rel="noopener" aria-label="TikTok">
                                         <div class="socials__icon-wrap">
                                             <img src="assets/img/tiktok.svg" alt="tiktok" class="socials__icon">
                                         </div>
@@ -358,7 +369,8 @@
                                 </li>
 
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--telegram" target="_blank" rel="noopener" aria-label="Telegram">
+                                    <a href="#" class="socials__link socials__link--telegram" target="_blank"
+                                        rel="noopener" aria-label="Telegram">
                                         <div class="socials__icon-wrap">
                                             <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                 <use href="assets/img/symbol.svg#telegram"></use>
@@ -368,7 +380,8 @@
                                 </li>
 
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--whatsapp" target="_blank" rel="noopener" aria-label="Whatsapp">
+                                    <a href="#" class="socials__link socials__link--whatsapp" target="_blank"
+                                        rel="noopener" aria-label="Whatsapp">
                                         <div class="socials__icon-wrap">
                                             <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                 <use href="assets/img/symbol.svg#whatsapp"></use>
@@ -378,7 +391,8 @@
                                 </li>
 
                                 <li class="socials__item">
-                                    <a href="#" class="socials__link socials__link--viber" target="_blank" rel="noopener" aria-label="Viber">
+                                    <a href="#" class="socials__link socials__link--viber" target="_blank"
+                                        rel="noopener" aria-label="Viber">
                                         <div class="socials__icon-wrap">
                                             <svg class="socials__icon" aria-hidden="true" width="36" height="36">
                                                 <use href="assets/img/symbol.svg#viber"></use>
@@ -415,48 +429,70 @@
 
         <div class="popup-content cta" data-rel="cta">
             <div class="layer-close"></div>
-            <div class="popup-container ">
-                <div class="popup-container__inner">
-                    <div class="btn--close d-flex align-middle align-center">
+            <div class="popup-container container">
 
+                <div class="popup-container__top d-flex align-justify align-middle">
+                    <a class="p-logo" href="/" aria-label=" logo">
+                        <img src="assets/img/p-logo.svg" alt="" class="p-logo__img">
+                    </a>
+                    <div class="btn--close"></div>
+                </div>
+
+
+                <div class="popup-form ">
+                    <h4 class="popup-form__heading text-bold">Замовити дзвінок</h4>
+                    <div class="popup-form__description">Залиште свої контакти — ми зателефонуємо вам найближчим часом.
                     </div>
+                    <form class="">
 
-                    <div class="popup-form text-center">
-                        <h4 class="popup-form__heading text-bold h3">Записатись на прийом</h4>
-                        <form class="">
-
-                            <div class="row m-row">
-                                <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
-                                    <div class="field">
-                                        <label class="field__label text-left" for="user-name">Як до вас
-                                            звертатися?</label>
-                                        <input class="field__input" type="text" id="p-user-name" name="name"
-                                            placeholder="Ваше ім’я">
-                                    </div>
-                                    <div class="form-field ">
-                                        <label class="field__label text-left" for="user-phone">Ваш номер
-                                            телефону</label>
-                                        <input class="field__input" type="tel" id="p-user-phone" name="phone"
-                                            value="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
-                                            aria-describedby="phone-error">
-
-                                    </div>
-
-                                    <div class="form-field ">
-                                        <button class="btn btn--primary" type="submit">
-                                            Записатися на прийом
-                                        </button>
-                                    </div>
+                        <div class="row m-row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field">
+                                    <label class="field__label text-left" for="user-name">Ваше ім’ я</label>
+                                    <input class="field__input" type="text" id="p-user-name" name="name"
+                                        placeholder="Ваше ім’я">
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field ">
+                                    <label class="field__label text-left" for="user-phone">Ваш номер
+                                        телефону</label>
+                                    <input class="field__input" type="tel" id="p-user-phone" name="phone"
+                                        placeholder="+38 (_ _ _) _ _ _  - _ _ - _ _" aria-invalid="true"
+                                        aria-describedby="phone-error">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-16 col-xs-16 column">
+                                <div class="field ">
+                                    <button class="btn btn--primary" type="submit">
+                                        Замовити прибирання
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row m-row">
+                            <div class="col-xl-16 col-lg-16 col-md-16 col-sm-16 col-xs-16 column">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="track_price" class="checkbox__input">
+                                    <span class="checkbox__custom"></span>
+                                    <span class="checkbox__text">
+                                        Я погоджуюся на обробку моїх персональних даних відповідно до Політики
+                                        конфіденційності.
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
             </div>
         </div>
 
     </div>
-
 
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9h5L2xSWEvRFgLc7y4d16KPUDydNgs9Y&loading=async&libraries=marker"

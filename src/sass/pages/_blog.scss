@@ -13,28 +13,29 @@ $transition-base: all 0.3s ease;
     margin-bottom: fluid(30, 45);
   }
 
-  & .btn--outline {
+  .btn--outline {
     min-width: 223px;
   }
 
   .news {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    @media (max-width: $breakpoint-lg) {
+      min-height: 350px;
+    }
 
     // Контейнер зображення
     &__img-wrap {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       z-index: 1;
 
       // Темне затемнення зображення для кращої читабельності
@@ -48,10 +49,10 @@ $transition-base: all 0.3s ease;
     }
 
     &__img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
       transition: transform 0.6s ease;
     }
 
@@ -59,22 +60,15 @@ $transition-base: all 0.3s ease;
     &__content {
       position: relative;
       z-index: 2;
-      margin: 20px;
-      padding: 24px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       gap: 20px;
-
-      @media (min-width: 992px) {
-        margin: 24px;
-        padding: 28px 32px;
-      }
+      margin: 0 10px 13px;
+      padding: 16px 19px;
+      border-radius: 10px;
+      background: linear-gradient(152.97deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+      backdrop-filter: blur(10px);
 
       @media (max-width: 576px) {
         margin: 12px;
@@ -88,11 +82,9 @@ $transition-base: all 0.3s ease;
     }
 
     &__title {
-      color: $color-white;
-      font-size: 18px;
-      line-height: 1.35;
-      margin-bottom: 8px;
       font-weight: 700;
+      line-height: 1.35;
+      color: $color-white;
 
       @media (min-width: 992px) {
         font-size: 20px;
@@ -102,17 +94,23 @@ $transition-base: all 0.3s ease;
         font-size: 16px;
         margin-bottom: 6px;
       }
+
+      &+.news__text {
+        @media (min-width: 992px) {
+          margin-top: 13.5px;
+        }
+      }
     }
 
     &__text {
-      color: rgba(255, 255, 255, 0.85);
+      display: -webkit-box;
+      overflow: hidden;
+      margin: 0;
       font-size: 13.5px;
       line-height: 1.5;
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; // Обмежує текст двома рядками
+      color: rgba(255, 255, 255, 0.85);
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      overflow: hidden;
 
       @media (min-width: 992px) {
         font-size: 14.5px;
@@ -121,16 +119,16 @@ $transition-base: all 0.3s ease;
 
     // Кругла кнопка зі стрілкою
     &__btn {
-      flex-shrink: 0;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.7);
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       justify-content: center;
-      transition: $transition-base;
+      width: 46px;
+      height: 46px;
+      border: 1.5px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
+      transition: $transition-base;
 
       @media (max-width: 576px) {
         width: 38px;
@@ -149,31 +147,91 @@ $transition-base: all 0.3s ease;
     // Ховер-ефекти для всієї картки
     &:hover {
       .news__img {
-        transform: scale(1.04); // Легкий зум картинки
+        transform: scale(1.04);
       }
 
       .news__btn {
-        background: $color-white;
         border-color: $color-white;
+        background: $color-white;
         transform: scale(1.05);
 
         svg {
-          transform: translate(2px, -2px); // Стрілка зміщується по діагоналі
+          transform: translate(2px, -2px);
 
           path {
-            stroke: #1A1A1A; // Колір стрілки стає темним при ховері
+            stroke: #1a1a1a;
           }
         }
       }
     }
   }
 
-  & .swiper {
+  .swiper {
     &-navigation {
       margin-top: fluid(30, 40);
 
       @media (max-width: $breakpoint-md) {
         margin-bottom: 30px;
+      }
+    }
+
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    .swiper-grid-flat {
+      overflow: hidden;
+
+      .swiper-wrapper {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        height: 530px;
+      }
+
+      .swiper-slide {
+        width: calc((100% - 16px) / 2) !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+
+        /* 1-й слайд у кожній трійці — ВЕЛИКИЙ */
+        &:nth-child(3n + 1) {
+          height: 100% !important;
+
+          .news {
+            &__content {
+              margin: 20px;
+              padding: 20px;
+            }
+
+            &__text {
+              display: block;
+            }
+          }
+        }
+
+        /* 2-й та 3-й слайди у кожній трійці — МАЛІ */
+        &:nth-child(3n + 2),
+        &:nth-child(3n + 3) {
+          height: calc((100% - 16px) / 2) !important;
+
+          .news__text {
+            display: none;
+          }
+
+        }
+
+        &:nth-child(3n + 2) {
+          margin-left: 16px;
+        }
+
+        &:nth-child(3n + 3) {
+          margin-left: calc(-50% + 8px) !important;
+          transform: translateY(calc(100% + 16px));
+        }
+
+        /* Відступ після всієї трійки слайдів */
+        &:nth-child(3n) {
+          margin-right: 16px !important;
+        }
       }
     }
   }
@@ -337,19 +395,15 @@ $transition-base: all 0.3s ease;
     }
 
     &__title {
-      font-size: 20px;
+      font-size: fluid(17, 20);
       font-weight: 700;
       line-height: 1.35;
       color: rgba(20, 20, 20, 1);
       margin-bottom: 15px;
-
-      @media (max-width: 767px) {
-        font-size: 18px;
-      }
     }
 
     &__text {
-      font-size: 14.5px;
+      font-size: fluid(15, 17);
       line-height: 1.5;
       color: rgba(20, 20, 20, 1);
       margin-bottom: 15px;
@@ -364,9 +418,9 @@ $transition-base: all 0.3s ease;
       align-items: center;
       gap: 8px;
       font-size: fluid(15, 17);
-      font-weight: 500;
+      font-weight: 400;
       color: $color-accent;
-      text-decoration: none;
+      text-decoration: underline;
       margin-top: auto;
       transition: color 0.3s ease;
 
@@ -376,7 +430,7 @@ $transition-base: all 0.3s ease;
       }
 
       &:hover {
-        color: red;
+        color: #6d7388;
 
         svg {
           transform: translateX(4px);
@@ -639,6 +693,31 @@ $transition-base: all 0.3s ease;
 
 .s-info {
   margin-bottom: 40px;
+
+
+
+  &--grid {
+    & .img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      &__wrap {
+        overflow: hidden;
+        border-radius: 20px;
+        aspect-ratio: 1/0.8;
+
+        @media (max-width: $breakpoint-md) {
+          margin-top: 20px;
+          aspect-ratio: 1/0.6;
+        }
+      }
+    }
+
+    & .row {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .s-video {
@@ -707,4 +786,50 @@ $transition-base: all 0.3s ease;
     }
   }
 
+}
+
+.s-steps--article {
+  margin-bottom: fluid(50, 100);
+
+  & .heading {
+    font-size: fluid(20, 25);
+    margin-bottom: 20px;
+    color: rgba(20, 20, 20, 1);
+  }
+
+  & .description {
+    margin-bottom: fluid(15, 22);
+  }
+
+  & .step {
+    border-radius: 20px;
+    background: rgba(248, 249, 253, 1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__number {
+      font-size: fluid(30, 60);
+      line-height: 1;
+      color: $color-accent;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+    }
+
+    &__text {
+      font-size: fluid(15, 17);
+      color: rgba(0, 0, 0, 1);
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }

@@ -2,57 +2,6 @@
 @use "../abstracts/mixins" as *;
 
 
-
-
-
-@media (min-width: 992px) {
-  .swiper-grid-flat {
-    overflow: hidden;
-  }
-
-  .swiper-grid-flat .swiper-wrapper {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    height: 480px;
-  }
-
-  .swiper-grid-flat .swiper-slide {
-    width: calc((100% - 16px) / 2) !important;
-    flex-shrink: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* 1-й слайд у кожній трійці — ВЕЛИКИЙ */
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 1) {
-    height: 100% !important;
-  }
-
-  /* 2-й та 3-й слайди у кожній трійці — МАЛІ */
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 2),
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
-    height: calc((100% - 16px) / 2) !important;
-  }
-
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 2) {
-    margin-left: 16px;
-  }
-
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 3) {
-    margin-left: calc(-50% + 8px) !important;
-    transform: translateY(calc(100% + 16px));
-  }
-
-  /* Відступ після всієї трійки слайдів */
-  .swiper-grid-flat .swiper-slide:nth-child(3n) {
-    margin-right: 16px !important;
-  }
-
-  .swiper-grid-flat .swiper-slide:nth-child(3n + 1) .slide-text h3 {
-    font-size: 1.35rem;
-  }
-}
-
-
 .collage {
   height: 100%;
   max-height: 560px;
@@ -229,8 +178,11 @@
     margin-bottom: fluid(50, 100);
 
     & .heading {
-      margin-bottom: 34px;
-      padding-top: 10%;
+      margin-bottom: fluid(30, 34);
+
+      @media (min-width: $breakpoint-lg) {
+        padding-top: 10%;
+      }
     }
 
     & .description {
