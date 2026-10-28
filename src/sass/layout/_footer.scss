@@ -87,6 +87,10 @@
 
   /* Навігація футера */
   .footer-nav {
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 30px;
+    }
+
     .menu {
       display: grid;
       gap: 15px;

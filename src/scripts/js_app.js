@@ -3,9 +3,7 @@ var _functions = {}, winWidth, shareButton;
 jQuery(function ($) {
     // 1. ПЕРЕВІРКА ПРИСТРОЇВ ТА БРАУЗЕРІВ
     const isTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchScreen) {
-        $('html').addClass('touch-screen');
-    }
+    if (isTouchScreen) $('html').addClass('touch-screen');
 
     const userAgent = navigator.userAgent;
     const is_Mac = (navigator.userAgentData?.platform || navigator.platform).toUpperCase().indexOf('MAC') >= 0;
@@ -23,11 +21,8 @@ jQuery(function ($) {
     let popupTop = 0;
 
     _functions.removeScroll = function () {
-        popupTop = $(window).scrollTop(); $('html').css({
-            "position": "fixed",
-            "top": -popupTop,
-            "width": "100%"
-        });
+        popupTop = $(window).scrollTop();
+        $('html').css({ "position": "fixed", "top": -popupTop, "width": "100%" });
     };
 
     _functions.addScroll = function () {
@@ -36,7 +31,8 @@ jQuery(function ($) {
     };
 
     _functions.openPopup = function (popup) {
-        $('.popup-content').removeClass('active'); $(popup + ', .popup-wrapper').addClass('active');
+        $('.popup-content').removeClass('active');
+        $(popup + ', .popup-wrapper').addClass('active');
         _functions.removeScroll();
     };
 
@@ -45,117 +41,6 @@ jQuery(function ($) {
         _functions.addScroll();
     };
 
-    // ==========================================
-    // FILTER TOGGLE (СПИСКИ ФІЛЬТРІВ)
-    // ==========================================
-    _functions.initFilterLists = function (selector = document) {
-        $(selector).find('.fl-list').not('.full').each(function () {
-            let th = $(this);
-            let li = th.find("li");
-            let extra = li.filter(':gt(4)');
-            let btn = th.siblings('.fl-list-btn');
-
-            if (li.length > 3) {
-                th.addClass('more-options');
-
-                let isUserOpened = btn.data('user-opened') === true;
-                let hasChecked = extra.find('input:checked').length > 0;
-
-                if (isUserOpened || hasChecked) {
-                    extra.show();
-                    btn.addClass('is-active');
-                } else {
-                    extra.hide();
-                    btn.removeClass('is-active');
-                }
-            }
-        });
-    };
-
-    // Ініціалізація фільтрів
-    _functions.initFilterLists();
-
-    // Перемикання заголовка блоку фільтра
-    $(document).on('click', '.fl-title', function () {
-        const th = $(this);
-        const block = $(this).closest('.fl-block');
-        const container = $(".fl-menu");
-
-        th.toggleClass('is-active');
-        block.find('.fl-toggle').slideToggle("slow");
-    });
-
-    // Клік на кнопку "Показати ще / Сховати"
-    $(document).on('click', '.fl-list-btn', function () {
-        let $btn = $(this);
-        let list = $btn.closest('.fl-toggle').find('.fl-list');
-        let li = list.find("li:gt(4)");
-        let isVisible = li.is(":visible");
-
-        // Запам'ятовуємо ручний вибір користувача
-        $btn.data('user-opened', !isVisible); $btn.toggleClass('is-active', !isVisible);
-
-        if (isVisible) {
-            li.hide("slow");
-        } else {
-            li.show("slow");
-        }
-    });
-    $(document).on("click", ".js_fl_open", function () {
-        $("html").addClass("filter-is-open");
-        _functions.removeScroll();
-    });
-
-    $(document).on("click", ".js_fl_close", function () {
-        $("html").removeClass("filter-is-open");
-        _functions.addScroll();
-    });
-
-    // Слайдер ціни / діапазону
-    if ($('#slider').length) {
-        var $slider = $("#slider");
-        var $inputFrom = $(".js-price-from");
-        var $inputTo = $(".js-price-to");
-
-        var minVal = 0;
-        var maxVal = 10000;
-        var startFrom = parseInt($inputFrom.val(), 10) || 299;
-        var startTo = parseInt($inputTo.val(), 10) || 10000;
-
-        $slider.slider({
-            range: true,
-            min: minVal,
-            max: maxVal,
-            values: [startFrom, startTo],
-            slide: function (event, ui) {
-                $inputFrom.val(ui.values[0]); $inputTo.val(ui.values[1]);
-            }
-        });
-
-        $inputFrom.on("change input", function () {
-            var val1 = parseInt($inputFrom.val(), 10) || minVal;
-            var val2 = parseInt($inputTo.val(), 10) || maxVal;
-
-            if (val1 < minVal) val1 = minVal;
-            if (val1 > val2) val1 = val2;
-
-            $slider.slider("values", 0, val1);
-        });
-
-        $inputTo.on("change input", function () {
-            var val1 = parseInt($inputFrom.val(), 10) || minVal;
-            var val2 = parseInt($inputTo.val(), 10) || maxVal;
-
-            if (val2 > maxVal) val2 = maxVal;
-            if (val2 < val1) val2 = val1;
-
-            $slider.slider("values", 1, val2);
-        });
-    }
-
-    // ==========================================
-    // ІНШІ ОБРОБНИКИ ПОДІЙ
-    // ==========================================
     $(document).on('click', '.open-popup', function (e) {
         e.preventDefault();
         _functions.openPopup('.popup-content[data-rel="' + $(this).data('rel') + '"]');
@@ -166,7 +51,7 @@ jQuery(function ($) {
         _functions.closePopup();
     });
 
-    // 3. СКРОЛ ФУНКЦІЇ (ХЕДЕР ТА АНІМАЦІЇ ЕЛЕМЕНТІВ)
+    // 3. СКРОЛ ФУНКЦІЇ ТА АНІМАЦІЇ
     let prev_scroll = 0;
 
     _functions.scrollCall = function () {
@@ -207,32 +92,61 @@ jQuery(function ($) {
     window.addEventListener('load', _functions.scrollCall);
 
     // 4. МОБІЛЬНЕ МЕНЮ
-    /* Open menu */
-    $(document).on('click', '.js-open-menu,  .js-close-menu, .h-overlay', function () {
+    $(document).on('click', '.js-open-menu, .js-close-menu, .h-overlay', function () {
         const $header = $('header');
         const isOpen = !$header.hasClass('open-menu');
 
-        // Перемикаємо класи відповідно до вашої логіки та верстки
         $('html').toggleClass('overflow-menu');
         $header.removeClass('hide');
         $header.toggleClass('open-menu');
         $header.removeClass('open-search');
 
-        // Додатково синхронізуємо з класом .is-open для off-canvas панелі та оверлея з нашого SCSS
         $('#mobile-menu').toggleClass('is-open', isOpen);
         $('#menu-overlay').toggleClass('is-open', isOpen);
-
-
     });
 
-    // Логіка відкриття випадаючих пунктів (sub-menu) на мобільному по кліку
-
-
-    /* Close menu */
     $(document).on('click', '.h-menu-overlay', function () {
         $('html').removeClass('overflow-menu');
-        $('header').removeClass('open-menu open-search'); $('.h-search-form input').val("");
+        $('header').removeClass('open-menu open-search');
+        $('.h-search-form input').val("");
         $(".h-search-results").removeClass("is-active");
+    });
+
+    // Випадаюче меню та стрілочки
+    $('.header .menu-item-has-children, .footer-nav .menu-item-has-children').each(function () {
+        var $this = $(this);
+        var $link = $this.children('a');
+
+        if (!$this.children('.menu-item__row').length) {
+            var $arrow = $link.find('.arrow');
+            if ($arrow.length) {
+                $arrow.detach();
+            } else {
+                $arrow = $('<span class="arrow">▼</span>');
+            }
+
+            $link.wrap('<div class="menu-item__row"></div>');
+            $this.children('.menu-item__row').append('<div class="menu-item__btn"></div>');
+            $this.children('.menu-item__row').find('.menu-item__btn').append($arrow);
+        }
+    });
+
+    $(document).off('click', '.menu-item__btn').on('click', '.menu-item__btn', function (e) {
+        if (window.innerWidth < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var $parentLi = $(this).closest('.menu-item-has-children');
+            $parentLi.children('.sub-menu').stop(true, true).slideToggle(300);
+            $parentLi.toggleClass('is-active');
+        }
+    });
+
+    $(window).on('resize', function () {
+        if (window.innerWidth >= 992) {
+            $('.menu-item-has-children').removeClass('is-active');
+            $('.sub-menu').removeAttr('style');
+        }
     });
 
     // 5. ТАБИ (DESKTOP) ТА АКОРДЕОН (MOBILE)
@@ -240,12 +154,14 @@ jQuery(function ($) {
     const $tabPanels = $('.p-tabs__panel');
 
     function initTabs() {
-        $tabBtns.removeClass('is-active'); $tabPanels.removeClass('is-active');
+        $tabBtns.removeClass('is-active');
+        $tabPanels.removeClass('is-active');
 
         const $firstBtn = $tabBtns.first();
         const $firstPanel = $tabPanels.first();
 
-        $firstBtn.addClass('is-active'); $firstPanel.addClass('is-active');
+        $firstBtn.addClass('is-active');
+        $firstPanel.addClass('is-active');
 
         if ($(window).width() < 992) {
             $firstPanel.find('.p-tabs__body').show();
@@ -257,12 +173,10 @@ jQuery(function ($) {
     $(document).on('click', '.p-tabs__nav-btn', function () {
         const targetId = $(this).data('tab');
 
-        $tabBtns.removeClass('is-active'); $(this).addClass('is-active');
+        $tabBtns.removeClass('is-active');
+        $(this).addClass('is-active');
 
-        $tabPanels.removeClass('is-active')
-            .find('.p-tabs__body')
-            .removeAttr('style');
-
+        $tabPanels.removeClass('is-active').find('.p-tabs__body').removeAttr('style');
         $(`#${targetId}`).addClass('is-active');
     });
 
@@ -276,19 +190,19 @@ jQuery(function ($) {
 
         if (isOpen) {
             $currentPanel.removeClass('is-active');
-            $currentBody.stop(true, true).slideUp(300); $tabBtns.removeClass('is-active');
+            $currentBody.stop(true, true).slideUp(300);
+            $tabBtns.removeClass('is-active');
         } else {
-            $currentPanel.addClass('is-active'); $currentBody.stop(true, true).slideDown(300);
+            $currentPanel.addClass('is-active');
+            $currentBody.stop(true, true).slideDown(300);
 
             const panelId = $currentPanel.attr('id');
-            $tabBtns.removeClass('is-active'); $tabBtns.filter(`[data-tab="${panelId}"]`).addClass('is-active');
+            $tabBtns.removeClass('is-active');
+            $tabBtns.filter(`[data-tab="${panelId}"]`).addClass('is-active');
         }
     });
 
-    // 6. ПОШУК
-
-
-    // 7. СЕЛЕКТИ (SumoSelect)
+    // 6. СЕЛЕКТИ (SumoSelect)
     _functions.initSelect = function (parent) {
         var $container = parent ? $(parent) : $(document);
 
@@ -336,7 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const isOpen = $item.hasClass('active');
 
         $accordeon.find('.accordeon-item.active').not($item).removeClass('active').find('.accordeon-title').next().slideUp();
-        $item.toggleClass('active', !isOpen); $title.next().slideToggle(!isOpen);
+        $item.toggleClass('active', !isOpen);
+        $title.next().slideToggle(!isOpen);
     });
 
     // 2. КЛІКЕР КІЛЬКОСТІ
@@ -374,51 +289,45 @@ document.addEventListener('DOMContentLoaded', () => {
         if (videoItem.paused) {
             videoItem.play();
             $video.attr('controls', '');
-            $btn.addClass('hide'); $container.find('.heading').hide();
+            $btn.addClass('hide');
+            $container.find('.heading').hide();
         } else {
             videoItem.pause();
             $video.removeAttr('controls');
-            $btn.removeClass('hide'); $container.find('.heading').show();
+            $btn.removeClass('hide');
+            $container.find('.heading').show();
         }
     });
 
-    // Додатково: повертаємо кнопку та ховаємо controls, якщо відео закінчилося
     jQuery(document).on('ended', '.media__video', function () {
         const $video = jQuery(this);
         const $container = $video.closest('.media');
 
         $video.removeAttr('controls');
-        $container.find('.media__btn').removeClass('hide'); $container.find('.heading').show();
+        $container.find('.media__btn').removeClass('hide');
+        $container.find('.heading').show();
     });
 
     // 4. ТАБИ
-
     document.addEventListener("click", (e) => {
-        // Шукаємо, чи клікнули на елемент табу
         const tabItem = e.target.closest(".tab__item");
         if (!tabItem) return;
 
-        // Знаходимо найближчий компонент .tab, якому належить ця кнопка
         const currentTabBlock = tabItem.closest(".tab");
         if (!currentTabBlock) return;
 
-        // Шукаємо прямий список кнопок цього конкретного рівня
         const tabList = currentTabBlock.querySelector(":scope > .tab__list");
         if (!tabList) return;
 
-        // Отримуємо всі кнопки цього рівня
         const tabItems = [...tabList.children].filter(child => child.classList.contains("tab__item"));
         const clickedIndex = tabItems.indexOf(tabItem);
         if (clickedIndex === -1) return;
 
-        // Шукаємо контент цього рівня
         const tabContent = currentTabBlock.querySelector(":scope > .tab__content");
         if (!tabContent) return;
 
-        // Отримуємо прямі панелі цього рівня
         const tabPanels = [...tabContent.children].filter(child => child.classList.contains("tab__panel"));
 
-        // Перемикаємо класи active тільки для цього рівня
         tabItems.forEach(item => item.classList.remove("is--active"));
         tabPanels.forEach(panel => panel.classList.remove("is--active"));
 
@@ -427,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tabPanels[clickedIndex].classList.add("is--active");
         }
     });
+
     // 5. ЛІЧИЛЬНИКИ
     if ('IntersectionObserver' in window) {
         const obsCounter = new IntersectionObserver((entries, observer) => {
@@ -470,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!header) return;
 
     const checkScroll = () => {
+        // Якщо проскролили більше ніж на 30 пікселів — додаємо клас is-scrolled
         if (window.scrollY > 30) {
             header.classList.add('is-scrolled');
         } else {
@@ -480,6 +391,3 @@ document.addEventListener('DOMContentLoaded', () => {
     checkScroll();
     window.addEventListener('scroll', checkScroll);
 });
-
-
-;

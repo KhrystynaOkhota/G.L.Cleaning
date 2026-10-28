@@ -99,7 +99,11 @@ section {
 .main {
   overflow: hidden;
   min-height: 50vh;
-  padding-top: 150px;
+  padding-top: 136px;
+
+  @media (max-width: 992px) {
+    padding-top: 100px;
+  }
 
   @media (max-width: $breakpoint-md) {
     padding-top: 100px;
@@ -114,7 +118,7 @@ section {
   }
 }
 
-.home {
+.has-transparent-header {
   .main {
     padding-top: 0;
   }
