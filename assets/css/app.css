@@ -267,7 +267,12 @@ section .heading {
 .main {
   overflow: hidden;
   min-height: 50vh;
-  padding-top: 150px;
+  padding-top: 136px;
+}
+@media (max-width: 992px) {
+  .main {
+    padding-top: 100px;
+  }
 }
 @media (max-width: 767px) {
   .main {
@@ -1864,24 +1869,182 @@ section .heading {
   }
 }
 
-/* За замовчуванням (або для сторінок з білим фоном) хедер має білий фон */
+/* ==========================================
+   1. БАЗОВІ СТИЛІ ХЕДЕРА (Білий фон за замовчуванням)
+   ========================================== */
 .header {
   background-color: #fff;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  color: #000;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
-/* Якщо сторінка має прозорий хедер зверху */
+.header .h-logo__img--light {
+  display: none !important;
+}
+
+.header .h-logo__img--dark {
+  display: inline-block !important;
+}
+
+.header a,
+.header .menu-item a,
+.header .menu-item__row a,
+.header .h-info__address-text,
+.header .h-info__schedule,
+.header .h-info__worktime,
+.header .h-info__phone,
+.header .phone {
+  color: #000;
+}
+
+.header .burger span {
+  background-color: #000;
+}
+
+/* ==========================================
+   2. ПРОЗОРИЙ ХЕДЕР (З градієнтом на початку сторінки)
+   ========================================== */
 body.has-transparent-header .header {
-  background-color: transparent;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#000000));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* Якщо потрібно застосувати саме поворот через transform або властивість, можна додати: */
+  /* transform: rotate(90deg); */
+  /* (Увага: поворот усього хедера на 90 градусів розверне його вертикально. Якщо вам потрібен лише кут градієнта, краще змінювати градуси в самому linear-gradient, наприклад linear-gradient(0deg, ...)) */
+  color: #fff;
 }
 
-/* Коли відбувся скрол або сторінка звичайчна — фон стає білим */
+body.has-transparent-header .header .h-logo__img--light {
+  display: inline-block !important;
+}
+
+body.has-transparent-header .header .h-logo__img--dark {
+  display: none !important;
+}
+
+/* Пункти меню та текст на прозорому фоні стають білими */
+@media (min-width: 992px) {
+  body.has-transparent-header .header a,
+  body.has-transparent-header .header .menu-item a,
+  body.has-transparent-header .header .menu-item__row a,
+  body.has-transparent-header .header .h-info__address-text,
+  body.has-transparent-header .header .h-info__schedule,
+  body.has-transparent-header .header .h-info__worktime,
+  body.has-transparent-header .header .h-info__phone,
+  body.has-transparent-header .header .phone {
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 992px) {
+  body.has-transparent-header .header .phone {
+    color: rgb(255, 255, 255) !important;
+  }
+}
+
+body.has-transparent-header .header .burger span {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ==========================================
+   3. ПРИ СКРОЛІ
+   ========================================== */
 body.has-transparent-header .header.is-scrolled,
 .header.is-scrolled {
+  background: rgb(255, 255, 255) !important;
   background-color: #fff !important;
+  color: rgb(20, 20, 20) !important;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+  /* Скидаємо можливий поворот при скролі */
+}
+
+body.has-transparent-header .header.is-scrolled .h-logo__img--light,
+.header.is-scrolled .h-logo__img--light {
+  display: none !important;
+}
+
+body.has-transparent-header .header.is-scrolled .h-logo__img--dark,
+.header.is-scrolled .h-logo__img--dark {
+  display: inline-block !important;
+}
+
+body.has-transparent-header .header.is-scrolled a,
+body.has-transparent-header .header.is-scrolled .menu-item a,
+body.has-transparent-header .header.is-scrolled .menu-item__row a,
+body.has-transparent-header .header.is-scrolled .h-info__address-text,
+body.has-transparent-header .header.is-scrolled .h-info__schedule,
+body.has-transparent-header .header.is-scrolled .h-info__worktime,
+body.has-transparent-header .header.is-scrolled .h-info__phone,
+body.has-transparent-header .header.is-scrolled .phone,
+.header.is-scrolled a,
+.header.is-scrolled .menu-item a,
+.header.is-scrolled .menu-item__row a,
+.header.is-scrolled .h-info__address-text,
+.header.is-scrolled .h-info__schedule,
+.header.is-scrolled .h-info__worktime,
+.header.is-scrolled .h-info__phone,
+.header.is-scrolled .phone {
+  color: rgb(20, 20, 20) !important;
+}
+
+body.has-transparent-header .header.is-scrolled .burger span,
+.header.is-scrolled .burger span {
+  background-color: #000 !important;
+}
+
+/* ==========================================
+   4. ФІКСОВАНІ КОЛЬОРИ (Активне меню, карта, соцмережі, кнопка)
+   ========================================== */
+/* Активний пункт меню та посилання "На карті" завжди #00bcd4 */
+.header .menu-item.current-menu-item > a,
+.header .h-info__address-link,
+body.has-transparent-header .header .menu-item.current-menu-item > a,
+body.has-transparent-header .header .h-info__address-link,
+body.has-transparent-header .header.is-scrolled .menu-item.current-menu-item > a,
+body.has-transparent-header .header.is-scrolled .h-info__address-link,
+.header.is-scrolled .menu-item.current-menu-item > a,
+.header.is-scrolled .h-info__address-link {
+  color: #00bcd4 !important;
+  fill: #00bcd4 !important;
+}
+
+/* Іконки соціальних мереж у хедері завжди залишаються #00bcd4 */
+.header .socials__icon,
+body.has-transparent-header .header .socials__icon,
+body.has-transparent-header .header.is-scrolled .socials__icon,
+.header.is-scrolled .socials__icon {
+  color: #00bcd4 !important;
+  fill: #00bcd4 !important;
+}
+
+/* Кнопка "ЗАМОВИТИ ДЗВІНОК" завжди має фон #00bcd4 та білий текст */
+.header .btn--primary,
+body.has-transparent-header .header .btn--primary,
+body.has-transparent-header .header.is-scrolled .btn--primary,
+.header.is-scrolled .btn--primary {
+  background-color: #00bcd4 !important;
+  color: rgb(255, 255, 255) !important;
+  border-color: #00bcd4 !important;
+}
+
+.header .btn--primary * {
+  color: rgb(255, 255, 255) !important;
+  fill: rgb(255, 255, 255) !important;
+}
+
+button.h-close.js-close-menu {
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
 }
 
 /* ==========================================
@@ -1975,6 +2138,11 @@ body.has-transparent-header .header.is-scrolled,
 }
 .footer {
   /* Навігація футера */
+}
+@media (max-width: 991px) {
+  .footer .footer-nav {
+    margin-bottom: 30px;
+  }
 }
 .footer .footer-nav .menu {
   display: grid;
