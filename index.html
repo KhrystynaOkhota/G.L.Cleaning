@@ -69,7 +69,7 @@
 
                             <ul class="menu">
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#">Для дому <span class="arrow">▼</span></a>
+                                    <a href="#">Для дому </a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
                                         <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
@@ -79,7 +79,7 @@
                                 </li>
 
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#" class="nav__link">Для бізнесу <span class="arrow">▼</span></a>
+                                    <a href="#">Для бізнесу </a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Прибирання офісів</a></li>
                                         <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
@@ -1863,10 +1863,7 @@
                             <ul class="menu">
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">Для дому</a>
-                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" />
-                                    </svg>
+
 
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Підпункт 1</a></li>
@@ -1874,10 +1871,7 @@
                                 </li>
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">Для бізнесу</a>
-                                    <svg class="menu-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" />
-                                    </svg>
+
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Підпункт 1</a></li>
                                     </ul>
@@ -2015,10 +2009,10 @@
         <div class="footer__bottom">
             <div class="container">
                 <div class="row m-row">
-                    <div class="col-xl-8 col-lg-8 col-md-16 column">
+                    <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16  column">
                         <div class="copyright">© 2026 Good idea Cleaning Усі права захищені</div>
                     </div>
-                    <div class="col-xl-8 col-lg-8 col-md-16 column">
+                    <div class="col-xl-8 col-lg-8 col-md-16 col-sm-16 col-xs-16  column">
                         <div class="develop">
                             Design and development —
                             <a href="https://webtune.com.ua/" target="_blank" rel="nofollow"
@@ -2112,6 +2106,7 @@
 
     <script src="assets/js/app-comparison.js"></script>
     <script src="src/scripts/app_map.js"></script>
+    <!--
     <script>
         jQuery(document).ready(function ($) {
 
@@ -2156,7 +2151,98 @@
             });
 
         });
+    </script>-->
+
+    <!-- <script>
+        $(document).ready(function () {
+            // 1. Динамічно загортаємо посилання і стрілочку в .menu-item__row та створюємо .menu-item__btn
+            $('.menu-item-has-children').each(function () {
+                var $this = $(this);
+                var $link = $this.children('a');
+
+                if (!$this.children('.menu-item__row').length) {
+                    var $arrow = $link.find('.arrow');
+                    if ($arrow.length) {
+                        $arrow.detach();
+                    } else {
+                        $arrow = $('<span class="arrow">▼</span>');
+                    }
+
+                    $link.wrap('<div class="menu-item__row"></div>');
+                    $this.children('.menu-item__row').append('<div class="menu-item__btn"></div>');
+                    $this.children('.menu-item__row').find('.menu-item__btn').append($arrow);
+                }
+            });
+
+            // 2. Клік по кнопці зі стрілочкою працює як акордеон виключно на мобільних (< 992px)
+            $(document).off('click', '.menu-item__btn').on('click', '.menu-item__btn', function (e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    var $parentLi = $(this).closest('.menu-item-has-children');
+
+                    // Використовуємо .stop(true, true) для запобігання ривків
+                    $parentLi.children('.sub-menu').stop(true, true).slideToggle(300);
+                    $parentLi.toggleClass('is-active');
+                }
+            });
+
+            // 3. Автоматичне скидання стилів при переході з мобілки на десктоп (при ресайзі екрана)
+            $(window).on('resize', function () {
+                if (window.innerWidth >= 992) {
+                    $('.menu-item-has-children').removeClass('is-active');
+                    $('.sub-menu').removeAttr('style'); // Видаляє інлайн-стилі display:block/none, залишаючи чистий CSS ховер
+                }
+            });
+        });
+    </script>-->
+
+    <script>
+        $(document).ready(function () {
+            // 1. Динамічно загортаємо посилання і стрілочку в .menu-item__row та створюємо .menu-item__btn для всіх меню
+            $('.header .menu-item-has-children, .footer-nav .menu-item-has-children').each(function () {
+                var $this = $(this);
+                var $link = $this.children('a');
+
+                if (!$this.children('.menu-item__row').length) {
+                    var $arrow = $link.find('.arrow');
+                    if ($arrow.length) {
+                        $arrow.detach();
+                    } else {
+                        $arrow = $('<span class="arrow">▼</span>');
+                    }
+
+                    $link.wrap('<div class="menu-item__row"></div>');
+                    $this.children('.menu-item__row').append('<div class="menu-item__btn"></div>');
+                    $this.children('.menu-item__row').find('.menu-item__btn').append($arrow);
+                }
+            });
+
+            // 2. Плавний акордеон по кліку на кнопку стрілочки виключно на мобільних (< 992px)
+            $(document).off('click', '.menu-item__btn').on('click', '.menu-item__btn', function (e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    var $parentLi = $(this).closest('.menu-item-has-children');
+
+                    // Використовуємо .stop(true, true) для уникнення ривків
+                    $parentLi.children('.sub-menu').stop(true, true).slideToggle(300);
+                    $parentLi.toggleClass('is-active');
+                }
+            });
+
+            // 3. Автоматичне очищення інлайн-стилів при переході на десктопний режим (ресайз)
+            $(window).on('resize', function () {
+                if (window.innerWidth >= 992) {
+                    $('.menu-item-has-children').removeClass('is-active');
+                    $('.sub-menu').removeAttr('style');
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>

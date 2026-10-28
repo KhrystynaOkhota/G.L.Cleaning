@@ -130,6 +130,9 @@
       color: rgba(20, 20, 20, 1);
     }
 
+    & .SumoSelect>.CaptionCont {
+      background-color: $color-white;
+    }
   }
 
   .contacts-card {

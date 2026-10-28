@@ -226,12 +226,7 @@ jQuery(function ($) {
     });
 
     // Логіка відкриття випадаючих пунктів (sub-menu) на мобільному по кліку
-    $(document).on('click', '.menu-item-has-children > .nav__link', function (e) {
-        if (window.innerWidth <= 991) {
-            e.preventDefault();
-            $(this).parent('.menu-item-has-children').toggleClass('is-active');
-        }
-    });
+
 
     /* Close menu */
     $(document).on('click', '.h-menu-overlay', function () {
@@ -291,24 +286,7 @@ jQuery(function ($) {
     });
 
     // 6. ПОШУК
-    $(document).on("click", ".js-open-search", function () {
-        $("header").addClass("search-open");
-        setTimeout(function () {
-            $(".h-search").find("input").focus();
-        }, 100);
-    });
 
-    $(document).on("click", ".js-close-search", function () {
-        $("header").removeClass("search-open");
-        $(".h-search").find("input").val("");
-        $(".cab-search, .search__results-wrap").removeClass("active");
-    });
-
-    $(document).on("input", ".search input", function () {
-        const val = $(this).val();
-        const $res = $(this).closest(".search").find(".search__results-wrap");
-        $res.toggleClass("active", val.length > 0);
-    });
 
     // 7. СЕЛЕКТИ (SumoSelect)
     _functions.initSelect = function (parent) {

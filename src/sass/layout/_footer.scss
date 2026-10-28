@@ -1,20 +1,11 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
+/* ==========================================
+   CONTACTS STYLES
+   ========================================== */
 .contacts {
-  font-style: normal; // Знімає курсив з <address>
+  font-style: normal;
 
   &__list {
     display: flex;
@@ -52,125 +43,15 @@
       font-weight: 700;
     }
   }
-
-  // --- Варіанти розташування (Модифікатори) ---
-
-  // 1. Колонковий режим (для футера / сайдбара / мобільного меню)
-  &--column {
-    .contacts__list {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: fluid(12, 20);
-    }
-  }
-
-  // 2. Рядковий режим з адаптивним переходом у колонку
-  &--row {
-    .contacts__list {
-      flex-direction: row;
-      align-items: center;
-      gap: fluid(20, 30);
-
-      @media (max-width: $breakpoint-md) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: fluid(12, 20);
-      }
-    }
-  }
 }
 
-.footer {
 
-  background: rgba(29, 33, 40, 1);
-
-  padding: fluid(30, 50) 0 0 0;
-
-
-  &__logo {
-    width: 142px;
-    height: 66px;
-    margin-bottom: 30px;
-    display: block;
-
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-  }
-
-  &__inner {
-    @media (min-width: $breakpoint-lg) {
-      margin-bottom: 30px;
-    }
-  }
-
-  .footer-nav {
-    .menu {
-      list-style: none;
-      -webkit-padding-start: 0;
-      padding-inline-start: 0;
-      margin-block: 0;
-      display: grid;
-      gap: 20px;
-
-
-      .menu-item,
-      li {
-        a {
-          color: $color-white;
-          text-decoration: none;
-          transition: color 0.2s ease;
-          font-size: fluid(15, 18);
-
-        }
-
-        &.current-menu-item,
-        &:hover {
-          >a {
-            color: $color-accent;
-
-          }
-        }
-      }
-    }
-  }
-
-
-  & .contact {
-    display: grid;
-    gap: 20px;
-
-    &__item {
-      color: $color-white;
-      text-decoration: none;
-      transition: color 0.2s ease;
-      font-size: fluid(15, 18);
-    }
-  }
-
-  & .socials {
-    margin-top: 20px;
-
-    &__label {
-      color: $color-white;
-    }
-  }
-
-  &__bottom {}
-}
-
-/* ==========================================
-   FOOTER MAIN STYLES
-   ========================================== */
 .footer {
   background-color: rgba(42, 45, 50, 1);
   color: #a0a5b1;
   font-size: 14px;
   line-height: 1.5;
-  padding-top: 50px;
+  padding: fluid(30, 50) 0 0 0;
 
   a {
     color: #ffffff;
@@ -182,43 +63,85 @@
     }
   }
 
-  &__inner {
-    padding-bottom: 40px;
-  }
+  & &__logo {
+    width: 142px;
+    height: 66px;
+    margin-bottom: 30px;
+    display: block;
 
-  &__logo {
     img {
       display: block;
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 
-  /* ==========================================
-       NAVIGATION & DROPDOWNS
-       ========================================== */
-  &-nav {
+  & &__inner {
+    padding-bottom: 40px;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  /* Навігація футера */
+  .footer-nav {
     .menu {
-      list-style: none;
+      display: grid;
+      gap: 15px;
       padding: 0;
       margin: 0;
+      list-style: none;
+      text-align: left;
 
       .menu-item {
-
         position: relative;
+        width: 100%;
 
-        a {
-          font-size: fluid(15,17);
-          color: rgba(255, 255, 255, 1);
+        .menu-item__row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          gap: 6px;
+
+          @media (min-width: 992px) {
+            width: auto;
+            justify-content: flex-start;
+          }
         }
 
-        /* Google Reviews Link */
+        .menu-item__btn {
+          cursor: pointer;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        a {
+          color: $color-white;
+          text-decoration: none;
+          transition: color 0.2s ease;
+          font-size: fluid(15, 18);
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .arrow {
+            font-size: 10px;
+            line-height: 1;
+            transition: transform 0.3s ease;
+            display: inline-block;
+          }
+        }
+
         &--google {
           a {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-
           }
 
           span {
@@ -231,26 +154,74 @@
           }
         }
 
-        /* Dropdown Parent Item */
-        &-has-children {
-          cursor: pointer;
 
-          >a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        @media (min-width: 992px) {
+          .sub-menu {
+            display: block;
+            position: absolute;
+            top: 100%; // Випадає чітко під пунктом меню
+            left: 0;
+            margin-top: 5px;
+            background-color: #2a2d32; // Щільний непрозорий фон під колір футера
+            min-width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 9999; // Запобігає перекриванню іншими елементами
+
+            .menu-item {
+              margin-bottom: 0;
+              width: 100%;
+
+              .menu-item__row {
+                display: block;
+              }
+
+              a {
+                display: block;
+                padding: 8px 16px;
+                font-size: 13px;
+                color: #ffffff !important; // Примусово білий текст
+                background-color: transparent;
+                white-space: nowrap;
+                transition: background-color 0.2s ease, color 0.2s ease;
+
+                &:hover {
+                  color: #20b2aa !important;
+                  background-color: rgba(255, 255, 255, 0.08);
+                }
+              }
+            }
           }
 
-          .menu-icon {
-            transition: transform 0.3s ease;
-          }
+          &.menu-item-has-children:hover {
+            >.sub-menu {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
 
-          /* Submenu */
+            >.menu-item__row .arrow,
+            >a .arrow {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        /* --- МОБІЛЬНИЙ: Акордеон у футері (< 992px) --- */
+        @media (max-width: 991px) {
           .sub-menu {
             display: none;
             list-style: none;
             padding-left: 15px;
             margin-top: 8px;
+            transition: none !important;
 
             .menu-item {
               margin-bottom: 8px;
@@ -262,21 +233,22 @@
             }
           }
 
-          /* Open State */
-          &.is-open {
-            .sub-menu {
-              display: block;
-            }
-
-            .menu-icon {
+          &.is-active {
+            >.menu-item__row .arrow {
               transform: rotate(180deg);
             }
+          }
+        }
+
+        &.current-menu-item,
+        &:hover {
+          >a {
+            color: #20b2aa;
           }
         }
       }
     }
   }
-
 
   .contact {
     display: flex;
@@ -289,13 +261,15 @@
       align-items: flex-start;
       gap: 20px;
       color: $color-white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-size: fluid(15, 18);
     }
 
     &__icon {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
-
       fill: rgba(255, 255, 255, 1);
       color: rgba(255, 255, 255, 1);
     }
@@ -343,8 +317,6 @@
         text-align: right;
       }
     }
-
-    .copyright {}
 
     .develop {
       a {
