@@ -448,11 +448,15 @@ body.has-transparent-header .header .h-info__address-text,
 body.has-transparent-header .header .h-info__schedule,
 body.has-transparent-header .header .h-info__worktime,
 body.has-transparent-header .header .h-info__phone,
-body.has-transparent-header .header .phone {
+body.has-transparent-header .header .phone,
+body.has-transparent-header .header .arrow {
+
   @media (min-width: 992px) {
     color: #fff !important;
   }
 }
+
+body.has-transparent-header .header .sub-menu {}
 
 body.has-transparent-header .header .phone {
   @media (max-width: 992px) {
@@ -465,6 +469,32 @@ body.has-transparent-header .header .burger span {
 }
 
 
+
+@media (min-width: 992px) {
+  body.has-transparent-header .header .arrow {
+    color: $color-white !important;
+  }
+
+  body.has-transparent-header .header .sub-menu {
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#000000));
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+
+  body.has-transparent-header .header.is-scrolled .arrow {
+    color: #000 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  body.has-transparent-header .header .arrow {
+    color: #000 !important;
+  }
+
+  body.has-transparent-header .header .sub-menu {
+    background: $color-white;
+  }
+}
+
 /* ==========================================
    3. ПРИ СКРОЛІ
    ========================================== */
@@ -476,6 +506,10 @@ body.has-transparent-header .header.is-scrolled,
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transform: none !important;
   /* Скидаємо можливий поворот при скролі */
+}
+
+body.has-transparent-header .header.is-scrolled .sub-menu {
+  background: rgba(255, 255, 255, 1) !important;
 }
 
 body.has-transparent-header .header.is-scrolled .h-logo__img--light,
