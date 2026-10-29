@@ -1933,7 +1933,8 @@ body.has-transparent-header .header .h-logo__img--dark {
   body.has-transparent-header .header .h-info__schedule,
   body.has-transparent-header .header .h-info__worktime,
   body.has-transparent-header .header .h-info__phone,
-  body.has-transparent-header .header .phone {
+  body.has-transparent-header .header .phone,
+  body.has-transparent-header .header .arrow {
     color: #fff !important;
   }
 }
@@ -1948,6 +1949,26 @@ body.has-transparent-header .header .burger span {
   background-color: rgb(255, 255, 255);
 }
 
+@media (min-width: 992px) {
+  body.has-transparent-header .header .arrow {
+    color: rgb(255, 255, 255) !important;
+  }
+  body.has-transparent-header .header .sub-menu {
+    background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(#000000));
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+  body.has-transparent-header .header.is-scrolled .arrow {
+    color: #000 !important;
+  }
+}
+@media (max-width: 992px) {
+  body.has-transparent-header .header .arrow {
+    color: #000 !important;
+  }
+  body.has-transparent-header .header .sub-menu {
+    background: rgb(255, 255, 255);
+  }
+}
 /* ==========================================
    3. ПРИ СКРОЛІ
    ========================================== */
@@ -1962,6 +1983,10 @@ body.has-transparent-header .header.is-scrolled,
       -ms-transform: none !important;
           transform: none !important;
   /* Скидаємо можливий поворот при скролі */
+}
+
+body.has-transparent-header .header.is-scrolled .sub-menu {
+  background: rgb(255, 255, 255) !important;
 }
 
 body.has-transparent-header .header.is-scrolled .h-logo__img--light,
