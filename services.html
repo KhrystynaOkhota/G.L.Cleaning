@@ -24,7 +24,7 @@
         <div class="h-wrap">
             <div class="container h-container">
                 <div class="h-controls d-flex align-justify align-middle">
-                    <a href="" class="h-logo" aria-label="">
+                    <a href="index.html" class="h-logo" aria-label="">
                         <img src="assets/img/logo-white.svg" alt="" class="h-logo__img h-logo__img--light d-none">
                         <img src="assets/img/logo-dark.svg" alt="" class="h__logo__img h-logo__img--dark">
                     </a>
@@ -64,12 +64,12 @@
                                 <a href="" class="h-logo__wrap" aria-label="">
                                     <img src="assets/img/logo-dark.svg" alt="" class="h-logo">
                                 </a>
-                                <button class="h-close js-close-menu" aria-label="Закрити меню">&times;</button>
+                                <button class="btn--close js-close-menu" aria-label="Закрити меню"></button>
                             </div>
 
                             <ul class="menu">
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#">Для дому <span class="arrow">▼</span></a>
+                                    <a href="#">Для дому </a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Генеральне прибирання</a></li>
                                         <li class="menu-item"><a href="#">Прибирання після ремонту</a></li>
@@ -79,7 +79,7 @@
                                 </li>
 
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#" class="nav__link">Для бізнесу <span class="arrow">▼</span></a>
+                                    <a href="#">Для бізнесу</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="#">Прибирання офісів</a></li>
                                         <li class="menu-item"><a href="#">Прибирання приміщень</a></li>
@@ -92,7 +92,7 @@
                                 </li>
 
                                 <li class="menu-item current-menu-item">
-                                    <a href="#">Про сервіс</a>
+                                    <a href="about.html">Про сервіс</a>
                                 </li>
 
                                 <li class="menu-item">
@@ -254,7 +254,8 @@
                                             вікон</h3>
                                         <p class="service__price text-bold ">від 350
                                             грн</p>
-                                        <a href="service-single.html" class="service__btn" aria-label="Детальніше">
+                                        <a href="service-single.html" class="service__btn btn--circle"
+                                            aria-label="Детальніше">
                                             <span></span>
                                         </a>
                                     </div>
@@ -640,33 +641,7 @@
 
     <script src="assets/js/app-comparison.js"></script>
     <script src="src/scripts/app_map.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            // Клік по пункту меню з випадайкою
-            $('.menu-item-has-children > a').on('click', function (e) {
-                e.preventDefault();
 
-                const $parentItem = $(this).parent('.menu-item-has-children');
-                const $subMenu = $parentItem.children('.sub-menu');
-
-                // Закриваємо інші відкриті списки (плавно)
-                $('.menu-item-has-children').not($parentItem).removeClass('is-open')
-                    .children('.sub-menu').slideUp(300);
-
-                // Перемикаємо поточний список з плавним ефектом
-                $parentItem.toggleClass('is-open');
-                $subMenu.slideToggle(300);
-            });
-
-            // Закриття при кліку поза межами меню
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.menu-item-has-children').length) {
-                    $('.menu-item-has-children').removeClass('is-open')
-                        .children('.sub-menu').slideUp(300);
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

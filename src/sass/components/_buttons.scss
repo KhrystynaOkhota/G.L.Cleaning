@@ -80,6 +80,7 @@
 
     position: relative;
     background-color: transparent;
+    border: none;
     color: #6D7388;
     width: fluid(25, 30);
     height: fluid(25, 30);
@@ -180,4 +181,40 @@
     min-width: max-content;
   }
 
+  &--circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    background: transparent;
+    transition: $transition-base;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: #fff;
+
+      -webkit-mask-image: url('/assets/img/ar-top.svg');
+      mask-image: url('/assets/img/ar-top.svg');
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    &:hover {
+      background-color: $color-accent;
+      border-color: $color-accent;
+      transform: translateX(2px);
+    }
+  }
 }

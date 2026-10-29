@@ -715,10 +715,11 @@ $transition-base: all 0.3s ease;
 
       @media (min-width: $breakpoint-xl) {
         position: absolute;
-        bottom: 80px;
+        bottom: 8%;
         left: 50%;
         transform: translateX(-50%);
         margin-top: 0;
+        width: 100%;
       }
 
       @media (max-width: 576px) {
@@ -917,6 +918,11 @@ $transition-base: all 0.3s ease;
     & .hero {
       &__description {
         margin-bottom: 29px;
+        font-size: fluid(17, 20);
+
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 100px;
+        }
       }
     }
 

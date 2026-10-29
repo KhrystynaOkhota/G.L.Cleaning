@@ -2,7 +2,6 @@
 @use "../abstracts/mixins" as *;
 
 
-
 .service {
     position: relative;
     overflow: hidden;
@@ -38,7 +37,7 @@
 
     &:hover {
         .service__image {
-            transform: scale(1.05);
+            //  transform: scale(1.05);
         }
     }
 
@@ -90,21 +89,6 @@
         top: 23px;
         z-index: 3;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-
-        border: 1px solid $color-white;
-        border-radius: 50%;
-        background: transparent;
-        transition: $transition-base;
-
-        &:hover {
-            background-color: $color-white;
-            border-color: $color-white;
-        }
     }
 
     &-group {
@@ -137,6 +121,8 @@
 
 
 .s-services {
+    padding: fluid(30, 50) 0 0 0;
+
     & .heading {
         margin-bottom: 24px;
     }
@@ -201,7 +187,7 @@
     }
 
     .included {
-        background: #FFFFFF;
+        background: $color-white ;
         border-radius: 20px;
         padding: 32px 24px;
         display: flex;
@@ -244,15 +230,11 @@
         }
 
         &__text {
-            font-size: 15px;
+            font-size: fluid(15, 17);
             line-height: 1.45;
-            font-weight: 600;
-            color: #0E1838;
+            font-weight: 40;
+            color: rgba(20, 20, 20, 1);
             margin: 0;
-
-            @media (max-width: 767px) {
-                font-size: 13.5px;
-            }
         }
 
         &__grid {

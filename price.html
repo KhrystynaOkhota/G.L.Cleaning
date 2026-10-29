@@ -64,7 +64,7 @@
                                 <a href="" class="h-logo__wrap" aria-label="">
                                     <img src="assets/img/logo-dark.svg" alt="" class="h-logo">
                                 </a>
-                                <button class="h-close js-close-menu" aria-label="Закрити меню">&times;</button>
+                                <button class="btn--close js-close-menu" aria-label="Закрити меню"></button>
                             </div>
 
                             <ul class="menu">
@@ -808,33 +808,7 @@
 
     <script src="assets/js/app-comparison.js"></script>
     <script src="src/scripts/app_map.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            // Клік по пункту меню з випадайкою
-            $('.menu-item-has-children > a').on('click', function (e) {
-                e.preventDefault();
 
-                const $parentItem = $(this).parent('.menu-item-has-children');
-                const $subMenu = $parentItem.children('.sub-menu');
-
-                // Закриваємо інші відкриті списки (плавно)
-                $('.menu-item-has-children').not($parentItem).removeClass('is-open')
-                    .children('.sub-menu').slideUp(300);
-
-                // Перемикаємо поточний список з плавним ефектом
-                $parentItem.toggleClass('is-open');
-                $subMenu.slideToggle(300);
-            });
-
-            // Закриття при кліку поза межами меню
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.menu-item-has-children').length) {
-                    $('.menu-item-has-children').removeClass('is-open')
-                        .children('.sub-menu').slideUp(300);
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
