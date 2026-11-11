@@ -5383,11 +5383,102 @@ $transition-base: all 0.3s ease;
   border-radius: 20px;
   background-color: rgb(248, 249, 253);
   overflow: hidden;
+  outline: none;
+  /* Для доступності з клавіатури */
 }
 @media (min-width: 767px) {
   .advantage {
     aspect-ratio: 1;
   }
+}
+.advantage {
+  /* --- 3D ПЕРЕКАТАННЯ ДЛЯ КАРТОК З КАРТИНКОЮ (&--image) --- */
+}
+.advantage--image {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .advantage--image {
+    display: none;
+  }
+}
+.advantage--image {
+  /* Обгортка, що виконує обертання */
+}
+.advantage--image .advantage__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.advantage--image {
+  /* Грані картки */
+}
+.advantage--image .advantage__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.advantage--image .advantage__face--front {
+  background-color: #ffffff;
+}
+.advantage--image .advantage__face--back {
+  background-color: rgb(248, 249, 253);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+.advantage--image {
+  /* Стан перевертання через JS (для мобільних / тач-пристроїв) */
+}
+.advantage--image.is-flipped .advantage__inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.advantage--image {
+  /* Фокус з клавіатури */
+}
+.advantage--image:focus-visible {
+  -webkit-box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.6);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.6);
+}
+.advantage--image {
+  /* --- HOVER ТІЛЬКИ НА ПК --- */
+}
+@media (hover: hover) and (pointer: fine) {
+  .advantage--image:hover .advantage__inner {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+.advantage {
+  /* --- ТВОЇ СТАРІ СТИЛІ ДЛЯ ЗВИЧАЙНИХ КАРТОК --- */
 }
 .advantage:not(.advantage--image) {
   padding: 20px;
@@ -5397,11 +5488,6 @@ $transition-base: all 0.3s ease;
     display: grid;
     grid-template-columns: 61px 1fr;
     gap: 20px;
-  }
-}
-@media (max-width: 767px) {
-  .advantage--image {
-    display: none;
   }
 }
 .advantage__img {
