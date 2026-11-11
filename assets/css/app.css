@@ -5514,6 +5514,53 @@ $transition-base: all 0.3s ease;
 .advantage__title {
   margin-bottom: clamp(0.9375rem, 0.9375rem + 3 * (100vw - 300px) / 1960, 1.125rem);
 }
+.advantage--image {
+  /* Твої попередні стилі зберігаються, додаємо тригер для демонстрації */
+}
+.advantage--image.is-peeking .advantage__inner {
+  -webkit-animation: cardPeek 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s 1;
+          animation: cardPeek 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s 1;
+}
+
+@-webkit-keyframes cardPeek {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  30% {
+    -webkit-transform: rotateY(25deg);
+            transform: rotateY(25deg);
+  }
+  /* Легкий підворот */
+  60% {
+    -webkit-transform: rotateY(-10deg);
+            transform: rotateY(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes cardPeek {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  30% {
+    -webkit-transform: rotateY(25deg);
+            transform: rotateY(25deg);
+  }
+  /* Легкий підворот */
+  60% {
+    -webkit-transform: rotateY(-10deg);
+            transform: rotateY(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
 .s-team {
   padding: 0 0 clamp(3.125rem, 3.125rem + 50 * (100vw - 300px) / 1960, 6.25rem) 0;
 }
