@@ -18,6 +18,96 @@
 
 </head>
 
+<style>
+    @media (min-width: 991px) {
+        .header {
+            transition: transform .4s ease-out;
+        }
+
+        .header.hide-header {
+            -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+        }
+    }
+</style>
+
+<!--<style>
+    /* Основний контейнер створення 3D-простору */
+    .advantage {
+        perspective: 1000px;
+        width: 100%;
+        max-width: 360px;
+        height: 240px;
+        outline: none;
+    }
+
+    /* Обгортка, яка фактично повертається */
+    .advantage__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        border-radius: 16px;
+    }
+
+    /* Спільні стилі граней */
+    .advantage__face {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Передня сторона з картинкою */
+    .advantage__face--front {
+        background-color: #ffffff;
+    }
+
+    .advantage__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Зворотна сторона */
+    .advantage__face--back {
+        background-color: #0f172a;
+        color: #ffffff;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    /* Клас перевертання (для JS / Click на мобілках) */
+    .advantage.is-flipped .advantage__inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Фокус для клавіатури */
+    .advantage:focus-visible .advantage__inner {
+        box-shadow: 0 0 0 3px #3b82f6;
+    }
+
+    /* --- ПК: Спрацьовує тільки при наведенні мишею --- */
+    @media (hover: hover) and (pointer: fine) {
+        .advantage:hover .advantage__inner {
+            transform: rotateY(180deg);
+        }
+    }
+</style>-->
+
 <body class="has-transparent-header"> <!-- class="has-transparent-header" для головної і сторінки подяки сторінки -->
     <header class="header">
         <div class="h-wrap">
@@ -321,9 +411,24 @@
                                         однодискові машини — техніка, якої немає у приватних виконавців.</p>
                                 </div>
                             </article>
-                            <article class="advantage advantage--image">
-                                <img src="assets/img/advantage-1.png" alt="Професійні засоби для прибирання"
-                                    class="advantage__img" loading="lazy">
+                            <article class="advantage advantage--image" tabindex="0"
+                                aria-label="Перевага: Професійні засоби">
+                                <div class="advantage__inner">
+
+                                    <!-- Передня сторона (Картинка) -->
+                                    <div class="advantage__face advantage__face--front">
+                                        <img src="assets/img/advantage-1.png" alt="Професійні засоби для прибирання"
+                                            class="advantage__img" loading="lazy">
+                                    </div>
+
+                                    <!-- Зворотна сторона (Текст/Контент) -->
+                                    <div class="advantage__face advantage__face--back" aria-hidden="true">
+                                        <h3 class="advantage__title">Професійні засоби</h3>
+                                        <p class="advantage__desc">Використовуємо лише гіпоалергенну та ефективну хімію
+                                            для безпечного прибирання.</p>
+                                    </div>
+
+                                </div>
                             </article>
                             <article class="advantage">
                                 <div class="advantage__icon-wrap">
