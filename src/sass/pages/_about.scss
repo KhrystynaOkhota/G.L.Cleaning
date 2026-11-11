@@ -284,11 +284,77 @@
   border-radius: 20px;
   background-color: rgba(248, 249, 253, 1);
   overflow: hidden;
+  outline: none;
+  /* Для доступності з клавіатури */
 
   @media (min-width: $breakpoint-md) {
     aspect-ratio: 1;
   }
 
+  /* --- 3D ПЕРЕКАТАННЯ ДЛЯ КАРТОК З КАРТИНКОЮ (&--image) --- */
+  &--image {
+    perspective: 1000px;
+    cursor: pointer;
+
+    @media (max-width: $breakpoint-md) {
+      display: none; // Залишаємо твою логіку приховування на мобілках, якщо вона потрібна
+    }
+
+    /* Обгортка, що виконує обертання */
+    .advantage__inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    /* Грані картки */
+    .advantage__face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .advantage__face--front {
+      background-color: #ffffff;
+    }
+
+    .advantage__face--back {
+      background-color: rgba(248, 249, 253, 1);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* Стан перевертання через JS (для мобільних / тач-пристроїв) */
+    &.is-flipped .advantage__inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Фокус з клавіатури */
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.6);
+    }
+
+    /* --- HOVER ТІЛЬКИ НА ПК --- */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .advantage__inner {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  /* --- ТВОЇ СТАРІ СТИЛІ ДЛЯ ЗВИЧАЙНИХ КАРТОК --- */
   &:not(&--image) {
     padding: 20px;
 
@@ -296,12 +362,6 @@
       display: grid;
       grid-template-columns: 61px 1fr;
       gap: 20px;
-    }
-  }
-
-  &--image {
-    @media (max-width: $breakpoint-md) {
-      display: none;
     }
   }
 
@@ -317,7 +377,6 @@
     object-fit: contain;
 
     &-wrap {
-
       width: 61px;
       height: 61px;
 

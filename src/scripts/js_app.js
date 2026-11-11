@@ -51,20 +51,31 @@ jQuery(function ($) {
         _functions.closePopup();
     });
 
-    // 3. СКРОЛ ФУНКЦІЇ ТА АНІМАЦІЇ
-    let prev_scroll = 0;
+    // 3. СКРОЛ ФУНКЦІЇ ТА АНІМАЦІЇ (БЕЗ ТАЙМЕРА)
+    var prev_scroll = 0;
 
     _functions.scrollCall = function () {
-        const winScr = $(window).scrollTop();
+        var winScr = $(window).scrollTop();
 
         if (winScr > prev_scroll) {
-            $("header").addClass("scrolled");
+            $('header').addClass('hide-header').removeClass('show-header');
+            $('.menu-item').removeClass('active');
+        } else {
+            $('header').removeClass('hide-header').addClass('show-header');
         }
+
         prev_scroll = winScr;
 
         if (winScr <= 10) {
-            $("header").removeClass("scrolled");
+            $('header').removeClass('hide-header').removeClass('show-header');
             prev_scroll = 0;
+        }
+
+        // Стандартний клас scrolled та анімації
+        if (winScr > 30) {
+            $("header").addClass("scrolled");
+        } else {
+            $("header").removeClass("scrolled");
         }
 
         scrollAnime(winScr);
@@ -240,7 +251,17 @@ jQuery(function ($) {
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. АКОРДЕОНИ
+    // 1. АКОРДЕОНИ (Автоматичне відкриття першого елемента)
+    $('.accordeon').each(function () {
+        const $accordeon = $(this);
+        const $firstItem = $accordeon.find('.accordeon-item').first();
+        const $firstTitle = $firstItem.find('.accordeon-title');
+
+        $firstItem.addClass('active');
+        $firstTitle.attr('aria-expanded', 'true');
+        $firstTitle.next().show();
+    });
+
     document.addEventListener('click', function (e) {
         const $title = $(e.target).closest('.accordeon-title');
         if (!$title.length) return;
@@ -373,21 +394,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
-    if (!header) return;
-
-    const checkScroll = () => {
-        // Якщо проскролили більше ніж на 30 пікселів — додаємо клас is-scrolled
-        if (window.scrollY > 30) {
-            header.classList.add('is-scrolled');
-        } else {
-            header.classList.remove('is-scrolled');
-        }
-    };
-
-    checkScroll();
-    window.addEventListener('scroll', checkScroll);
 });
