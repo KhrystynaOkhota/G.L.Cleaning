@@ -393,6 +393,36 @@
   &__text {}
 }
 
+
+
+
+.advantage--image {
+  /* Твої попередні стилі зберігаються, додаємо тригер для демонстрації */
+
+  &.is-peeking .advantage__inner {
+    animation: cardPeek 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s 1;
+  }
+}
+
+@keyframes cardPeek {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  30% {
+    transform: rotateY(25deg);
+  }
+
+  /* Легкий підворот */
+  60% {
+    transform: rotateY(-10deg);
+  }
+
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
 .s-team {
   padding: 0 0 fluid(50, 100) 0;
 

@@ -450,9 +450,24 @@
                                         запаху. Безпечні для дітей, алергіків та домашніх тварин.</p>
                                 </div>
                             </article>
-                            <article class="advantage advantage--image">
-                                <img src="assets/img/advantage-2.png" alt="Процес прибирання" class="advantage__img"
-                                    loading="lazy">
+                            <article class="advantage advantage--image" tabindex="0"
+                                aria-label="Перевага: Професійні засоби">
+                                <div class="advantage__inner">
+
+                                    <!-- Передня сторона (Картинка) -->
+                                    <div class="advantage__face advantage__face--front">
+                                        <img src="assets/img/advantage-1.png" alt="Професійні засоби для прибирання"
+                                            class="advantage__img" loading="lazy">
+                                    </div>
+
+                                    <!-- Зворотна сторона (Текст/Контент) -->
+                                    <div class="advantage__face advantage__face--back" aria-hidden="true">
+                                        <h3 class="advantage__title">Професійні засоби</h3>
+                                        <p class="advantage__desc">Використовуємо лише гіпоалергенну та ефективну хімію
+                                            для безпечного прибирання.</p>
+                                    </div>
+
+                                </div>
                             </article>
                             <article class="advantage">
                                 <div class="advantage__icon-wrap">
@@ -2332,7 +2347,28 @@
             });
         });
     </script>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+            const imageCards = document.querySelectorAll('.advantage--image');
 
+            const observerOptions = {
+                root: null,
+                threshold: 0.5 // Спрацьовує, коли картка видно на 50%
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        card.classList.add('is-peeking');
+
+                        // Вимикаємо спостереження після першого програвання
+                        observer.unobserve(card);
+                    }
+                });
+            }, observerOptions);
+
+            imageCards.forEach(card => observer.observe(card));
+        });</script>
 </body>
 
 </html>
